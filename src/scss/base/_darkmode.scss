@@ -1,0 +1,19 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.dark-mode {
+  background-color: v.$light-black;
+
+  .header {
+    background-color: v.$light-brown;
+  }
+  .menu__hidden {
+    @include m.tablet {
+      background-color: v.$light-brown;
+    }
+  }
+
+  .dark-mode-button {
+    color: v.$white;
+  }
+}

@@ -1,6 +1,7 @@
 //*Fuentes
 $main-font: "Mukta", sans-serif;
 $title-font: "Oswald", sans-serif;
+$logo-font: "Playfair Display", serif;
 
 //*media Query
 $phone: 480px;
@@ -8,16 +9,23 @@ $tablet: 768px;
 $desktop: 1024px;
 
 //*Colores
+
+$light-brown: rgba(208, 188, 168, 1);
+$orange: #fcb900;
+$pink: rgba(212, 172, 207, 0.927);
+$light-purple: #d1d5db;
+$light-pink: #fcc3d9c0;
+$beige: #e6e1cd;
+$light-grey: #d6d6d6;
+$grey: rgb(58, 58, 58);
 $white: rgb(255, 255, 255);
 $black: rgb(0, 0, 0);
-$purple: rgb(67, 39, 73);
-$pink: rgb(247, 182, 212);
-$dark-pink: rgb(124, 67, 102);
-$blue: rgb(69, 122, 235);
-$dark-blue: rgba(25, 51, 99, 0.856);
-$orange: rgba(240, 146, 58, 0.856);
+$light-black: #332e2e;
+$royal-blue: #2a66ad;
+$purple: rgb(204, 191, 215);
+$dark-purple: rgb(187, 152, 215);
 $cyan: rgb(71, 204, 204);
-
+$red: rgb(212, 140, 140);
 //* separacion
 $separacion: 5rem;
 
@@ -26,4 +34,4 @@ $separacion: 5rem;
 $slim: 300;
 $regular: 400;
 $bold: 700;
-$black: 900;
+$dark: 900;

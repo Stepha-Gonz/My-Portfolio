@@ -1,0 +1,47 @@
+<nav class="nav container">
+        <a href="#" class="nav__logo">
+          <span class="nav__logo-circle">
+            <span class="s">S</span>
+            <span class="g">G</span>
+          </span>
+          <span class="nav__logo-name">Stephanie Gonzalez</span>
+        </a>
+
+        <div class="nav__menu" id="nav-menu">
+          <span class="nav__title">Menu</span>
+          <h3 class="nav__name">Stephanie</h3>
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link">Home</a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#about" class="nav__link">About Me</a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#Career" class="nav__link">Career</a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#projects" class="nav__link">Projects</a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">Contact Me</a>
+            </li>
+          </ul>
+
+          <!-- , CLOSE BUTTON -->
+
+          <div class="nav__close" id="nav-close">
+            <i class="ri-close-circle-line"></i>
+          </div>
+        </div>
+
+        <div class="nav__buttons">
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-4-fill"></i>
+          </div>
+        </div>
+      </nav>
