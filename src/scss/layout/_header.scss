@@ -3,18 +3,31 @@
 
 .header {
   background-color: v.$beige;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 1rem;
   min-height: auto;
   @include m.tablet {
-    padding-top: 1rem;
+    //padding-top: 1rem;
     min-height: auto;
+    padding: 0.5rem;
   }
 }
 
 //,LOGO
+.nav__logo {
+  display: flex;
+  align-items: center;
+  font-family: v.$title-font;
+}
 .nav__logo-name {
   color: v.$black;
   font-family: v.$title-font;
+  font-size: 1.5rem;
+  transition: font-size 0.3s ease, font-weight 0.3s;
+
+  &:hover {
+    font-size: 2rem;
+    font-weight: v.$black;
+  }
 }
 .nav__logo-circle,
 .nav__toggle {
@@ -22,11 +35,7 @@
   height: 32px;
   color: v.$black;
 }
-.nav__logo {
-  display: flex;
-  align-items: center;
-  font-family: v.$title-font;
-}
+
 .nav__logo-circle {
   display: flex;
   align-items: center;
@@ -35,7 +44,7 @@
   border-radius: 50%;
   font-size: 2.3rem;
   font-weight: v.$bold;
-  background-color: v.$purple;
+  background-color: v.$red;
   margin-right: 1rem;
 }
 //,MENU ICON
@@ -75,13 +84,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2rem;
   }
 }
 .nav__menu {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
 
   @include m.tablet {
     flex-direction: row;
@@ -112,25 +122,25 @@
     transition: width 0.3s;
   }
   &:hover {
-    color: v.$light-pink;
+    color: v.$red;
     &::after {
       width: 100%;
     }
     @include m.tablet {
-      color: v.$dark-purple;
+      color: v.$red;
     }
   }
 }
 
 .nav__link.contact {
   color: v.$light-black;
-  background-color: v.$purple;
+  background-color: v.$red;
   border-radius: 5px;
   padding: 0.5rem 1rem;
   transition: background-color 0.3s, color 0.3s, transform 0.3s;
 
   &:hover {
-    background-color: v.$dark-purple;
+    background-color: v.$dark-red;
     transform: scale(1.1);
     color: v.$white;
   }
@@ -152,6 +162,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 20;
 
   &.show {
     height: 30rem;

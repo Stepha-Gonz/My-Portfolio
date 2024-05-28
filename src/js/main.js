@@ -44,3 +44,7 @@ function darkMode() {
 function changeDarkMode() {
   document.body.classList.toggle("dark-mode");
 }
+
+//,Gallery
+
+var mixer = mixitup(".projects__grid");

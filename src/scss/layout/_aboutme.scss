@@ -1,0 +1,172 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+//,ABOUT SECTION
+
+.about.section {
+  margin-bottom: 5rem;
+}
+//,ABOUT TITLE
+.about__title-wrapper {
+  position: relative;
+  text-align: center;
+  //width: 225px;
+  margin: 0 auto;
+}
+
+.about__title-text {
+  position: relative;
+  z-index: 2;
+  font-size: 2.5rem;
+  font-family: v.$title-font;
+  padding: 0 0.5rem;
+  font-weight: v.$bold;
+}
+
+.about__title-shape {
+  width: 35px;
+  height: 25px;
+  background-color: v.$orange;
+  position: absolute;
+  top: 0.5rem;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+//,ABOUT IMG
+.about {
+  border-radius: 200px 0px 200px 0px;
+  -moz-border-radius: 200px 0px 200px 0px;
+  -webkit-border-radius: 200px 0px 200px 0px;
+
+  background-color: v.$green;
+  transition: background-color 0.6s;
+}
+
+.about__perfil-img {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6rem;
+}
+
+.about__shadow {
+  position: absolute;
+  top: 28rem;
+  left: 65%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 100px;
+  z-index: 1;
+  filter: brightness(0) saturate(100%) invert(69%) sepia(37%) saturate(6580%) hue-rotate(323deg)
+    brightness(108%) contrast(88%);
+}
+
+.about__image {
+  position: relative;
+  z-index: 2;
+}
+
+.about__img {
+  width: 225px;
+  border: 4px solid v.$blue;
+}
+
+.about__lines {
+  transform: rotate(180deg);
+  width: 150px;
+  position: fixed;
+}
+
+.about__box__shadow {
+  background-color: v.$dark-beige;
+  position: absolute;
+  top: 2rem;
+  left: 55%;
+  transform: translateX(-50%);
+  width: 225px;
+  height: 340px;
+  border-bottom: 4px solid v.$yellow;
+  border-right: 4px solid v.$yellow;
+}
+
+//, ABOUT INFO
+
+.about__perfil {
+  padding: 1.25rem;
+}
+
+.about__description {
+  color: v.$black;
+  text-align: center;
+
+  .about-skills {
+    font-weight: v.$bold;
+    font-family: v.$title-font;
+  }
+}
+
+.about__skills-info {
+  color: v.$white;
+  .highlight {
+    color: v.$yellow;
+    font-weight: v.$bold;
+  }
+}
+
+//,ABOUT BUTTONS
+
+.contact__button {
+  font-family: v.$title-font;
+  font-size: 20px;
+  background: #212121;
+  color: white;
+  fill: rgb(155, 153, 153);
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 34px;
+  font-weight: 1000;
+  width: auto;
+}
+
+.contact__button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact__button .ri-contacts-book-3-line {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact__button:hover {
+  background: v.$light-beige;
+  color: v.$black;
+}
+
+.contact__button:hover .svg-wrapper {
+  transform: scale(1.25);
+  transition: 0.5s linear;
+}
+
+.contact__button:hover .ri-contacts-book-3-line {
+  transform: translateX(200%) scale(1.1);
+  fill: #fff;
+}
+
+.contact__button:hover span {
+  opacity: 0;
+  transition: 0.2s linear;
+}
+
+.contact__button:active {
+  transform: scale(0.95);
+}

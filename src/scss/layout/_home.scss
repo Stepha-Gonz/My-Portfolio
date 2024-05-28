@@ -1,0 +1,240 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.home.section {
+  margin-top: 0;
+}
+
+//,HOME TITLE
+.home__name {
+  text-align: center;
+  font-family: v.$logo-font;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  span {
+    color: v.$red;
+  }
+}
+
+//,HOME IMAGE AND FORMS
+.home__perfil {
+  position: relative;
+  justify-self: center;
+}
+
+.home__image {
+  width: 225px;
+  position: relative;
+}
+
+.home__img {
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.home__shadow {
+  width: 100%;
+  height: 95%;
+  background-color: v.$dark-red;
+  position: absolute;
+  bottom: -2rem;
+  right: -2rem;
+  border: 4px solid v.$black;
+  z-index: 5;
+}
+
+.home__arrow,
+.home__fire {
+  position: absolute;
+}
+
+.home__arrow {
+  left: -45%;
+  bottom: -5rem;
+  transform: rotate(180deg);
+  width: 200px;
+  z-index: 2;
+}
+
+.home__fire {
+  left: 80%;
+  bottom: 29rem;
+  transform: rotate(345deg);
+  width: 110px;
+  z-index: -1;
+}
+//,SOCIAL LINKS
+.home__social {
+  height: max-content;
+  position: absolute;
+  left: -5rem;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  @include m.grid(1, 2rem);
+}
+
+.home__social-link {
+  background-color: none;
+  color: v.$black;
+  font-size: 3rem;
+  border-radius: 0%;
+  transition: font-size 0.3s ease, color 0.3s ease, border-radius 0.5s ease;
+
+  &:hover {
+    font-size: 4rem;
+
+    color: v.$dark-red;
+  }
+}
+
+//,DESCRIPTION
+
+.home__info {
+  margin-top: 1rem;
+}
+.ima {
+  text-align: center;
+  margin-bottom: 0;
+}
+.home-animation {
+  text-align: center;
+  span {
+    position: relative;
+  }
+}
+
+.home-animation span::before {
+  content: "Systems Engineer";
+  color: v.$red;
+  animation: words 20s infinite;
+}
+.home-animation span::after {
+  content: "";
+  background-color: v.$beige;
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  border-left: 5px solid v.$beige;
+  right: -5px;
+  animation: typing 20s steps(14) infinite;
+}
+
+@keyframes words {
+  0%,
+  20% {
+    content: "Systems Engineer";
+  }
+  21%,
+  40% {
+    content: "Chemical Engineer";
+  }
+  41%,
+  60% {
+    content: "Data Analyst";
+  }
+  61%,
+  80% {
+    content: "Web Developer";
+  }
+  81%,
+  100% {
+    content: "Leader";
+  }
+}
+
+@keyframes typing {
+  10%,
+  15%,
+  30%,
+  35%,
+  50%,
+  55%,
+  70%,
+  75%,
+  90%,
+  95% {
+    width: 0;
+  }
+  5%,
+  20%,
+  25%,
+  40%,
+  45%,
+  60%,
+  65%,
+  80%,
+  85% {
+    width: calc(100% + 10px);
+  }
+}
+.home__description {
+  text-align: center;
+  color: v.$black;
+  margin-bottom: 1.5rem;
+}
+
+.home__description span {
+  font-weight: v.$bold;
+}
+.majors {
+  background: linear-gradient(
+    90deg,
+    rgba(212, 135, 138, 0.6783088235294117) 10%,
+    rgba(230, 225, 205, 0.7959558823529411) 59%
+  );
+}
+
+.slogan {
+  background: linear-gradient(
+    90deg,
+    rgba(230, 225, 205, 0.7959558823529411) 10%,
+    rgba(212, 135, 138, 0.6783088235294117) 61%
+  );
+}
+
+//,SCROLL DOWN BUTTON
+
+.home__scroll {
+  display: block;
+  width: max-content;
+  margin: 0 auto;
+  color: v.$grey;
+}
+
+.home__scroll-text {
+  display: none;
+}
+
+.home__scroll-box {
+  background-color: v.$black;
+  color: v.$white;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.4s, border-radius 0.3s;
+  position: relative;
+
+  &:hover {
+    background-color: v.$red;
+    color: v.$black;
+    border-radius: 50%;
+  }
+}
+@keyframes scroll {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.home__scroll-box .ri-arrow-down-double-line {
+  animation: scroll 1s infinite;
+}
