@@ -9,6 +9,11 @@ function showEvents() {
 
   const closeMenu = document.querySelector(".nav__close");
   closeMenu.addEventListener("click", cierreMenu);
+
+  const closeLinks = document.querySelectorAll(".nav__link");
+  closeLinks.forEach((link) => {
+    link.addEventListener("click", cierreMenu);
+  });
 }
 
 function navegacionResponsive() {

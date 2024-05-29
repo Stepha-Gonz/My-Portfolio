@@ -1,0 +1,33 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.gallery__projects-img {
+  margin: 1rem;
+  padding: 2rem;
+}
+
+.carousel-control-next i {
+  font-size: 4rem;
+  color: #000000;
+}
+
+.carousel-control-prev i {
+  font-size: 4rem;
+}
+
+.carousel-caption {
+  background-color: v.$beige;
+  margin-top: 2rem;
+  border-radius: 2rem;
+}
+
+#carouselExampleDark {
+  border: 5px solid v.$red;
+  border-radius: 5px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 0 25px 50px rgba(0, 0, 0, 0.2);
+
+  transition: transform 0.3s ease;
+}
+#carouselExampleDark:hover {
+  transform: scale(1.05);
+}
