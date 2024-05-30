@@ -135,8 +135,8 @@
   padding: 0.5rem 3rem 2rem 3rem;
   margin: 0 auto;
   @include m.tablet {
-    padding: 2rem 10rem 2rem 10rem;
-    @include m.grid(2, 1, 2fr 1fr);
+    padding: 2rem 8rem 2rem 8rem;
+    @include m.grid(2, 3rem, 1fr 1fr);
   }
 }
 
@@ -146,43 +146,90 @@
   font-size: 2rem;
   margin: 1rem 0 2rem 0;
 }
+
+.tech_title {
+  font-size: 2rem;
+  text-align: center;
+}
 .content-info-project {
   color: v.$grey;
   font-size: 1.5rem;
+  @include m.tablet {
+    padding: 2rem;
+  }
+  span {
+    font-weight: v.$dark;
+  }
+}
+
+@include m.tablet {
+  .content-info-project:nth-child(2) {
+    padding-top: 5rem;
+  }
 }
 
 .skills__used {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
+  margin: 1rem auto 2rem auto;
   padding: 1rem;
-  @include m.desktop {
-    @include m.grid(2, 25px);
-  }
+  list-style: none;
+  padding: 0;
+  @include m.grid(2, 2rem);
 
-  button {
-    width: 150px;
-
-    color: v.$dark-red;
-    height: 60px;
-    border: 3px solid v.$dark-red;
-    border-radius: 45px;
-    transition: all 0.3s;
-    cursor: pointer;
-    background: white;
-    font-size: 1.2em;
-    font-weight: 550;
-    font-family: "Montserrat", sans-serif;
-  }
-
-  button:hover {
-    background: v.$dark-red;
+  .skill__used {
+    font-size: 1.8rem;
+    padding: 5px 20px;
+    margin: 2.5px 0;
     color: v.$white;
-    font-size: 1.5em;
+    text-align: center;
+    background-color: v.$grey;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.4s;
+    z-index: 10;
+  }
+
+  .skill__used::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: v.$white;
+    transition: all 0.4s;
+    z-index: -1;
+  }
+
+  .skill__used:hover::before {
+    width: 100%;
+  }
+
+  .skill__used:nth-child(1)::before {
+    background-color: v.$cyan;
+  }
+  .skill__used:nth-child(2)::before {
+    background-color: v.$dark-orange;
+  }
+  .skill__used:nth-child(3)::before {
+    background-color: v.$pink;
+  }
+  .skill__used:nth-child(4)::before {
+    background-color: v.$dark-yellow;
   }
 }
-.skill__used {
-  margin: 1rem auto;
+
+.skills__used.DB li:nth-child(1) {
+  grid-column: 1 / span 2;
+}
+
+.skills__used.BE li:nth-child(3) {
+  grid-column: 1 / span 2;
+}
+.skills__used.TA li:nth-child(3) {
+  grid-column: 1 / span 2;
+}
+.skills__used.ARC li:nth-child(1) {
+  grid-column: 1 / span 2;
 }
 
 .repository__button {
