@@ -160,6 +160,12 @@
   span {
     font-weight: v.$dark;
   }
+  &.desc-list {
+    list-style: none;
+    color: v.$grey;
+    font-size: 1.5rem;
+    margin: 2rem;
+  }
 }
 
 @include m.tablet {
@@ -232,6 +238,11 @@
   grid-column: 1 / span 2;
 }
 
+.link__buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
 .repository__button {
   border: none;
   border-radius: 50%;
@@ -254,6 +265,10 @@
 
 .svgIcon path {
   fill: white;
+}
+
+img.svgIcon {
+  filter: invert(1);
 }
 
 .text {
