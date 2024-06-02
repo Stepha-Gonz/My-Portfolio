@@ -1,0 +1,311 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.contact.section {
+  margin-top: 5rem;
+  background-color: v.$light-red;
+  border-radius: 155px 157px 36px 32px;
+  -moz-border-radius: 155px 157px 36px 32px;
+  -webkit-border-radius: 155px 157px 36px 32px;
+  border: 0px solid #000000;
+}
+.contact__title-wrapper {
+  position: relative;
+  text-align: center;
+  width: 225px;
+  margin: 0 auto;
+}
+
+.contact__title {
+  position: relative;
+  color: v.$black;
+  font-family: v.$title-font;
+  font-weight: v.$bold;
+  font-size: 2.5rem;
+  z-index: 2;
+}
+
+.contact__title-shape {
+  position: absolute;
+  background-color: v.$dark-orange;
+  height: 25px;
+  width: 35px;
+  top: -0.5rem;
+  right: 3rem;
+  z-index: 1;
+}
+
+//,form
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 350px;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+  background-color: v.$white;
+  color: #fff;
+
+  top: -2rem;
+  left: 5%;
+  -webkit-box-shadow: 0px 34px 65px 19px rgba(138, 76, 76, 0.47);
+  -moz-box-shadow: 0px 34px 65px 19px rgba(138, 76, 76, 0.47);
+  box-shadow: 0px 34px 65px 19px rgba(138, 76, 76, 0.47);
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  color: v.$red;
+}
+
+.title::before {
+  width: 18px;
+  height: 18px;
+}
+
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.title::before,
+.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: v.$red;
+}
+
+.message,
+.signin {
+  font-size: 14.5px;
+  color: v.$grey;
+}
+
+.signin {
+  text-align: center;
+}
+
+.signin a:hover {
+  text-decoration: underline v.$red;
+}
+
+.signin a {
+  color: v.$red;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+.form label {
+  position: relative;
+}
+
+.form label .input {
+  background-color: v.$light-beige;
+  color: v.$black;
+  width: 100%;
+  padding: 20px 05px 05px 10px;
+  outline: 0;
+  border: 1px solid v.$red;
+  border-radius: 10px;
+}
+
+.form label .input + span {
+  color: v.$green;
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+  top: 12.5px;
+  font-size: 0.9em;
+}
+
+.form label .input:focus + span,
+.form label .input:valid + span {
+  color: v.$red;
+  top: 0px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.input {
+  font-size: medium;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: 0.3s ease;
+  background-color: v.$red;
+}
+
+.submit:hover {
+  background-color: v.$dark-red;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+//,links
+
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+  height: 120px;
+  width: 100%;
+  padding-top: 10px;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  color: v.$black;
+
+  svg {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .linkedin:hover,
+.wrapper .linkedin:hover .tooltip,
+.wrapper .linkedin:hover .tooltip::before {
+  background: #1877f2;
+  color: #fff;
+}
+
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+  background: v.$black;
+  color: #fff;
+}
+
+//,contact info
+
+.contact__data {
+  background-color: v.$white;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 0px 121px 123px 0px;
+  -moz-border-radius: 0px 121px 123px 0px;
+  -webkit-border-radius: 0px 121px 123px 0px;
+  border: 0px solid #000000;
+
+  border-bottom: 4px solid #bc7455;
+  -webkit-box-shadow: -8px 9px 16px 19px rgba(188, 116, 85, 0.55);
+  -moz-box-shadow: -8px 9px 16px 19px rgba(188, 116, 85, 0.55);
+  box-shadow: -8px 9px 16px 19px rgba(188, 116, 85, 0.55);
+}
+
+.contact__description-1,
+.contact__description-2 {
+  font-family: v.$main-font;
+  padding: 3rem 1.5rem 0 2rem;
+  font-size: 1.3rem;
+}
+
+//,links
+
+.contact__social-arrow {
+  transform: rotate(150deg);
+  width: 100px;
+  margin: 0 auto;
+}
+
+.contact__social-description {
+  color: v.$grey;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.contact__social-description-2 {
+  color: v.$black;
+  text-align: center;
+}
