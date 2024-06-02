@@ -1,0 +1,35 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.footer {
+  background-color: v.$black;
+}
+
+.footer__container {
+  padding-block: 3rem 2rem;
+  row-gap: 2.5rem;
+  text-align: center;
+}
+
+.footer__links {
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
+}
+
+.footer__link {
+  color: v.$white;
+  transition: color 0.4s;
+}
+
+.footer__link:hover {
+  color: v.$red;
+}
+
+.footer__copy {
+  color: v.$grey;
+
+  span {
+    color: v.$white;
+  }
+}

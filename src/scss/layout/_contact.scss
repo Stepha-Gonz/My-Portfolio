@@ -55,7 +55,7 @@
   box-shadow: 0px 34px 65px 19px rgba(138, 76, 76, 0.47);
 }
 
-.title {
+.title-contact {
   font-size: 28px;
   font-weight: 600;
   letter-spacing: -1px;
@@ -66,19 +66,19 @@
   color: v.$red;
 }
 
-.title::before {
+.title-contact::before {
   width: 18px;
   height: 18px;
 }
 
-.title::after {
+.title-contact::after {
   width: 18px;
   height: 18px;
   animation: pulse 1s linear infinite;
 }
 
-.title::before,
-.title::after {
+.title-contact::before,
+.title-contact::after {
   position: absolute;
   content: "";
   height: 16px;

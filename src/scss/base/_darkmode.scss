@@ -4,16 +4,7 @@
 .dark-mode {
   background-color: v.$light-black;
 
-  .header {
-    background-color: v.$light-brown;
-  }
-  .menu__hidden {
-    @include m.tablet {
-      background-color: v.$light-brown;
-    }
-  }
-
-  .dark-mode-button {
-    color: v.$white;
+  h1.home__name {
+    color: v.$beige;
   }
 }
