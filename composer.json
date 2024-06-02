@@ -1,17 +1,16 @@
 {
-    "name": "stepha/my-portfolio",
-    "description": "my portfolio",
-    "type": "project",
-    "autoload": {
-        "psr-4": {
-            "Stepha\\MyPortfolio\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Stephanie Gonzalez",
-            "email": "gstephaniegonz@gmail.com"
-        }
-    ],
-    "require": {}
+  "name": "stepha/my-portfolio",
+  "description": "my portfolio",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "Stepha\\MyPortfolio\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Stephanie Gonzalez",
+      "email": "gstephaniegonz@gmail.com"
+    }
+  ]
 }

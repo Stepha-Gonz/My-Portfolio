@@ -53,3 +53,35 @@ function changeDarkMode() {
 //,Gallery
 
 var mixer = mixitup(".projects__grid");
+
+//,EMAIL
+
+const contactForm = document.getElementById("contact-form");
+
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  emailjs
+    .sendForm("service_rwa9r29", "template_1jvwq0a", "#contact-form", "kdSuNW2tviCll_Lq9")
+    .then(
+      () => {
+        Swal.fire({
+          title: "Email Sent!",
+          text: "We will reply to you as soon as possible.",
+          icon: "success",
+          timer: 6000,
+        });
+        contactForm.reset();
+      },
+      () => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong, please try again",
+          timer: 6000,
+        });
+      }
+    );
+};
+
+contactForm.addEventListener("submit", sendEmail);
