@@ -1,6 +1,11 @@
 @use "base/variables" as v;
 @use "base/mixins" as m;
 
+.home__container-project {
+  height: 50px;
+  margin: 0 auto;
+  text-align: center;
+}
 .projects.section {
   margin-top: 5rem;
 }
@@ -11,7 +16,7 @@
   margin: 0 auto;
 }
 
-.projects__title {
+.projects__title-text {
   position: relative;
   color: v.$black;
   font-family: v.$title-font;

@@ -45,8 +45,6 @@
 }
 
 #carouselExampleDark {
-  box-shadow: 0 15px 20px v.$light-brown, 0 25px 50px v.$light-brown;
-
   transition: transform 0.3s ease;
 }
 
@@ -71,31 +69,6 @@
   @include m.tablet {
     margin-top: 5rem;
   }
-}
-.project__title-wrapper {
-  position: relative;
-  padding-top: 3rem;
-  margin: 2rem auto 0.5rem auto;
-  width: 200px;
-}
-
-.project__title-text {
-  text-align: center;
-  font-family: v.$title-font;
-  font-weight: v.$bold;
-  font-size: 3rem;
-  position: relative;
-  z-index: 2;
-}
-
-.project__title-shape {
-  background-color: v.$red;
-  width: 35px;
-  height: 25px;
-  z-index: 1;
-  position: absolute;
-  top: 3rem;
-  right: -0.5rem;
 }
 
 .description__image {

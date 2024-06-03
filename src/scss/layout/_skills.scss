@@ -9,37 +9,6 @@
   -webkit-border-radius: 0px 100px 10px 200px;
   border: 0px solid #000000;
 }
-.title__box {
-  margin: 0.75rem auto 0.5rem;
-  text-align: center;
-}
-.skills-subtitle {
-  font-family: v.$logo-font;
-  color: v.$dark-brown;
-  z-index: 3;
-  position: relative;
-}
-.skills__title-wrapper {
-  position: relative;
-}
-.skills-title {
-  position: relative;
-  z-index: 2;
-  font-size: 2.5rem;
-  font-family: v.$title-font;
-  padding: 0 0.5rem;
-  font-weight: v.$bold;
-}
-.skills__title-shape {
-  width: 35px;
-  height: 25px;
-  position: absolute;
-  background-color: v.$yellow;
-  z-index: 1;
-  transform: translate(50%, -50%);
-  top: 0.5rem;
-  right: 3.5rem;
-}
 
 .skills-items {
   margin: 1rem auto;

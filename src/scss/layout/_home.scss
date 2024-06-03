@@ -5,17 +5,6 @@
   margin-top: 0;
 }
 
-//,HOME TITLE
-.home__name {
-  text-align: center;
-  font-family: v.$logo-font;
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  span {
-    color: v.$red;
-  }
-}
-
 //,HOME IMAGE AND FORMS
 .home__perfil {
   position: relative;
@@ -166,77 +155,7 @@
   text-align: center;
   margin-bottom: 0;
 }
-.home-animation {
-  text-align: center;
-  span {
-    position: relative;
-  }
-}
 
-.home-animation span::before {
-  content: "Systems Engineer";
-  color: v.$red;
-  animation: words 20s infinite;
-}
-.home-animation span::after {
-  content: "";
-  background-color: v.$beige;
-  position: absolute;
-  width: calc(100% + 8px);
-  height: 100%;
-  border-left: 5px solid v.$beige;
-  right: -5px;
-  animation: typing 20s steps(14) infinite;
-}
-
-@keyframes words {
-  0%,
-  20% {
-    content: "Systems Engineer";
-  }
-  21%,
-  40% {
-    content: "Chemical Engineer";
-  }
-  41%,
-  60% {
-    content: "Data Analyst";
-  }
-  61%,
-  80% {
-    content: "Web Developer";
-  }
-  81%,
-  100% {
-    content: "Leader";
-  }
-}
-
-@keyframes typing {
-  10%,
-  15%,
-  30%,
-  35%,
-  50%,
-  55%,
-  70%,
-  75%,
-  90%,
-  95% {
-    width: 0;
-  }
-  5%,
-  20%,
-  25%,
-  40%,
-  45%,
-  60%,
-  65%,
-  80%,
-  85% {
-    width: calc(100% + 10px);
-  }
-}
 .home__description {
   text-align: center;
   color: v.$black;
@@ -262,50 +181,6 @@
   );
 }
 
-//,SCROLL DOWN BUTTON
-
-.home__scroll {
-  display: block;
-  width: max-content;
-  margin: 0 auto;
-  color: v.$grey;
-}
-
-.home__scroll-text {
-  display: none;
-}
-
-.home__scroll-box {
-  background-color: v.$black;
-  color: v.$white;
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: background-color 0.4s, border-radius 0.3s;
-  position: relative;
-
-  &:hover {
-    background-color: v.$red;
-    color: v.$black;
-    border-radius: 50%;
-  }
-}
-@keyframes scroll {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-}
-
-.home__scroll-box .ri-arrow-down-double-line {
-  animation: scroll 1s infinite;
-}
 //,Download button
 
 .download-btn {
@@ -440,14 +315,45 @@
 
 //, MEDIA and LARGE screen
 
-// .home__container {
-//   @include m.tablet {
-//     @include m.grid(2, 2rem);
-//     justify-content: center;
+.home__container {
+  @include m.tablet {
+    height: 500px;
+    @include m.grid(2, 2rem);
+    justify-content: center;
 
-//     .home__perfil {
-//       position: relative;
-//       top: 5rem;
-//     }
-//   }
-// }
+    .home__perfil {
+      position: relative;
+      top: 5rem;
+    }
+
+    .home__name {
+      position: relative;
+      top: 5rem;
+    }
+
+    .home__arrow {
+      top: -10rem;
+      left: -10rem;
+    }
+
+    .home__info {
+      position: relative;
+      top: -30rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .home__scroll {
+      margin: 0;
+    }
+    .btn-box {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      align-items: center;
+    }
+    .home__fire {
+      top: 30rem;
+      transform: rotate(180deg);
+    }
+  }
+}

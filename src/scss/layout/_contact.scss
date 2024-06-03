@@ -9,31 +9,6 @@
   -webkit-border-radius: 155px 157px 36px 32px;
   border: 0px solid #000000;
 }
-.contact__title-wrapper {
-  position: relative;
-  text-align: center;
-  width: 225px;
-  margin: 0 auto;
-}
-
-.contact__title {
-  position: relative;
-  color: v.$black;
-  font-family: v.$title-font;
-  font-weight: v.$bold;
-  font-size: 2.5rem;
-  z-index: 2;
-}
-
-.contact__title-shape {
-  position: absolute;
-  background-color: v.$dark-orange;
-  height: 25px;
-  width: 35px;
-  top: -0.5rem;
-  right: 3rem;
-  z-index: 1;
-}
 
 //,form
 
@@ -273,9 +248,9 @@
   position: relative;
   width: 300px;
   height: 300px;
-  border-radius: 0px 121px 123px 0px;
-  -moz-border-radius: 0px 121px 123px 0px;
-  -webkit-border-radius: 0px 121px 123px 0px;
+  border-radius: 33px 131px 147px 47px;
+  -moz-border-radius: 33px 131px 147px 47px;
+  -webkit-border-radius: 33px 131px 147px 47px;
   border: 0px solid #000000;
 
   border-bottom: 4px solid #bc7455;
@@ -287,7 +262,7 @@
 .contact__description-1,
 .contact__description-2 {
   font-family: v.$main-font;
-  padding: 3rem 1.5rem 0 2rem;
+  padding: 2rem 1.5rem 0 2rem;
   font-size: 1.3rem;
 }
 
@@ -308,4 +283,62 @@
 .contact__social-description-2 {
   color: v.$black;
   text-align: center;
+}
+
+//,media and large screens
+
+.contact__container {
+  @include m.tablet {
+    margin: 4rem 5rem;
+    height: 600px;
+
+    @include m.grid(2, 2rem);
+
+    justify-content: center;
+    .contact__data {
+      width: 350px;
+      height: 320px;
+      margin: 0 auto;
+
+      @include m.desktop {
+        transform: scale(1.4);
+        position: relative;
+        top: 3rem;
+      }
+    }
+
+    .contact__description-1,
+    .contact__description-2 {
+      font-size: 1.5rem;
+      padding-right: 3rem;
+    }
+
+    .contact__email {
+      transform: scale(1.2);
+      margin: 0 auto;
+      position: relative;
+      top: 5rem;
+      @include m.desktop {
+        transform: scale(1.4);
+        top: 8rem;
+      }
+    }
+
+    .contact__social-arrow {
+      position: relative;
+      transform: scale(1.3) rotate(190deg);
+      right: -12rem;
+      top: 3rem;
+    }
+    .contact__social {
+      position: relative;
+      top: -21rem;
+      @include m.desktop {
+        top: -10rem;
+      }
+    }
+  }
+  @include m.desktop {
+    height: 650px;
+  }
 }

@@ -1,0 +1,115 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.home__name {
+  text-align: center;
+  font-family: v.$logo-font;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  span {
+    color: v.$red;
+  }
+}
+//,Sections Titles
+.title-wrapper {
+  position: relative;
+  padding: 1rem;
+  margin: 1.5rem auto;
+  width: 200px;
+  height: 60px;
+  text-align: center;
+
+  &.contact-t {
+    margin: 0 auto;
+    padding: 0;
+    height: auto;
+  }
+}
+
+.title-text {
+  text-align: center;
+  font-family: v.$title-font;
+  font-weight: v.$bold;
+  font-size: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.title-shape {
+  width: 35px;
+  height: 25px;
+  z-index: 1;
+  position: absolute;
+
+  &.red {
+    background-color: v.$red;
+  }
+  &.yellow {
+    background-color: v.$yellow;
+  }
+  &.blue {
+    background-color: v.$blue;
+  }
+  &.orange {
+    background-color: v.$dark-orange;
+  }
+  &.green {
+    background-color: v.$green;
+  }
+}
+
+.title-shape {
+  &.project-title {
+    top: 0.5rem;
+    right: 1rem;
+  }
+  &.projects-title {
+    top: 0.5rem;
+    right: 3rem;
+  }
+  &.about-title {
+    top: 0.5rem;
+    right: 2.5rem;
+  }
+  &.career-title {
+    top: 0.5rem;
+    right: 4rem;
+  }
+  &.skills-title {
+    top: 0.5rem;
+    right: 3rem;
+  }
+  &.contact-title {
+    top: -0.5rem;
+    right: 1.5rem;
+  }
+}
+
+//,skills subtitle
+.title__box {
+  margin: 0.75rem auto 0.5rem;
+  text-align: center;
+}
+.skills-subtitle {
+  font-family: v.$logo-font;
+  color: v.$dark-brown;
+  z-index: 3;
+  position: relative;
+}
+
+//,Career titles
+
+.title-career {
+  font-size: 2rem;
+  font-weight: v.$regular;
+  text-align: center;
+  font-family: v.$name-font;
+}
+.title-timeline {
+  padding: 20px 50px 0px 50px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: left;
+  color: v.$white;
+  position: relative;
+}
