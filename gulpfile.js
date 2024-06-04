@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
 import { glob } from "glob";
-import { src, dest, watch, series } from "gulp";
+import { src, dest, watch, series, parallel } from "gulp";
 import * as dartSass from "sass";
 import gulpSass from "gulp-sass";
 import concat from "gulp-concat";
@@ -77,4 +77,7 @@ export function dev() {
   watch("src/img/**/*.{png,jpg}", imagenes);
 }
 
-export default series(js, css, imagenes, dev);
+// Nueva tarea de construcción para producción
+export const build = series(js, css, imagenes);
+
+export default dev;
