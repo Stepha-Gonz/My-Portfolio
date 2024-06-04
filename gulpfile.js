@@ -16,6 +16,7 @@ const sass = gulpSass(dartSass);
 const paths = {
   scss: "src/scss/**/*.scss",
   js: "src/js/**/*.js",
+  html: "./*.html",
 };
 
 export function css(done) {
@@ -72,6 +73,10 @@ function procesarImagenes(file, outputSubDir) {
     sharp(file).avif().toFile(outputFileAvif);
   }
 }
+export function html(done) {
+  src("./*.html").pipe(dest("./build"));
+  done();
+}
 
 export function dev() {
   watch(paths.scss, css);
@@ -80,6 +85,6 @@ export function dev() {
 }
 
 // Nueva tarea de construcción para producción
-export const build = series(js, css, imagenes);
+export const build = series(js, css, imagenes, html);
 
 export default dev;
