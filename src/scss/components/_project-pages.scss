@@ -197,11 +197,14 @@
   }
 }
 
-.skills__used.DB li:nth-child(1) {
+.skills__used.DB li:nth-child(3) {
   grid-column: 1 / span 2;
 }
 
-.skills__used.BE li:nth-child(3) {
+.skills__used.BE li:nth-child(1) {
+  grid-column: 1 / span 2;
+}
+.skills__used.WS li:nth-child(1) {
   grid-column: 1 / span 2;
 }
 .skills__used.TA li:nth-child(3) {
