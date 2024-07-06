@@ -103,16 +103,39 @@
 }
 
 .item-1 {
-  background-image: url("../img/tasknexus.jpg");
+  background-image: image-set(
+    url(../img/tasknexus.avif) 1x,
+    url(../img/tasknexus.webp) 1x,
+    url(../img/tasknexus.jpg) 1x
+  );
 }
 .item-2 {
-  background-image: url("../img/homehunter.jpg");
+  background-image: image-set(
+    url(../img/homehunter.avif) 1x,
+    url(../img/homehunter.webp) 1x,
+    url(../img/homehunter.jpg) 1x
+  );
 }
 .item-3 {
-  background-image: url("../img/glowradiance.jpg");
+  background-image: image-set(
+    url(../img/glowradiance.avif) 1x,
+    url(../img/glowradiance.webp) 1x,
+    url(../img/glowradiance.jpg) 1x
+  );
 }
 .item-4 {
-  background-image: url("../img/harmony-fest.jpg");
+  background-image: image-set(
+    url(../img/harmony-fest.avif) 1x,
+    url(../img/harmony-fest.webp) 1x,
+    url(../img/harmony-fest.jpg) 1x
+  );
+}
+.item-5 {
+  background-image: image-set(
+    url(../img/bizexpo.avif) 1x,
+    url(../img/bizexpo.webp) 1x,
+    url(../img/bizexpo.jpg) 1x
+  );
 }
 .flip-card-back {
   background: linear-gradient(

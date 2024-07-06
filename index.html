@@ -76,7 +76,18 @@
           <h1 class="home__name slide-right">Hi, I'm <span>Stephanie</span></h1>
           <div class="home__perfil slide-left">
             <div class="home__image">
-              <img src="build/img/home-img.jpg" alt="home image" class="home__img" />
+              <!-- <img src="build/img/home-img.jpg" alt="home image" class="home__img" /> -->
+              <picture class="foreground-image">
+                <source class="home__img" srcset="build/img/home-img.avif" type="image/avif" />
+                <source class="home__img" srcset="build/img/home-img.webp" type="image/webp" />
+                <img
+                  class="home__img"
+                  loading="lazy"
+                  src="build/img/home-img.jpg"
+                  alt="home-image"
+                  width="225"
+                  height="380" />
+              </picture>
               <div class="home__shadow">
                 <img src="build/img/curly-arrow.svg" alt="arrow" class="home__arrow" />
                 <img src="build/img/flash.svg" alt="fire" class="home__fire" />
@@ -157,7 +168,18 @@
               <img src="build/img/flash.svg" alt="lines under image" class="about__lines" />
             </div>
             <div class="about__image">
-              <img src="build/img/about-img.jpg" alt="about image" class="about__img" />
+              <!-- <img src="build/img/about-img.jpg" alt="about image" class="about__img" /> -->
+              <picture class="foreground-image">
+                <source class="about__img" srcset="build/img/about-img.avif" type="image/avif" />
+                <source class="about__img" srcset="build/img/about-img.webp" type="image/webp" />
+                <img
+                  class="about__img"
+                  loading="lazy"
+                  src="build/img/about-img.jpg"
+                  alt="about-image"
+                  width="292"
+                  height="434" />
+              </picture>
             </div>
             <div class="about__box__shadow"></div>
           </div>
@@ -466,6 +488,30 @@
             </div>
 
             <div class="projects__grid">
+              <div class="grid-items mix full__stack">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front item-5"></div>
+                    <div class="flip-card-back">
+                      <p class="title">BIZEXPO</p>
+                      <p class="project-description">
+                        A web platform for a tech event offering conferences and workshops. Users
+                        can view events, speakers, locations via Leaflet, and purchase tickets.
+                        Post-login, users can choose ticket types and pay via PayPal, with an admin
+                        panel for managing data.
+                      </p>
+                      <a href="/bizexpo.html" class="link-project-logo">
+                        <button class="cta">
+                          <span>See Project</span>
+                          <svg width="15px" height="10px" viewBox="0 0 13 10">
+                            <path d="M1,5 L11,5"></path>
+                            <polyline points="8 1 12 5 8 9"></polyline>
+                          </svg></button
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="grid-items mix full__stack">
                 <div class="flip-card">
                   <div class="flip-card-inner">
