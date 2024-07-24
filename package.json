@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "gulp",
-    "build": "npx gulp build"
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -22,21 +22,27 @@
   "author": "Stephanie Gonzalez",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^7.1.2",
+    "del": "^7.1.0",
     "glob": "^10.3.16",
     "gulp": "^5.0.0",
-    "gulp-cli": "^3.0.0",
+    "gulp-autoprefixer": "^8.0.0",
     "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^9.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-terser": "^2.1.0",
     "sass": "^1.75.0",
-    "sharp": "^0.33.4"
+    "sharp": "^0.33.4",
+    "style-loader": "^4.0.0"
+  },
+  "dependencies": {
+    "webpack-stream": "^7.0.0",
+    "bootstrap": "^5.3.3"
   },
   "bugs": {
     "url": "https://github.com/Stepha-gon/My-Portfolio/issues"
   },
-  "homepage": "https://github.com/Stepha-gon/My-Portfolio#readme",
-  "dependencies": {
-    "bootstrap": "^5.3.3"
-  }
+  "homepage": "https://github.com/Stepha-gon/My-Portfolio#readme"
 }
