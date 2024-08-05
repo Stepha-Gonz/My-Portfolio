@@ -16,30 +16,35 @@
   }
 }
 
-@mixin boton($bgColor, $colorTexto) {
+@mixin button($bgColor, $colorTexto) {
   background-color: $bgColor;
-  padding: 1.5rem 4rem;
+  font-family: v.$text-font;
+  padding: 1rem 3.5rem;
   color: $colorTexto;
   font-size: 1.6rem;
   display: inline-block;
-  font-weight: 700;
+  font-weight: v.$regular;
   border: none;
+  border-radius: 5rem;
   transition-property: background-color;
   transition-duration: 0.3s;
   text-align: center;
-  display: block;
-  width: 100%;
-  @include tablet {
-    width: auto;
-  }
+
+  width: fit-content;
+
   &:hover {
     background-color: darken($bgColor, 10%);
     cursor: pointer;
   }
 }
 
-@mixin grid($columnas, $espaciado, $tamanos-columnas: repeat($columnas, 1fr)) {
+@mixin grid($columns, $spacing, $size-columns: repeat($columns, 1fr)) {
   display: grid;
-  gap: $espaciado;
-  grid-template-columns: $tamanos-columnas;
+  gap: $spacing;
+  grid-template-columns: $size-columns;
+
+  justify-items: center;
+}
+@mixin fluid-text($min, $max) {
+  font-size: clamp($min, -0.8rem + 10vw, $max);
 }

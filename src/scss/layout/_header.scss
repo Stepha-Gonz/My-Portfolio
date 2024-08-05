@@ -2,247 +2,194 @@
 @use "base/mixins" as m;
 
 .header {
-  background-color: v.$beige;
-  padding: 1rem;
-  min-height: auto;
-  @include m.tablet {
-    //padding-top: 1rem;
-    min-height: auto;
-    padding: 0.5rem;
-  }
-}
-
-//,LOGO
-.nav__logo {
-  display: flex;
-  align-items: center;
-  font-family: v.$title-font;
-}
-.nav__logo-name {
-  color: v.$black;
-  font-family: v.$title-font;
-  font-size: 1.5rem;
-  transition: font-size 0.3s ease, font-weight 0.3s;
-
-  &:hover {
-    font-size: 2rem;
-    font-weight: v.$black;
-  }
-}
-.nav__logo-circle,
-.nav__toggle {
-  width: 32px;
-  height: 32px;
-  color: v.$black;
-}
-
-.nav__logo-circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: v.$logo-font;
-  border-radius: 50%;
-  font-size: 2.3rem;
-  font-weight: v.$bold;
-  background-color: v.$red;
-  margin-right: 1rem;
-}
-//,MENU ICON
-.nav__toggle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 2rem;
-  transition: font-size 0.3s ease-in-out;
-  &:hover {
-    font-size: 3rem;
-  }
-  @include m.tablet {
-    display: none;
-  }
-}
-//,LOGO AND DARKMODE ICON
-.nav__bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 0;
-
-  @include m.tablet {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-
-//,NAVIGATION MENU
-.nav__container {
-  @include m.tablet {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-.nav__menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 0.5rem;
-  padding-bottom: 1rem;
-
-  @include m.tablet {
-    flex-direction: row;
-  }
-}
-.nav__link {
-  color: v.$beige;
-  margin-bottom: 1rem;
-  position: relative;
-  transition: color 0.3s;
-  font-family: v.$title-font;
-
-  @include m.tablet {
-    margin-right: 1rem;
-    margin-left: 1rem;
-    margin-bottom: 0;
-    color: v.$light-black;
-  }
-
-  &::after {
-    content: "";
-    width: 0;
-    height: 3px;
-    position: absolute;
-    background-color: v.$purple;
-    left: 0;
-    bottom: -0.5rem;
-    transition: width 0.3s;
-  }
-  &:hover {
-    color: v.$red;
-    &::after {
-      width: 100%;
-    }
-    @include m.tablet {
-      color: v.$red;
-    }
-  }
-}
-
-.nav__link.contact {
-  color: v.$light-black;
-  background-color: v.$red;
-  border-radius: 5px;
-  padding: 0.5rem 1rem;
-  transition: background-color 0.3s, color 0.3s, transform 0.3s;
-
-  &:hover {
-    background-color: v.$dark-red;
-    transform: scale(1.1);
-    color: v.$white;
-  }
-  &::after {
-    transition: none;
-  }
-}
-
-//,NAVIGATION MENU FOR MOBILES
-.menu__hidden {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  overflow: hidden;
-  background-color: v.$grey;
-  transition: height 0.5s ease-out;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 20;
-
-  &.show {
-    height: 32rem;
-  }
-  @include m.tablet {
+  background-image: linear-gradient(
+      90deg,
+      rgba(254, 244, 234, 0.720745969286152) 20%,
+      rgba(254, 244, 234, 0.5095414874934349) 59%
+    ),
+    image-set(
+      url("../img/portada.avif") 1x,
+      url("../img/portada.webp") 1x,
+      url("../img/portada.jpg") 1x
+    );
+  background-repeat: no-repeat;
+  background-position: left, left, left;
+  background-size: cover, cover, cover;
+  &__container-main {
     position: relative;
-    top: auto;
-    background-color: v.$beige;
-    height: auto;
-    opacity: 1;
-    display: flex;
-    .nav__close {
-      display: none;
-    }
-    .menu__title {
-      display: none;
-    }
   }
-}
+  &__container-wave {
+    position: absolute;
+    bottom: -15px;
+    width: 100%;
+    z-index: 1;
+  }
 
-.menu__hidden {
-  &.show {
+  &__container {
+    position: relative;
+    z-index: 2;
+    margin: 1rem auto;
+    @include m.grid(1, 2rem);
+
     @include m.tablet {
-      height: auto;
+      @include m.grid(2, 1rem);
+    }
+    @include m.desktop {
+      width: 1200px;
+      @include m.grid(2, 5rem);
+    }
+  }
+  &__title {
+    @include m.tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    &--secondary {
+      text-align: center;
+      font-family: v.$text-font;
+      font-size: 30px;
+      font-weight: v.$slim;
+      color: v.$coral;
+    }
+    &--main {
+      text-align: center;
+      font-family: v.$title-font;
+      font-size: 35px;
+      color: v.$red;
+      @include m.tablet {
+        margin: 0;
+      }
+    }
+  }
+  &__image {
+    max-width: 350px;
+    @include m.tablet {
+      max-width: 500px;
+      min-width: 420px;
+      grid-row: 1/3;
+      grid-column: 2/3;
+    }
+  }
+
+  &__description {
+    font-family: v.$main-font;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include m.tablet {
+      margin: 0 auto;
+      padding: 2rem;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    &--title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: v.$red;
+      margin: 0;
+      font-size: 25px;
+      text-align: center;
+      @include m.tablet {
+        flex-direction: row;
+      }
+      @include m.desktop {
+        font-size: 32px;
+      }
+    }
+    &--ima {
+      margin: 2rem 0 0 0;
+      @include m.tablet {
+        margin: 0 1rem 0 0;
+      }
+    }
+    &--animation {
+      margin: 0 0 0 0;
+      text-align: center;
+      span {
+        position: relative;
+        &::before {
+          content: "Systems Engineer";
+          color: v.$coral;
+          animation: words 20s infinite;
+        }
+        &::after {
+          content: "";
+          background-color: #fcf5ef;
+          position: absolute;
+          width: calc(100% + 8px);
+          height: calc(100% + 8px);
+          border-left: 5px solid v.$coral;
+          right: -5px;
+          animation: typing 20s steps(14) infinite;
+        }
+      }
+    }
+    &--text {
+      margin-top: 3rem;
+      font-size: 20px;
+      color: v.$red;
+      margin-bottom: 2rem;
+      text-align: center;
+      @include m.tablet {
+        text-align: left;
+      }
+    }
+    &--button {
+      @include m.button(v.$coral, v.$white);
     }
   }
 }
 
-//,CLOSE BUTTON
-
-.nav__close {
-  color: v.$white;
-  font-size: 1.5rem;
-  transition: font-size 0.3s ease, color 0.3s;
-  &:hover {
-    font-size: 2rem;
-    color: v.$red;
+@keyframes words {
+  0%,
+  20% {
+    content: "Systems Engineer";
+  }
+  21%,
+  40% {
+    content: "Chemical Engineer";
+  }
+  41%,
+  60% {
+    content: "Data Analyst";
+  }
+  61%,
+  80% {
+    content: "Web Developer";
+  }
+  81%,
+  100% {
+    content: "Leader";
   }
 }
 
-//,DARK MODE BUTTON
-.dark-mode-button {
-  color: v.$orange;
-  font-size: 2rem;
-  cursor: pointer;
-  transition: font-size 0.3s ease;
-
-  &:hover {
-    font-size: 2.5rem;
+@keyframes typing {
+  10%,
+  15%,
+  30%,
+  35%,
+  50%,
+  55%,
+  70%,
+  75%,
+  90%,
+  95% {
+    width: 0;
   }
-
-  @include m.tablet {
-    margin-left: 25px;
-  }
-}
-
-//,MENU TITLE
-.menu__title {
-  color: v.$white;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  font-family: v.$title-font;
-  position: relative;
-  &::before {
-    content: "";
-    color: v.$purple;
-    width: 40px;
-    height: 1.5px;
-    background-color: v.$white;
-    position: absolute;
-    top: 50%;
-    left: -4.5rem;
-  }
-  &::after {
-    content: "";
-    height: 1.5px;
-    width: 40px;
-    background-color: v.$white;
-    position: absolute;
-    top: 50%;
-    right: -4.5rem;
+  5%,
+  20%,
+  25%,
+  40%,
+  45%,
+  60%,
+  65%,
+  80%,
+  85% {
+    width: calc(100% + 10px);
   }
 }

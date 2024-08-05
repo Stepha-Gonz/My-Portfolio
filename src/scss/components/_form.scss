@@ -1,0 +1,134 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 350px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: v.$beige;
+  color: v.$black;
+  margin: 1rem;
+  @include m.tablet {
+    margin: 3rem;
+    transform: scale(1.2);
+  }
+  @include m.desktop {
+    margin: 6rem auto 10rem auto;
+    transform: scale(1.5);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+    color: v.$dark-blue;
+    text-align: center;
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      left: 0px;
+      background-color: v.$dark-blue;
+    }
+    &::before {
+      width: 18px;
+      height: 18px;
+    }
+    &::after {
+      width: 18px;
+      height: 18px;
+      animation: pulse 1s linear infinite;
+    }
+  }
+  &__message {
+    font-size: 14.5px;
+    color: v.$dark-blue;
+    font-family: v.$main-font;
+  }
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+.form label {
+  position: relative;
+}
+
+.form label .input {
+  background-color: v.$dark-beige;
+  color: v.$black;
+  width: 100%;
+  padding: 20px 05px 05px 10px;
+  outline: 0;
+  border: none;
+  border-radius: 10px;
+}
+
+.form label .input + span {
+  color: v.$dark-blue;
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+  top: 12.5px;
+  font-size: 0.9em;
+}
+
+.form label .input:focus + span,
+.form label .input:valid + span {
+  color: v.$dark-blue;
+  top: 0px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.input {
+  font-size: medium;
+}
+
+.submit {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: 0.3s ease;
+  background-color: v.$dark-blue;
+}
+
+.submit:hover {
+  background-color: lighten(v.$dark-blue, 15%);
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}

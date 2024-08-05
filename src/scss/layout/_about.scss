@@ -1,0 +1,70 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.about {
+  background-color: v.$dark-blue;
+
+  &__title {
+    &--main {
+      font-family: v.$main-font;
+      text-align: center;
+      color: v.$white;
+      margin-top: 0;
+      padding-top: 2rem;
+      @include m.tablet {
+        text-align: left;
+      }
+    }
+    &--text {
+      font-family: v.$text-font;
+      font-size: 2rem;
+      color: v.$white;
+      text-align: center;
+      padding-right: 2rem;
+      @include m.tablet {
+        text-align: left;
+      }
+    }
+  }
+
+  &__grid {
+    margin: 0.5rem auto;
+    padding-bottom: 2rem;
+    @include m.grid(1, 2rem);
+    @include m.tablet {
+      @include m.grid(2, 2rem);
+    }
+    @include m.desktop {
+      width: 1200px;
+    }
+  }
+  &__img {
+    margin-top: 2rem;
+    max-width: 300px;
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    &--text {
+      margin-top: 0;
+      text-align: center;
+      color: v.$white;
+      font-family: v.$text-font;
+      font-size: 2rem;
+      padding-right: 2rem;
+      span {
+        color: v.$coral;
+      }
+      @include m.tablet {
+        text-align: left;
+      }
+    }
+    &--button {
+      @include m.button(v.$dark-beige, v.$red);
+    }
+  }
+}
