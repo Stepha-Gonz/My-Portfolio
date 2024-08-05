@@ -3,401 +3,857 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- ,GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Pacifico&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=Neucha&family=Purple+Purse&display=swap"
       rel="stylesheet" />
-    <!-- ,REMIXICON -->
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
-      crossorigin="" />
-    <!-- ,Bootstrap -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous" />
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet" />
 
-    <!-- ,CSS -->
-    <link rel="stylesheet" href="build/css/app.css" />
-
-    <title>My Portfolio- Stephanie Gonzalez</title>
+    <link rel="stylesheet" href="public/build/css/app.css" />
+    <title>Portfolio-Stephanie Gonzalez</title>
+    <link rel="shortcut icon" href="public/build/img/SG.png" />
   </head>
   <body>
-    <header class="header" id="header">
-      <div class="nav__container">
-        <div class="nav__bar">
-          <!-- ,LOGO -->
-          <a href="#" class="nav__logo">
-            <span class="nav__logo-circle">
-              <span class="s">S</span>
-              <span class="g">G</span>
-            </span>
-            <span class="nav__logo-name">STEPHANIE GONZALEZ</span>
-          </a>
-          <!-- , DARK MODE BUTTON -->
-          <div class="dark-mode-button">
-            <i class="ri-sun-line"></i>
-          </div>
-          <div class="mobile-menu">
-            <div class="nav__toggle" id="nav-toggle">
-              <i class="ri-menu-4-fill"></i>
-            </div>
-          </div>
-        </div>
-        <div class="right__corner">
-          <div class="menu__hidden">
-            <!-- ,NAVIGATION BAR -->
-            <div class="menu__title">MENU</div>
-            <div class="nav__menu">
-              <a href="#home" class="nav__link">Home</a>
-              <a href="#about" class="nav__link">About Me</a>
-              <a href="#career" class="nav__link">Career</a>
-              <a href="#skills" class="nav__link">Skills</a>
-              <a href="#projects" class="nav__link">Projects</a>
-              <a href="#contact" class="nav__link contact">Contact Me</a>
-            </div>
-            <div class="nav__close" id="nav-close">
-              <i class="ri-close-circle-line"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
     <div class="main">
-      <section class="home section" id="home">
-        <div class="home__container container grid">
-          <h1 class="home__name slide-right">Hi, I'm <span>Stephanie</span></h1>
-          <div class="home__perfil slide-left">
-            <div class="home__image">
-              <!-- <img src="build/img/home-img.jpg" alt="home image" class="home__img" /> -->
-              <picture class="foreground-image">
-                <source class="home__img" srcset="build/img/home-img.avif" type="image/avif" />
-                <source class="home__img" srcset="build/img/home-img.webp" type="image/webp" />
-                <img
-                  class="home__img"
-                  loading="lazy"
-                  src="build/img/home-img.jpg"
-                  alt="home-image"
-                  width="225"
-                  height="380" />
-              </picture>
-              <div class="home__shadow">
-                <img src="build/img/curly-arrow.svg" alt="arrow" class="home__arrow" />
-                <img src="build/img/flash.svg" alt="fire" class="home__fire" />
-              </div>
+      <section class="header" id="home">
+        <div class="nav__container">
+          <div class="nav__bar">
+            <div class="nav__logo">
+              <a href="#home" class="nav__logo--title"
+                >Stepha<span class="nav__logo--dot">•</span
+                ><span class="nav__logo--lastname">Gonz</span></a
+              >
             </div>
-            <div class="contact__social-links__home">
-              <ul class="wrapper__home">
-                <a href="https://www.linkedin.com/in/stephanie-gonzalez-m/" class="links__home">
-                  <li class="icon linkedin">
-                    <span class="tooltip">LinkedIn</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                      <path
-                        d="M6.94048 4.99993C6.94011 5.81424 6.44608 6.54702 5.69134 6.85273C4.9366 7.15845 4.07187 6.97605 3.5049 6.39155C2.93793 5.80704 2.78195 4.93715 3.1105 4.19207C3.43906 3.44699 4.18654 2.9755 5.00048 2.99993C6.08155 3.03238 6.94097 3.91837 6.94048 4.99993ZM7.00048 8.47993H3.00048V20.9999H7.00048V8.47993ZM13.3205 8.47993H9.34048V20.9999H13.2805V14.4299C13.2805 10.7699 18.0505 10.4299 18.0505 14.4299V20.9999H22.0005V13.0699C22.0005 6.89993 14.9405 7.12993 13.2805 10.1599L13.3205 8.47993Z"></path>
-                    </svg>
-                  </li>
-                </a>
-                <a href="https://github.com/Stepha-Gonz" class="links__home">
-                  <li class="icon github">
-                    <span class="tooltip">GitHub</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                      <path
-                        d="M5.88401 18.6533C5.58404 18.4526 5.32587 18.1975 5.0239 17.8369C4.91473 17.7065 4.47283 17.1524 4.55811 17.2583C4.09533 16.6833 3.80296 16.417 3.50156 16.3089C2.9817 16.1225 2.7114 15.5499 2.89784 15.0301C3.08428 14.5102 3.65685 14.2399 4.17672 14.4263C4.92936 14.6963 5.43847 15.1611 6.12425 16.0143C6.03025 15.8974 6.46364 16.441 6.55731 16.5529C6.74784 16.7804 6.88732 16.9182 6.99629 16.9911C7.20118 17.1283 7.58451 17.1874 8.14709 17.1311C8.17065 16.7489 8.24136 16.3783 8.34919 16.0358C5.38097 15.3104 3.70116 13.3952 3.70116 9.63971C3.70116 8.40085 4.0704 7.28393 4.75917 6.3478C4.5415 5.45392 4.57433 4.37284 5.06092 3.15636C5.1725 2.87739 5.40361 2.66338 5.69031 2.57352C5.77242 2.54973 5.81791 2.53915 5.89878 2.52673C6.70167 2.40343 7.83573 2.69705 9.31449 3.62336C10.181 3.41879 11.0885 3.315 12.0012 3.315C12.9129 3.315 13.8196 3.4186 14.6854 3.62277C16.1619 2.69 17.2986 2.39649 18.1072 2.52651C18.1919 2.54013 18.2645 2.55783 18.3249 2.57766C18.6059 2.66991 18.8316 2.88179 18.9414 3.15636C19.4279 4.37256 19.4608 5.45344 19.2433 6.3472C19.9342 7.28337 20.3012 8.39208 20.3012 9.63971C20.3012 13.3968 18.627 15.3048 15.6588 16.032C15.7837 16.447 15.8496 16.9105 15.8496 17.4121C15.8496 18.0765 15.8471 18.711 15.8424 19.4225C15.8412 19.6127 15.8397 19.8159 15.8375 20.1281C16.2129 20.2109 16.5229 20.5077 16.6031 20.9089C16.7114 21.4504 16.3602 21.9773 15.8186 22.0856C14.6794 22.3134 13.8353 21.5538 13.8353 20.5611C13.8353 20.4708 13.836 20.3417 13.8375 20.1145C13.8398 19.8015 13.8412 19.599 13.8425 19.4094C13.8471 18.7019 13.8496 18.0716 13.8496 17.4121C13.8496 16.7148 13.6664 16.2602 13.4237 16.051C12.7627 15.4812 13.0977 14.3973 13.965 14.2999C16.9314 13.9666 18.3012 12.8177 18.3012 9.63971C18.3012 8.68508 17.9893 7.89571 17.3881 7.23559C17.1301 6.95233 17.0567 6.54659 17.199 6.19087C17.3647 5.77663 17.4354 5.23384 17.2941 4.57702L17.2847 4.57968C16.7928 4.71886 16.1744 5.0198 15.4261 5.5285C15.182 5.69438 14.8772 5.74401 14.5932 5.66413C13.7729 5.43343 12.8913 5.315 12.0012 5.315C11.111 5.315 10.2294 5.43343 9.40916 5.66413C9.12662 5.74359 8.82344 5.69492 8.57997 5.53101C7.8274 5.02439 7.2056 4.72379 6.71079 4.58376C6.56735 5.23696 6.63814 5.77782 6.80336 6.19087C6.94565 6.54659 6.87219 6.95233 6.61423 7.23559C6.01715 7.8912 5.70116 8.69376 5.70116 9.63971C5.70116 12.8116 7.07225 13.9683 10.023 14.2999C10.8883 14.3971 11.2246 15.4769 10.5675 16.0482C10.3751 16.2156 10.1384 16.7802 10.1384 17.4121V20.5611C10.1384 21.5474 9.30356 22.2869 8.17878 22.09C7.63476 21.9948 7.27093 21.4766 7.36613 20.9326C7.43827 20.5204 7.75331 20.2116 8.13841 20.1276V19.1381C7.22829 19.1994 6.47656 19.0498 5.88401 18.6533Z"></path>
-                    </svg>
-                  </li>
-                </a>
-              </ul>
+            <div class="nav__icon">
+              <i class="ri-menu-5-line"></i>
             </div>
           </div>
-
-          <div class="home__info slide-right">
-            <h3 class="ima">I'm a</h3>
-            <h3 class="home-animation"><span></span></h3>
-            <p class="home__description">
-              I love creating interactive, user-friendly tech solutions. I focus on innovative
-              solutions that save time and increase efficiency.
-              <span class="slogan">Let's build something amazing together!</span>
-            </p>
-            <div class="btn-box">
-              <a href="CV-Stephanie_Gonzalez.pdf" download="CV_StephanieGonzalez.pdf">
-                <button class="download-btn pixel-corners">
-                  <div class="button-content">
-                    <div class="svg-container">
-                      <svg
-                        class="download-icon"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24">
-                        <path
-                          d="M19.479 10.092c-.212-3.951-3.473-7.092-7.479-7.092-4.005 0-7.267 3.141-7.479 7.092-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h13c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408zm-7.479 6.908l-4-4h3v-4h2v4h3l-4 4z"></path>
-                      </svg>
-                    </div>
-                    <div class="text-container">
-                      <div class="text">Download My CV</div>
-                    </div>
-                  </div>
-                </button>
-              </a>
-              <a href="#about" class="home__scroll">
-                <div class="home__scroll-box">
-                  <i class="ri-arrow-down-double-line"></i>
-                </div>
-                <span class="home__scroll-text"> Scroll Down </span>
-              </a>
+          <div class="nav__menu">
+            <div class="nav__menu--links">
+              <a href="#home" class="nav__menu--link">Home</a>
+              <a href="#about" class="nav__menu--link">About</a>
+              <a href="#skills-services" class="nav__menu--link">Skills</a>
+              <a href="#projects" class="nav__menu--link">Projects</a>
+              <a href="#career" class="nav__menu--link">Career</a>
+              <a href="#contact" class="nav__menu--link">Contact</a>
+              <i class="ri-sun-line nav__menu--link-darkmode"></i>
             </div>
+            <div class="nav__close">
+              <i class="ri-close-circle-fill nav__menu--link-close"></i>
+            </div>
+          </div>
+        </div>
+        <div class="header__container-main">
+          <div class="header__container">
+            <div class="header__title">
+              <h2 class="header__title--secondary">Hey There!</h2>
+              <h1 class="header__title--main">I'm Stephanie Gonzalez</h1>
+            </div>
+            <div class="header__image">
+              <picture class="header__img-container">
+                <source
+                  srcset="public/build/img/header-img.avif"
+                  type="image/avif"
+                  alt="header image"
+                  class="header__img" />
+                <source
+                  srcset="public/build/img/header-img.webp"
+                  type="image/webp"
+                  alt="header image"
+                  class="header__img" />
+                <img
+                  src="public/build/img/header-img.png"
+                  alt="header image"
+                  type="image/png"
+                  class="header__img"
+                  loading="lazy" />
+              </picture>
+            </div>
+            <div class="header__description container-sm">
+              <div class="header__description--title">
+                <h3 class="header__description--ima">I'm a <b></b></h3>
+                <h3 class="header__description--animation"><span></span></h3>
+              </div>
+              <div class="header__description--text">
+                I love creating interactive solutions that optimize problems and increase
+                efficiency. I design and develop dynamic websites and dashboards that effectively
+                showcase brands and their data.
+              </div>
+              <a href="#projects" class="header__description--button"
+                >See my Work <i class="ri-arrow-right-fill"></i
+              ></a>
+            </div>
+          </div>
+          <div class="container_mouse">
+            <span class="mouse-text">Scroll Down</span>
+            <span class="mouse-btn">
+              <span class="mouse-scroll"></span>
+            </span>
+          </div>
+          <div class="header__container-wave">
+            <svg
+              id="wave"
+              style="transform: rotate(0deg); transition: 0.3s"
+              viewBox="0 0 1440 120"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
+                  <stop stop-color="rgba(220, 124, 123, 1)" offset="0%"></stop>
+                  <stop stop-color="rgba(220, 124, 123, 1)" offset="100%"></stop>
+                </linearGradient>
+              </defs>
+              <path
+                style="transform: translate(0, 0px); opacity: 1"
+                fill="url(#sw-gradient-0)"
+                d="M0,96L30,84C60,72,120,48,180,50C240,52,300,80,360,78C420,76,480,44,540,30C600,16,660,20,720,32C780,44,840,64,900,68C960,72,1020,60,1080,62C1140,64,1200,80,1260,80C1320,80,1380,64,1440,60C1500,56,1560,64,1620,74C1680,84,1740,96,1800,84C1860,72,1920,36,1980,30C2040,24,2100,48,2160,62C2220,76,2280,80,2340,76C2400,72,2460,60,2520,50C2580,40,2640,32,2700,24C2760,16,2820,8,2880,16C2940,24,3000,48,3060,48C3120,48,3180,24,3240,22C3300,20,3360,40,3420,56C3480,72,3540,84,3600,78C3660,72,3720,48,3780,50C3840,52,3900,80,3960,80C4020,80,4080,52,4140,42C4200,32,4260,40,4290,44L4320,48L4320,120L4290,120C4260,120,4200,120,4140,120C4080,120,4020,120,3960,120C3900,120,3840,120,3780,120C3720,120,3660,120,3600,120C3540,120,3480,120,3420,120C3360,120,3300,120,3240,120C3180,120,3120,120,3060,120C3000,120,2940,120,2880,120C2820,120,2760,120,2700,120C2640,120,2580,120,2520,120C2460,120,2400,120,2340,120C2280,120,2220,120,2160,120C2100,120,2040,120,1980,120C1920,120,1860,120,1800,120C1740,120,1680,120,1620,120C1560,120,1500,120,1440,120C1380,120,1320,120,1260,120C1200,120,1140,120,1080,120C1020,120,960,120,900,120C840,120,780,120,720,120C660,120,600,120,540,120C480,120,420,120,360,120C300,120,240,120,180,120C120,120,60,120,30,120L0,120Z"></path>
+              <defs>
+                <linearGradient id="sw-gradient-1" x1="0" x2="0" y1="1" y2="0">
+                  <stop stop-color="rgba(35, 46, 69, 1)" offset="0%"></stop>
+                  <stop stop-color="rgba(35, 46, 69, 1)" offset="100%"></stop>
+                </linearGradient>
+              </defs>
+              <path
+                style="transform: translate(0, 50px); opacity: 1"
+                fill="url(#sw-gradient-1)"
+                d="M0,48L30,54C60,60,120,72,180,70C240,68,300,52,360,50C420,48,480,60,540,56C600,52,660,32,720,28C780,24,840,36,900,38C960,40,1020,32,1080,24C1140,16,1200,8,1260,16C1320,24,1380,48,1440,60C1500,72,1560,72,1620,60C1680,48,1740,24,1800,22C1860,20,1920,40,1980,52C2040,64,2100,68,2160,66C2220,64,2280,56,2340,46C2400,36,2460,24,2520,30C2580,36,2640,60,2700,72C2760,84,2820,84,2880,70C2940,56,3000,28,3060,20C3120,12,3180,24,3240,40C3300,56,3360,76,3420,86C3480,96,3540,96,3600,94C3660,92,3720,88,3780,84C3840,80,3900,76,3960,66C4020,56,4080,40,4140,42C4200,44,4260,64,4290,74L4320,84L4320,120L4290,120C4260,120,4200,120,4140,120C4080,120,4020,120,3960,120C3900,120,3840,120,3780,120C3720,120,3660,120,3600,120C3540,120,3480,120,3420,120C3360,120,3300,120,3240,120C3180,120,3120,120,3060,120C3000,120,2940,120,2880,120C2820,120,2760,120,2700,120C2640,120,2580,120,2520,120C2460,120,2400,120,2340,120C2280,120,2220,120,2160,120C2100,120,2040,120,1980,120C1920,120,1860,120,1800,120C1740,120,1680,120,1620,120C1560,120,1500,120,1440,120C1380,120,1320,120,1260,120C1200,120,1140,120,1080,120C1020,120,960,120,900,120C840,120,780,120,720,120C660,120,600,120,540,120C480,120,420,120,360,120C300,120,240,120,180,120C120,120,60,120,30,120L0,120Z"></path>
+            </svg>
           </div>
         </div>
       </section>
-      <section class="about section" id="about">
-        <div class="about__container container grid">
-          <div class="title-wrapper">
-            <span class="title-text">ABOUT ME.</span>
-            <div class="title-shape orange about-title"></div>
+      <section class="about" id="about">
+        <div class="about__grid">
+          <div class="about__image-section">
+            <picture class="about__image">
+              <source
+                srcset="public/build/img/about-img.avif"
+                type="image/avif"
+                class="about__img"
+                alt="about image" />
+              <source
+                srcset="public/build/img/about-img.webp"
+                type="image/webp"
+                class="about__img"
+                alt="about image" />
+              <img
+                src="public/build/img/about-img.png"
+                type="image/png"
+                class="about__img"
+                alt="about image"
+                loading="lazy" />
+            </picture>
           </div>
-
-          <div class="about__perfil-img">
-            <div class="about__shadow">
-              <img src="build/img/flash.svg" alt="lines under image" class="about__lines" />
+          <div class="about__description">
+            <div class="about__title">
+              <h1 class="about__title--main">ABOUT ME</h1>
+              <p class="about__title--text">
+                I´m an engineer with a blend of skills in Project management, Quality Control,
+                Programming, and Data analysis.
+              </p>
             </div>
-            <div class="about__image">
-              <!-- <img src="build/img/about-img.jpg" alt="about image" class="about__img" /> -->
-              <picture class="foreground-image">
-                <source class="about__img" srcset="build/img/about-img.avif" type="image/avif" />
-                <source class="about__img" srcset="build/img/about-img.webp" type="image/webp" />
-                <img
-                  class="about__img"
-                  loading="lazy"
-                  src="build/img/about-img.jpg"
-                  alt="about-image"
-                  width="292"
-                  height="434" />
-              </picture>
-            </div>
-            <div class="about__box__shadow"></div>
-          </div>
-
-          <div class="about__perfil">
-            <p class="about__description">
-              I'm an engineer with a blend of skills in
-              <span class="about-skills"
-                >Project management, Quality control, Programming and Data analysis.</span
-              >
+            <p class="about__description--text">
+              <span>My superpower?</span> Driving continuous improvement projects with an innovative
+              twist, always looking for new ways to optimize and automate tasks to save time and
+              increase efficiency. Right now, I'm immersed in Full-Stack web development and data
+              analysis, with the goal of creating digital efficient products. Let's make digital
+              magic together!
             </p>
-            <hr />
-            <p class="about__skills-info">
-              <span class="highlight">My superpower?</span> Leading multidisciplinary teams and
-              driving continuous improvement projects with an innovative twist. I am always looking
-              for new ways to optimize and automate tasks to save time and increase efficiency.
-              Right now, I'm immersed in Full-Stack web development and data analysis, with the goal
-              of creating digital products that are not only efficient, but also visually appealing
-              to users.<span class="highlight"> Let's make digital magic together! </span>
-            </p>
-          </div>
-          <div class="about__buttons">
-            <a href="#contact" class="link__button"
-              ><button class="contact__button">
-                <div class="svg-wrapper-1">
-                  <div class="svg-wrapper">
-                    <i class="ri-contacts-book-3-line"></i>
-                  </div>
-                </div>
-                <span>Contact Me</span>
-              </button></a
+            <a
+              href="CV-Stephanie_Gonzalez.pdf"
+              class="about__description--button"
+              download="CV-Stephanie_Gonzalez.pdf"
+              >Download My CV</a
             >
           </div>
         </div>
       </section>
-
-      <section class="career section" id="career">
-        <div class="career__container container grid">
-          <div class="title-wrapper">
-            <span class="title-text">CAREER.</span>
-            <div class="title-shape blue career-title"></div>
+      <section class="skills-services" id="skills-services">
+        <h1 class="skills-services__title--skills">MY SKILLS</h1>
+        <div class="skills-services__skills">
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/javascript.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">JavaScript</p>
           </div>
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/python.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">Python</p>
+          </div>
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/html.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">HTML</p>
+          </div>
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/css.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">CSS</p>
+          </div>
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/sass.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">SASS</p>
+          </div>
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/php.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">PHP</p>
+          </div>
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/git.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">GIT</p>
+          </div>
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/github.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">Github</p>
+          </div>
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/mysql.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">MySQL</p>
+          </div>
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/sql.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">SQL</p>
+          </div>
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/figma.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">Figma</p>
+          </div>
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/visual.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">VSC</p>
+          </div>
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/boot.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">BootStrap</p>
+          </div>
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/powerbi.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">PowerBI</p>
+          </div>
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/responsive.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">Responsive Design</p>
+          </div>
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/api.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">Restful API’s</p>
+          </div>
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/office.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">Microsoft Office</p>
+          </div>
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/vba.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">VBA</p>
+          </div>
+        </div>
+        <h1 class="skills-services__title--services">MY SERVICES</h1>
+        <div class="swiper-container">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="skills-services__card swiper-slide">
+                <div class="skills-services__card--container">
+                  <img
+                    src="public/build/img/code.svg"
+                    alt="icon-service"
+                    class="skills-services__card--img" />
+                  <h3 class="skills-services__card--title">Web Programming</h3>
+                  <p class="skills-services__card--text">
+                    Creating full-stack web applications that meet your needs, including dashboards
+                    for better understanding of data
+                  </p>
+                </div>
+              </div>
+              <div class="skills-services__card swiper-slide">
+                <div class="skills-services__card--container">
+                  <img
+                    src="public/build/img/pallete.svg"
+                    alt="icon-service"
+                    class="skills-services__card--img" />
+                  <h3 class="skills-services__card--title">Web Design</h3>
+                  <p class="skills-services__card--text">
+                    Designing attractive and user-friendly websites for a better user experience
+                  </p>
+                </div>
+              </div>
 
-          <h2 class="title-career">EDUCATION</h2>
-          <div class="timeline-items">
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">2021</div>
-              <div class="timeline-content">
-                <h3 class="title-timeline">
-                  Chemical Engineer<span class="place-timeline">EAN UNIVERSITY </span>
-                </h3>
-                <ul class="list-bullets">
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Emphasis on green chemistry principles
+              <div class="skills-services__card swiper-slide">
+                <div class="skills-services__card--container">
+                  <img
+                    src="public/build/img/devices.svg"
+                    alt="icon-service"
+                    class="skills-services__card--img" />
+                  <h3 class="skills-services__card--title">Responsive Websites</h3>
+                  <p class="skills-services__card--text">
+                    Developing websites that look great on any device
+                  </p>
+                </div>
+              </div>
+
+              <div class="skills-services__card swiper-slide">
+                <div class="skills-services__card--container">
+                  <img
+                    src="public/build/img/load.svg"
+                    alt="icon-service"
+                    class="skills-services__card--img" />
+                  <h3 class="skills-services__card--title">WPO</h3>
+                  <p class="skills-services__card--text">
+                    Web Performance Optimization: Improving your website's speed and performance
+                  </p>
+                </div>
+              </div>
+
+              <div class="skills-services__card swiper-slide">
+                <div class="skills-services__card--container">
+                  <img
+                    src="public/build/img/bars.svg"
+                    alt="icon-service"
+                    class="skills-services__card--img" />
+                  <h3 class="skills-services__card--title">Data Analysis</h3>
+                  <p class="skills-services__card--text">
+                    Analyzing data to gain useful insights through website dashboards for better
+                    understanding of the data
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+      <section class="work" id="projects">
+        <h1 class="work__title">MY WORK</h1>
+        <div class="work__controls">
+          <div class="work__controls--title"><h1>Filters</h1></div>
+          <div class="work__controls--buttons">
+            <button class="work__control blue" data-filter="all">Show All</button>
+            <button class="work__control orange" data-filter=".front__end">Front-end</button>
+            <button class="work__control pink" data-filter=".full__stack">Full-stack</button>
+            <button class="work__control yellow" data-filter=".data__analysis">
+              Data Analysis
+            </button>
+          </div>
+        </div>
+
+        <div class="projects__grid">
+          <div class="book mix full__stack">
+            <div class="work__projectdesc--container">
+              <h1 class="work__projectdesc--title">BizExpo</h1>
+              <p class="work__projectdesc--text">
+                A web platform for a tech event offering conferences and workshops. Users can view
+                events, speakers, locations via Leaflet, and purchase tickets. Post-login, users can
+                choose ticket types and pay via PayPal, with an admin panel for managing data
+              </p>
+              <a href="views/bizexpo.html" class="work__projectdesc--link"
+                >Go to Project<i class="ri-arrow-right-fill"></i>
+              </a>
+            </div>
+            <div class="cover">
+              <div class="work__project--cover">
+                <img
+                  src="public/build/img/bizexpo-img.png"
+                  alt="project image"
+                  class="work__project--img" />
+                <h1 class="work__project--title">BizExpo</h1>
+                <div class="work__project--techs">
+                  <p class="work__project--tech">PHP</p>
+                  <p class="work__project--tech">HTML</p>
+                  <p class="work__project--tech">JavaScript</p>
+                  <p class="work__project--tech">CSS</p>
+                  <p class="work__project--tech">APIs</p>
+                  <p class="work__project--tech">SQL</p>
+                </div>
+                <div class="work__project--link">
+                  <img
+                    src="public/build/img/arrow-right.svg"
+                    alt="see description"
+                    class="work__project--icon" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="book mix full__stack">
+            <div class="work__projectdesc--container">
+              <h1 class="work__projectdesc--title">Tasknexus</h1>
+              <p class="work__projectdesc--text">
+                A full-stack app for managing projects and tasks. Users can create accounts, track
+                tasks, and customize profiles. Features CRUD operations, email validation, and
+                secure password management
+              </p>
+              <a href="views/tasknexus.html" class="work__projectdesc--link"
+                >Go to Project<i class="ri-arrow-right-fill"></i>
+              </a>
+            </div>
+            <div class="cover">
+              <div class="work__project--cover">
+                <img
+                  src="public/build/img/tasknexus-img.png"
+                  alt="project image"
+                  class="work__project--img" />
+                <h1 class="work__project--title">Tasknexus</h1>
+                <div class="work__project--techs">
+                  <p class="work__project--tech">PHP</p>
+                  <p class="work__project--tech">HTML</p>
+                  <p class="work__project--tech">JavaScript</p>
+                  <p class="work__project--tech">CSS</p>
+                  <p class="work__project--tech">APIs</p>
+                  <p class="work__project--tech">SQL</p>
+                </div>
+                <div class="work__project--link">
+                  <img
+                    src="public/build/img/arrow-right.svg"
+                    alt="see description"
+                    class="work__project--icon" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="book mix full__stack">
+            <div class="work__projectdesc--container">
+              <h1 class="work__projectdesc--title">GlowRadiance</h1>
+              <p class="work__projectdesc--text">
+                Revolutionize beauty salon management. Schedule appointments seamlessly, manage
+                services effortlessly. Robust security. MVC architecture for scalability
+              </p>
+              <a href="views/glowradiance.html" class="work__projectdesc--link"
+                >Go to Project<i class="ri-arrow-right-fill"></i>
+              </a>
+            </div>
+            <div class="cover">
+              <div class="work__project--cover">
+                <img
+                  src="public/build/img/glowradiance-img.png"
+                  alt="project image"
+                  class="work__project--img" />
+                <h1 class="work__project--title">GlowRadiance</h1>
+                <div class="work__project--techs">
+                  <p class="work__project--tech">PHP</p>
+                  <p class="work__project--tech">HTML</p>
+                  <p class="work__project--tech">JavaScript</p>
+                  <p class="work__project--tech">CSS</p>
+                  <p class="work__project--tech">APIs</p>
+                  <p class="work__project--tech">SQL</p>
+                </div>
+                <div class="work__project--link">
+                  <img
+                    src="public/build/img/arrow-right.svg"
+                    alt="see description"
+                    class="work__project--icon" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="book mix full__stack">
+            <div class="work__projectdesc--container">
+              <h1 class="work__projectdesc--title">HomeHunter</h1>
+              <p class="work__projectdesc--text">
+                Web app for buying and selling luxury homes. It features user security, competitive
+                pricing, and efficient service. Users can browse listings, read blog posts, and
+                contact admins. Admins manage listings via a secure CRUD panel
+              </p>
+              <a href="views/homehunter.html" class="work__projectdesc--link"
+                >Go to Project<i class="ri-arrow-right-fill"></i>
+              </a>
+            </div>
+            <div class="cover">
+              <div class="work__project--cover">
+                <img
+                  src="public/build/img/homehunter2.png"
+                  alt="project image"
+                  class="work__project--img" />
+                <h1 class="work__project--title">HomeHunter</h1>
+                <div class="work__project--techs">
+                  <p class="work__project--tech">PHP</p>
+                  <p class="work__project--tech">HTML</p>
+                  <p class="work__project--tech">JavaScript</p>
+                  <p class="work__project--tech">CSS</p>
+                  <p class="work__project--tech">SASS</p>
+                  <p class="work__project--tech">SQL</p>
+                </div>
+                <div class="work__project--link">
+                  <img
+                    src="public/build/img/arrow-right.svg"
+                    alt="see description"
+                    class="work__project--icon" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="book mix front__end">
+            <div class="work__projectdesc--container">
+              <h1 class="work__projectdesc--title">Dental Clinic</h1>
+              <p class="work__projectdesc--text">
+                Front-end project showcasing his information, experience, services, and contact. It
+                is hosted with a purchased domain. Tools used include Gulp, webpack, and Figma for
+                design. A successful freelance project
+              </p>
+              <a href="views/dentalclinic.html" class="work__projectdesc--link"
+                >Go to Project<i class="ri-arrow-right-fill"></i>
+              </a>
+            </div>
+            <div class="cover">
+              <div class="work__project--cover">
+                <img
+                  src="public/build/img/hector-gonzalez.png"
+                  alt="project image"
+                  class="work__project--img" />
+                <h1 class="work__project--title">Dental Clinic</h1>
+                <div class="work__project--techs">
+                  <p class="work__project--tech">HTML</p>
+                  <p class="work__project--tech">JavaScript</p>
+                  <p class="work__project--tech">CSS</p>
+                  <p class="work__project--tech">SASS</p>
+                  <p class="work__project--tech">WebPack</p>
+                  <p class="work__project--tech">Figma</p>
+                </div>
+                <div class="work__project--link">
+                  <img
+                    src="public/build/img/arrow-right.svg"
+                    alt="see description"
+                    class="work__project--icon" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="book mix front__end">
+            <div class="work__projectdesc--container">
+              <h1 class="work__projectdesc--title">Portfolio</h1>
+              <p class="work__projectdesc--text">
+                Front-end website showcasing my programming and web design skills, including
+                education, experience, and projects. Tools used include Gulp, webpack, and Figma for
+                design. Projects include front-end, full-stack, and data analysis, with demos and
+                repository links
+              </p>
+              <a href="views/portfolio.html" class="work__projectdesc--link"
+                >Go to Project<i class="ri-arrow-right-fill"></i>
+              </a>
+            </div>
+            <div class="cover">
+              <div class="work__project--cover">
+                <img
+                  src="public/build/img/portfolio-img.png"
+                  alt="project image"
+                  class="work__project--img" />
+                <h1 class="work__project--title">Portfolio</h1>
+                <div class="work__project--techs">
+                  <p class="work__project--tech">HTML</p>
+                  <p class="work__project--tech">JavaScript</p>
+                  <p class="work__project--tech">CSS</p>
+                  <p class="work__project--tech">SASS</p>
+                  <p class="work__project--tech">WebPack</p>
+                  <p class="work__project--tech">Figma</p>
+                </div>
+                <div class="work__project--link">
+                  <img
+                    src="public/build/img/arrow-right.svg"
+                    alt="see description"
+                    class="work__project--icon" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="book mix data__analysis">
+            <div class="work__projectdesc--container">
+              <h1 class="work__projectdesc--title">Audit Tracker</h1>
+              <p class="work__projectdesc--text">
+                Developed an automated audit tracker during my internship at Concentrix using Excel
+                macros and VBA. The tool created a dynamic dashboard for real-time analysis,
+                filtering by week, evaluators, and team leaders, improving quality management
+                efficiency.
+              </p>
+              <a href="views/audittracker.html" class="work__projectdesc--link"
+                >Go to Project<i class="ri-arrow-right-fill"></i>
+              </a>
+            </div>
+            <div class="cover">
+              <div class="work__project--cover">
+                <img
+                  src="public/build/img/audittracker-img.png"
+                  alt="project image"
+                  class="work__project--img" />
+                <h1 class="work__project--title">Audit Tracker</h1>
+                <div class="work__project--techs">
+                  <p class="work__project--tech">Excel</p>
+                  <p class="work__project--tech">VBA</p>
+                  <p class="work__project--tech">Macros</p>
+                </div>
+                <div class="work__project--link">
+                  <img
+                    src="public/build/img/arrow-right.svg"
+                    alt="see description"
+                    class="work__project--icon" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="career" id="career">
+        <div class="career__container">
+          <h1 class="career__container--title">CAREER</h1>
+          <h3 class="career__timeline--title">EDUCATION</h3>
+          <div class="career__timeline--items">
+            <div class="career__timeline--item">
+              <div class="career__timeline--dot"></div>
+              <div class="career__timeline--date">2021</div>
+              <div class="career__timeline--content">
+                <div class="career__card--titles">
+                  <h3 class="career__card--title">Chemical Engineer</h3>
+                  <h5 class="career__card--place">EAN University</h5>
+                </div>
+
+                <ul class="career__card--bullets">
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Emphasis on green chemistry principles
                   </li>
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Focus on applied science
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Focus on applied science
                   </li>
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Utilization of computational tools
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Use of computational tools
                   </li>
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Development of innovative, sustainable
-                    products and processes
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Development of innovative, sustainable products and
+                    processes
                   </li>
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Efficient transformation of matter and
-                    energy
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Efficient transformation of matter and energy
                   </li>
                 </ul>
               </div>
             </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">2023</div>
-              <div class="timeline-content">
-                <h3 class="title-timeline">
-                  Systems Engineer <span class="place-timeline">EAN UNIVERSITY</span>
-                </h3>
-                <ul class="list-bullets">
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Creation of sustainable solutions on
-                    technology platforms
+            <div class="career__timeline--item">
+              <div class="career__timeline--dot"></div>
+              <div class="career__timeline--date">2023</div>
+              <div class="career__timeline--content">
+                <div class="career__card--titles">
+                  <h3 class="career__card--title">Systems Engineer</h3>
+                  <h5 class="career__card--place">EAN University</h5>
+                </div>
+
+                <ul class="career__card--bullets">
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Creation of sustainable solutions on technology
+                    platforms
                   </li>
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Generation of innovative solutions to meet
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Generation of innovative solutions to meet
                     environmental needs
                   </li>
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Leadership in entrepreneurship and
-                    intrapreneurship projects
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Leadership in entrepreneurship and intrapreneurship
+                    projects
                   </li>
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Provision of economic, environmental, and
-                    social value
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">2024</div>
-              <div class="timeline-content">
-                <h3 class="title-timeline">
-                  Introduction to automated testing
-                  <span class="place-timeline">EPAM CAMPUS</span>
-                </h3>
-                <ul class="list-bullets">
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Core software development methodologies
-                  </li>
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Testing theory and test automation
-                    foundations
-                  </li>
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Proficiency in version control with Git
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Provision of economic, environmental, and social
+                    value
                   </li>
                 </ul>
               </div>
             </div>
-            <div class="timeline-item">
-              <!-- <div class="timeline-dot"></div> -->
-              <div class="timeline-date"></div>
-              <div class="timeline-content">
-                <h3 class="title-timeline">
-                  Web Development using HTML5, CSS3, JS, AJAX, PHP and MySQL
-                  <span class="place-timeline">UDEMY</span>
-                </h3>
-                <ul class="list-bullets">
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Creation of web applications with advanced
-                    features
+            <div class="career__timeline--item">
+              <div class="career__timeline--dot"></div>
+              <div class="career__timeline--date">2024</div>
+              <div class="career__timeline--content">
+                <div class="career__card--titles">
+                  <h3 class="career__card--title">
+                    Web Development (HTML5, CSS3, JS, PHP and MySQL)
+                  </h3>
+                  <h5 class="career__card--place">Udemy</h5>
+                </div>
+
+                <ul class="career__card--bullets">
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Creation of web applications with advanced features
                   </li>
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Development of fully dynamic administrative
-                    areas
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Development of fully dynamic administrative areas
                   </li>
-                  <li class="bullet-point"><i class="ri-check-double-line"></i>Sending emails</li>
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Communicating with APIs
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>RESTful APIs Integration
+                  </li>
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Web Design and Performance improvement
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="career__timeline--item">
+              <div class="career__timeline--content">
+                <div class="career__timeline--date"></div>
+                <div class="career__card--titles">
+                  <h3 class="career__card--title">Introduction to automated testing</h3>
+                  <h5 class="career__card--place">EPAM Campus</h5>
+                </div>
+                <ul class="career__card--bullets">
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Core software development methodologies
+                  </li>
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Testing theory and test automation foundations
+                  </li>
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Proficiency in version control with Git
                   </li>
                 </ul>
               </div>
             </div>
           </div>
-          <h2 class="title-career">EXPERIENCE</h2>
-          <div class="timeline-items">
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">2021</div>
-              <div class="timeline-content-exp">
-                <h3 class="title-timeline">
-                  Bilingual Customer Service Advisor
-                  <span class="place-timeline">CONCENTRIX | Aug 2021 - Jun 2022</span>
-                </h3>
-                <ul class="list-bullets">
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Managed customer inquiries
+          <h3 class="career__timeline--title">EXPERIENCE</h3>
+          <div class="career__timeline--items">
+            <div class="career__timeline--item">
+              <div class="career__timeline--dot"></div>
+              <div class="career__timeline--date">2024</div>
+              <div class="career__timeline--content">
+                <div class="career__card--titles">
+                  <h3 class="career__card--title">Freelance Web Developer</h3>
+                  <h5 class="career__card--place">Dental Clinic - Dr.Hector Gonzalez | Jul 2024</h5>
+                </div>
+                <ul class="career__card--bullets">
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Designed and developed a responsive website for a
+                    dental clinic, showcasing services, experience and location.
                   </li>
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Ensured customer satisfaction
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Created mockups using Figma and implemented the
+                    approved design in front-end development.
                   </li>
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Operated in a bilingual service environment
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Managed the entire project from requirements
+                    gathering to website deployment.
                   </li>
-                </ul>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">2022</div>
-              <div class="timeline-content-exp">
-                <h3 class="title-timeline">
-                  Bilingual Quality Evaluator<span class="place-timeline"
-                    >CONCENTRIX | Jun 2022 - Aug 2023</span
-                  >
-                </h3>
-                <ul class="list-bullets">
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Conducted call audits, group trainings, and
-                    1:1 sessions to improve campaign KPIs and agent performance
-                  </li>
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Designed action plans to address performance
-                    deficiencies
-                  </li>
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Improved overall service quality
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Handled domain purchase, hosting setup, and
+                    delivered a fully functional website within the agreed timeframe.
                   </li>
                 </ul>
               </div>
             </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">2023</div>
-              <div class="timeline-content-exp">
-                <h3 class="title-timeline">
-                  Bilingual Training and Quality Supervisor
-                  <span class="place-timeline">CONCENTRIX | Aug 2023- Jan 2024 </span>
-                </h3>
-                <ul class="list-bullets">
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Supervised a team of eight quality
-                    evaluators, ensuring weekly goals were met
+            <div class="career__timeline--item">
+              <div class="career__timeline--dot"></div>
+              <div class="career__timeline--date">2023</div>
+              <div class="career__timeline--content">
+                <div class="career__card--titles">
+                  <h3 class="career__card--title">Bilingual Training and Quality Supervisor</h3>
+                  <h5 class="career__card--place">Concentrix | Aug 2023- Jan 2024</h5>
+                </div>
+                <ul class="career__card--bullets">
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Developed and implemented Excel macros to optimize
+                    workflows, increasing team efficiency.
                   </li>
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Developed and implemented Excel macros to
-                    optimize workflows
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Designed interactive dashboards for visualizing
+                    KPIs and facilitating strategic decision-making.
                   </li>
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Created interactive dashboards for
-                    visualizing performance and aiding strategic decisions
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Led a team of eight quality evaluators,
+                    consistently exceeding weekly goals.
                   </li>
-                  <li class="bullet-point">
-                    <i class="ri-check-double-line"></i>Executed action plans to correct
-                    deficiencies and enhance campaign effectiveness
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Executed action plans to address deficiencies and
+                    enhance campaign effectiveness.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="career__timeline--item">
+              <div class="career__timeline--dot"></div>
+              <div class="career__timeline--date">2022</div>
+              <div class="career__timeline--content">
+                <div class="career__card--titles">
+                  <h3 class="career__card--title">Bilingual Quality Evaluator</h3>
+                  <h5 class="career__card--place">Concentrix | Jun 2022-Aug 2023</h5>
+                </div>
+                <ul class="career__card--bullets">
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Conducted data analysis of call audits to identify
+                    trends and areas for improvement.
+                  </li>
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Designed and delivered data-driven group trainings
+                    and 1:1 sessions to improve agent performance.
+                  </li>
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Development of metrics-based action plans to
+                    correct performance deficiencies, achieving an improvement in the campaign's
+                    KPIs
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="career__timeline--item">
+              <div class="career__timeline--dot"></div>
+              <div class="career__timeline--date">2021</div>
+              <div class="career__timeline--content">
+                <div class="career__card--titles">
+                  <h3 class="career__card--title">Bilingual Customer Service Advisor</h3>
+                  <h5 class="career__card--place">Concentrix | Sep 2021-Jun 2022</h5>
+                </div>
+                <ul class="career__card--bullets">
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Analyzed customer inquiry patterns to propose
+                    improvements in service processes.
+                  </li>
+                  <li class="career__card--bullet">
+                    <i class="ri-check-fill"></i>Contributed to the optimization of service scripts
+                    based on customer satisfaction analysis.
                   </li>
                 </ul>
               </div>
@@ -405,233 +861,53 @@
           </div>
         </div>
       </section>
-
-      <section class="skills section" id="skills">
-        <div class="skills__container container grid">
-          <div class="title__box">
-            <span class="skills-subtitle">Technical and Professional</span>
-            <div class="title-wrapper">
-              <span class="title-text">MY SKILLS.</span>
-              <div class="title-shape yellow skills-title"></div>
-            </div>
-          </div>
-          <div class="skills-grid">
-            <div class="skills-items">
-              <div class="skill-box">
-                <img src="build/img/python.svg" alt="skill logo" class="skill-logo" />
-                <div class="title-logo">Python</div>
-              </div>
-            </div>
-            <div class="skills-items">
-              <div class="skill-box">
-                <img src="build/img/css.svg" alt="skill logo" class="skill-logo" />
-                <div class="title-logo">CSS</div>
-              </div>
-            </div>
-            <div class="skills-items">
-              <div class="skill-box">
-                <img src="build/img/scss.svg" alt="skill logo" class="skill-logo" />
-                <div class="title-logo">SCSS</div>
-              </div>
-            </div>
-            <div class="skills-items">
-              <div class="skill-box">
-                <img src="build/img/html.svg" alt="skill logo" class="skill-logo" />
-                <div class="title-logo">HTML</div>
-              </div>
-            </div>
-            <div class="skills-items">
-              <div class="skill-box">
-                <img src="build/img/php.svg" alt="skill logo" class="skill-logo" />
-                <div class="title-logo">PHP</div>
-              </div>
-            </div>
-            <div class="skills-items">
-              <div class="skill-box">
-                <img src="build/img/javascript.svg" alt="skill logo" class="skill-logo" />
-                <div class="title-logo">JavaScript</div>
-              </div>
-            </div>
-            <div class="skills-items">
-              <div class="skill-box">
-                <img src="build/img/git.svg" alt="skill logo" class="skill-logo" />
-                <div class="title-logo">GIT</div>
-              </div>
-            </div>
-            <div class="skills-items">
-              <div class="skill-box">
-                <img src="build/img/sql.svg" alt="skill logo" class="skill-logo" />
-                <div class="title-logo">SQL</div>
-              </div>
-            </div>
-            <div class="skills-items item-9">
-              <div class="skill-box">
-                <img src="build/img/mysql.svg" alt="skill logo" class="skill-logo" />
-                <div class="title-logo">MySQL</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="projects section" id="projects">
-        <div class="projects__container container">
-          <div class="title-wrapper">
-            <div class="title-text">PROJECTS.</div>
-            <div class="title-shape green projects-title"></div>
-          </div>
-
-          <div class="container">
-            <div class="filter-buttons">
-              <button class="button" data-filter="all">All</button>
-              <button class="button" data-filter=".full__stack">Full-Stack</button>
-              <button class="button" data-filter=".front__end">Front-End</button>
-            </div>
-
-            <div class="projects__grid">
-              <div class="grid-items mix full__stack">
-                <div class="flip-card">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front item-5"></div>
-                    <div class="flip-card-back">
-                      <p class="title">BIZEXPO</p>
-                      <p class="project-description">
-                        A web platform for a tech event offering conferences and workshops. Users
-                        can view events, speakers, locations via Leaflet, and purchase tickets.
-                        Post-login, users can choose ticket types and pay via PayPal, with an admin
-                        panel for managing data.
-                      </p>
-                      <a href="/bizexpo.html" class="link-project-logo">
-                        <button class="cta">
-                          <span>See Project</span>
-                          <svg width="15px" height="10px" viewBox="0 0 13 10">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                          </svg></button
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="grid-items mix full__stack">
-                <div class="flip-card">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front item-1"></div>
-                    <div class="flip-card-back">
-                      <p class="title">TASKNEXUS</p>
-                      <p class="project-description">
-                        A full-stack app for managing projects and tasks. Users can create accounts,
-                        track tasks, and customize profiles. Features CRUD operations, email
-                        validation, and secure password management.
-                      </p>
-                      <a href="/tasknexus.html" class="link-project-logo">
-                        <button class="cta">
-                          <span>See Project</span>
-                          <svg width="15px" height="10px" viewBox="0 0 13 10">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                          </svg></button
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="grid-items mix full__stack">
-                <div class="flip-card">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front item-3"></div>
-
-                    <div class="flip-card-back">
-                      <p class="title">GLOWRADIANCE</p>
-                      <p class="project-description">
-                        Revolutionize beauty salon management. Schedule appointments seamlessly,
-                        manage services effortlessly. Robust security. MVC architecture for
-                        scalability.
-                      </p>
-                      <a href="/glowradiance.html" class="link-project-logo">
-                        <button class="cta">
-                          <span>See Project</span>
-                          <svg width="15px" height="10px" viewBox="0 0 13 10">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                          </svg></button
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="grid-items mix full__stack">
-                <div class="flip-card">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front item-2"></div>
-                    <div class="flip-card-back">
-                      <p class="title">HOMEHUNTER</p>
-                      <p class="project-description">
-                        Web app for buying and selling luxury homes. It features user security,
-                        competitive pricing, and efficient service. Users can browse listings, read
-                        blog posts, and contact admins. Admins manage listings via a secure CRUD
-                        panel.
-                      </p>
-                      <a href="/homehunter.html" class="link-project-logo">
-                        <button class="cta">
-                          <span>See Project</span>
-                          <svg width="15px" height="10px" viewBox="0 0 13 10">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                          </svg></button
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="grid-items mix front__end">
-                <div class="flip-card">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front item-4"></div>
-
-                    <div class="flip-card-back">
-                      <p class="title">HARMONY FEST</p>
-                      <p class="project-description">
-                        A vibrant front-end website showcasing Colombia's music festival,
-                        celebrating diverse genres and renowned artists like Karol G and Feid.
-                      </p>
-                      <a href="/harmonyfest.html" class="link-project-logo">
-                        <button class="cta">
-                          <span>See Project</span>
-                          <svg width="15px" height="10px" viewBox="0 0 13 10">
-                            <path d="M1,5 L11,5"></path>
-                            <polyline points="8 1 12 5 8 9"></polyline>
-                          </svg></button
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="contact section" id="contact">
+      <section class="contact" id="contact">
         <div class="contact__container">
-          <div class="contact__data">
-            <div class="title-wrapper contact-t">
-              <div class="title-text">CONTACT ME.</div>
-              <div class="title-shape orange contact-title"></div>
+          <h1 class="contact__container--title">CONTACT ME</h1>
+          <div class="cardContainer">
+            <div class="profileDiv">
+              <h2 class="profileDiv__title">Connect with me, Click here</h2>
+              <img src="public/build/img/contact.svg" alt="contact image" class="profileDiv__img" />
+              <h3 class="profileDiv__title">Stephanie Gonzalez</h3>
             </div>
-            <p class="contact__description-1">
-              If you would like more information, please don't hesitate to send me a message. I will
-              respond within 24 hours.
-            </p>
-            <p class="contact__description-2">
-              To reply to your message, I'll need your name and email. Rest assured, you won't
-              receive any other emails apart from the response to your message.
+            <div class="infoDiv">
+              <div class="contactDiv">
+                <p class="email">
+                  <span><i class="ri-mail-fill"></i></span>gstephaniegonz@gmail.com
+                </p>
+                <p class="phone">
+                  <span><i class="ri-phone-fill"></i></span>(+57)3125359116/3107991662
+                </p>
+                <p class="location">
+                  <span><i class="ri-map-pin-fill"></i></span>Bogotá, Colombia
+                </p>
+              </div>
+              <div class="socialDiv">
+                <a href="https://github.com/Stepha-Gonz" target="_blank"
+                  ><svg viewBox="0 0 496 512" class="socials github">
+                    <path
+                      d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg
+                ></a>
+                <a href="https://www.linkedin.com/in/stephanie-gonzalez-m/" target="_blank"
+                  ><svg viewBox="0 0 448 512" class="socials linkdin">
+                    <path
+                      d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact__info container">
+            <p class="contact__info--text">
+              For more info, message me. I'll reply within 24 hours. Please include your name and
+              email. You'll only receive my response, no other emails.
             </p>
           </div>
+
           <div class="contact__email">
             <form class="form" id="contact-form">
-              <p class="title-contact">Send Me a Message</p>
-              <p class="message">
+              <p class="form__title">Send Me a Message</p>
+              <p class="form__message">
                 Please make sure to fill in all the fields so I can assist you promptly!
               </p>
               <div class="flex">
@@ -643,7 +919,7 @@
                     id="user_name"
                     placeholder=""
                     required="" />
-                  <span>Firstname</span>
+                  <span>Full Name</span>
                 </label>
                 <label>
                   <input
@@ -682,73 +958,85 @@
               </button>
             </form>
           </div>
-          <div class="contact__social">
-            <img src="build/img/curly-arrow.svg" alt="arrow image" class="contact__social-arrow" />
-            <div class="contact__social-data">
-              <p class="contact__social-description">If you prefer not to send emails</p>
-              <p class="contact__social-description-2">
-                feel free to reach out to me via my social media channels!
-              </p>
-            </div>
-            <div class="contact__social-links">
-              <ul class="wrapper">
-                <a href="https://www.linkedin.com/in/stephanie-gonzalez-m/" class="links">
-                  <li class="icon linkedin">
-                    <span class="tooltip">LinkedIn</span>
-
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                      <path
-                        d="M6.94048 4.99993C6.94011 5.81424 6.44608 6.54702 5.69134 6.85273C4.9366 7.15845 4.07187 6.97605 3.5049 6.39155C2.93793 5.80704 2.78195 4.93715 3.1105 4.19207C3.43906 3.44699 4.18654 2.9755 5.00048 2.99993C6.08155 3.03238 6.94097 3.91837 6.94048 4.99993ZM7.00048 8.47993H3.00048V20.9999H7.00048V8.47993ZM13.3205 8.47993H9.34048V20.9999H13.2805V14.4299C13.2805 10.7699 18.0505 10.4299 18.0505 14.4299V20.9999H22.0005V13.0699C22.0005 6.89993 14.9405 7.12993 13.2805 10.1599L13.3205 8.47993Z"></path>
-                    </svg>
-                  </li>
-                </a>
-                <a href="https://github.com/Stepha-Gonz" class="links">
-                  <li class="icon github">
-                    <span class="tooltip">GitHub</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                      <path
-                        d="M5.88401 18.6533C5.58404 18.4526 5.32587 18.1975 5.0239 17.8369C4.91473 17.7065 4.47283 17.1524 4.55811 17.2583C4.09533 16.6833 3.80296 16.417 3.50156 16.3089C2.9817 16.1225 2.7114 15.5499 2.89784 15.0301C3.08428 14.5102 3.65685 14.2399 4.17672 14.4263C4.92936 14.6963 5.43847 15.1611 6.12425 16.0143C6.03025 15.8974 6.46364 16.441 6.55731 16.5529C6.74784 16.7804 6.88732 16.9182 6.99629 16.9911C7.20118 17.1283 7.58451 17.1874 8.14709 17.1311C8.17065 16.7489 8.24136 16.3783 8.34919 16.0358C5.38097 15.3104 3.70116 13.3952 3.70116 9.63971C3.70116 8.40085 4.0704 7.28393 4.75917 6.3478C4.5415 5.45392 4.57433 4.37284 5.06092 3.15636C5.1725 2.87739 5.40361 2.66338 5.69031 2.57352C5.77242 2.54973 5.81791 2.53915 5.89878 2.52673C6.70167 2.40343 7.83573 2.69705 9.31449 3.62336C10.181 3.41879 11.0885 3.315 12.0012 3.315C12.9129 3.315 13.8196 3.4186 14.6854 3.62277C16.1619 2.69 17.2986 2.39649 18.1072 2.52651C18.1919 2.54013 18.2645 2.55783 18.3249 2.57766C18.6059 2.66991 18.8316 2.88179 18.9414 3.15636C19.4279 4.37256 19.4608 5.45344 19.2433 6.3472C19.9342 7.28337 20.3012 8.39208 20.3012 9.63971C20.3012 13.3968 18.627 15.3048 15.6588 16.032C15.7837 16.447 15.8496 16.9105 15.8496 17.4121C15.8496 18.0765 15.8471 18.711 15.8424 19.4225C15.8412 19.6127 15.8397 19.8159 15.8375 20.1281C16.2129 20.2109 16.5229 20.5077 16.6031 20.9089C16.7114 21.4504 16.3602 21.9773 15.8186 22.0856C14.6794 22.3134 13.8353 21.5538 13.8353 20.5611C13.8353 20.4708 13.836 20.3417 13.8375 20.1145C13.8398 19.8015 13.8412 19.599 13.8425 19.4094C13.8471 18.7019 13.8496 18.0716 13.8496 17.4121C13.8496 16.7148 13.6664 16.2602 13.4237 16.051C12.7627 15.4812 13.0977 14.3973 13.965 14.2999C16.9314 13.9666 18.3012 12.8177 18.3012 9.63971C18.3012 8.68508 17.9893 7.89571 17.3881 7.23559C17.1301 6.95233 17.0567 6.54659 17.199 6.19087C17.3647 5.77663 17.4354 5.23384 17.2941 4.57702L17.2847 4.57968C16.7928 4.71886 16.1744 5.0198 15.4261 5.5285C15.182 5.69438 14.8772 5.74401 14.5932 5.66413C13.7729 5.43343 12.8913 5.315 12.0012 5.315C11.111 5.315 10.2294 5.43343 9.40916 5.66413C9.12662 5.74359 8.82344 5.69492 8.57997 5.53101C7.8274 5.02439 7.2056 4.72379 6.71079 4.58376C6.56735 5.23696 6.63814 5.77782 6.80336 6.19087C6.94565 6.54659 6.87219 6.95233 6.61423 7.23559C6.01715 7.8912 5.70116 8.69376 5.70116 9.63971C5.70116 12.8116 7.07225 13.9683 10.023 14.2999C10.8883 14.3971 11.2246 15.4769 10.5675 16.0482C10.3751 16.2156 10.1384 16.7802 10.1384 17.4121V20.5611C10.1384 21.5474 9.30356 22.2869 8.17878 22.09C7.63476 21.9948 7.27093 21.4766 7.36613 20.9326C7.43827 20.5204 7.75331 20.2116 8.13841 20.1276V19.1381C7.22829 19.1994 6.47656 19.0498 5.88401 18.6533Z"></path>
-                    </svg>
-                  </li>
-                </a>
-              </ul>
-            </div>
+          <div class="contact__info--text">
+            If you prefer not to send emails feel free to reach out to me via my social media
+            channels!
+          </div>
+          <div class="contact__social-links">
+            <ul class="wrapper">
+              <a href="https://www.linkedin.com/in/stephanie-gonzalez-m/" class="links">
+                <li class="icon linkedin">
+                  <span class="tooltip">LinkedIn</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M6.94048 4.99993C6.94011 5.81424 6.44608 6.54702 5.69134 6.85273C4.9366 7.15845 4.07187 6.97605 3.5049 6.39155C2.93793 5.80704 2.78195 4.93715 3.1105 4.19207C3.43906 3.44699 4.18654 2.9755 5.00048 2.99993C6.08155 3.03238 6.94097 3.91837 6.94048 4.99993ZM7.00048 8.47993H3.00048V20.9999H7.00048V8.47993ZM13.3205 8.47993H9.34048V20.9999H13.2805V14.4299C13.2805 10.7699 18.0505 10.4299 18.0505 14.4299V20.9999H22.0005V13.0699C22.0005 6.89993 14.9405 7.12993 13.2805 10.1599L13.3205 8.47993Z"></path>
+                  </svg>
+                </li>
+              </a>
+              <a href="https://github.com/Stepha-Gonz" class="links">
+                <li class="icon github">
+                  <span class="tooltip">GitHub</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M5.88401 18.6533C5.58404 18.4526 5.32587 18.1975 5.0239 17.8369C4.91473 17.7065 4.47283 17.1524 4.55811 17.2583C4.09533 16.6833 3.80296 16.417 3.50156 16.3089C2.9817 16.1225 2.7114 15.5499 2.89784 15.0301C3.08428 14.5102 3.65685 14.2399 4.17672 14.4263C4.92936 14.6963 5.43847 15.1611 6.12425 16.0143C6.03025 15.8974 6.46364 16.441 6.55731 16.5529C6.74784 16.7804 6.88732 16.9182 6.99629 16.9911C7.20118 17.1283 7.58451 17.1874 8.14709 17.1311C8.17065 16.7489 8.24136 16.3783 8.34919 16.0358C5.38097 15.3104 3.70116 13.3952 3.70116 9.63971C3.70116 8.40085 4.0704 7.28393 4.75917 6.3478C4.5415 5.45392 4.57433 4.37284 5.06092 3.15636C5.1725 2.87739 5.40361 2.66338 5.69031 2.57352C5.77242 2.54973 5.81791 2.53915 5.89878 2.52673C6.70167 2.40343 7.83573 2.69705 9.31449 3.62336C10.181 3.41879 11.0885 3.315 12.0012 3.315C12.9129 3.315 13.8196 3.4186 14.6854 3.62277C16.1619 2.69 17.2986 2.39649 18.1072 2.52651C18.1919 2.54013 18.2645 2.55783 18.3249 2.57766C18.6059 2.66991 18.8316 2.88179 18.9414 3.15636C19.4279 4.37256 19.4608 5.45344 19.2433 6.3472C19.9342 7.28337 20.3012 8.39208 20.3012 9.63971C20.3012 13.3968 18.627 15.3048 15.6588 16.032C15.7837 16.447 15.8496 16.9105 15.8496 17.4121C15.8496 18.0765 15.8471 18.711 15.8424 19.4225C15.8412 19.6127 15.8397 19.8159 15.8375 20.1281C16.2129 20.2109 16.5229 20.5077 16.6031 20.9089C16.7114 21.4504 16.3602 21.9773 15.8186 22.0856C14.6794 22.3134 13.8353 21.5538 13.8353 20.5611C13.8353 20.4708 13.836 20.3417 13.8375 20.1145C13.8398 19.8015 13.8412 19.599 13.8425 19.4094C13.8471 18.7019 13.8496 18.0716 13.8496 17.4121C13.8496 16.7148 13.6664 16.2602 13.4237 16.051C12.7627 15.4812 13.0977 14.3973 13.965 14.2999C16.9314 13.9666 18.3012 12.8177 18.3012 9.63971C18.3012 8.68508 17.9893 7.89571 17.3881 7.23559C17.1301 6.95233 17.0567 6.54659 17.199 6.19087C17.3647 5.77663 17.4354 5.23384 17.2941 4.57702L17.2847 4.57968C16.7928 4.71886 16.1744 5.0198 15.4261 5.5285C15.182 5.69438 14.8772 5.74401 14.5932 5.66413C13.7729 5.43343 12.8913 5.315 12.0012 5.315C11.111 5.315 10.2294 5.43343 9.40916 5.66413C9.12662 5.74359 8.82344 5.69492 8.57997 5.53101C7.8274 5.02439 7.2056 4.72379 6.71079 4.58376C6.56735 5.23696 6.63814 5.77782 6.80336 6.19087C6.94565 6.54659 6.87219 6.95233 6.61423 7.23559C6.01715 7.8912 5.70116 8.69376 5.70116 9.63971C5.70116 12.8116 7.07225 13.9683 10.023 14.2999C10.8883 14.3971 11.2246 15.4769 10.5675 16.0482C10.3751 16.2156 10.1384 16.7802 10.1384 17.4121V20.5611C10.1384 21.5474 9.30356 22.2869 8.17878 22.09C7.63476 21.9948 7.27093 21.4766 7.36613 20.9326C7.43827 20.5204 7.75331 20.2116 8.13841 20.1276V19.1381C7.22829 19.1994 6.47656 19.0498 5.88401 18.6533Z"></path>
+                  </svg>
+                </li>
+              </a>
+            </ul>
           </div>
         </div>
       </section>
+      <button id="scroll-up" class="scroll-up">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path
+            fill="rgba(255,255,255,1)"
+            d="M11.9997 10.8284L7.04996 15.7782L5.63574 14.364L11.9997 8L18.3637 14.364L16.9495 15.7782L11.9997 10.8284Z"></path>
+        </svg>
+      </button>
     </div>
-
-    <footer class="footer">
+    <footer class="footer" id="footer">
       <div class="footer__container container">
-        <ul class="footer__links">
-          <li>
-            <a href="#home" class="footer__link">Home</a>
-          </li>
-          <li>
-            <a href="#about" class="footer__link">About</a>
-          </li>
-          <li>
-            <a href="#career" class="footer__link">Career</a>
-          </li>
-          <li>
-            <a href="#projects" class="footer__link">Projects</a>
-          </li>
-        </ul>
-
+        <div class="footer__container--nav">
+          <a href="#home" class="footer__container--link">Home</a>
+          <a href="#skills-services" class="footer__container--link">Skills</a>
+          <a href="#projects" class="footer__container--link">Projects</a>
+          <a href="#contact" class="footer__container--link">Contact</a>
+        </div>
+        <div class="footer__container--contact">
+          <div class="footer__container--card">
+            <img
+              src="public/build/img/phone.svg"
+              alt="phone icon"
+              class="footer__container--icon" />
+            <h2 class="footer__container--title">Phone</h2>
+            <p class="footer__container--text">(+57) 3125359116/3107991662</p>
+          </div>
+          <div class="footer__container--card">
+            <img
+              src="public/build/img/email.svg"
+              alt="email icon"
+              class="footer__container--icon" />
+            <h2 class="footer__container--title">Email</h2>
+            <p class="footer__container--text">gstephaniegonz@gmail.com</p>
+          </div>
+          <div class="footer__container--card">
+            <img
+              src="public/build/img/location.svg"
+              alt="phone icon"
+              class="footer__container--icon" />
+            <h2 class="footer__container--title">Location</h2>
+            <p class="footer__container--text">Bogotá, Colombia</p>
+          </div>
+        </div>
         <span class="footer__copy"> &#169; All Rights Reserved By <span>Stepha-Gonz</span> </span>
       </div>
     </footer>
   </body>
-
-  <!-- ,MAIN JS -->
   <script
     type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <script src="../build/js/mixitup.js"></script>
-  <script src="../build/js/bundle.min.js"></script>
+  <script src="public/build/js/main.min.js"></script>
+  <script src="public/build/js/mixitup.js"></script>
 </html>
