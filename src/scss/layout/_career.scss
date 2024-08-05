@@ -1,139 +1,166 @@
 @use "base/variables" as v;
 @use "base/mixins" as m;
 
-//,CAREER SECTION
+.career {
+  background-color: v.$beige;
+  &__container {
+    &--title {
+      margin: 0 auto 2rem auto;
+      color: v.$red;
+      text-align: center;
+    }
+  }
+  &__timeline {
+    &--items {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      margin: auto;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 100%;
+        left: calc(50% - 1px);
+        background-color: v.$coral;
+      }
+    }
+    &--item {
+      position: relative;
+      width: 100%;
+      margin-bottom: 5rem;
+      transition: transform 0.5s ease-in-out;
+      &:hover {
+        transform: scale(1.02);
+        @include m.tablet {
+          transform: scale(1.05);
+        }
+      }
+      &:nth-child(odd) {
+        .career__timeline--date {
+          padding-left: calc(50% - 80px);
+          @include m.tablet {
+            padding-left: unset;
+          }
+        }
+      }
+      &:nth-child(even) {
+        .career__timeline--date {
+          padding-right: calc(50% - 90px);
+          text-align: right;
+          @include m.tablet {
+            padding-right: unset;
+            text-align: left;
+          }
+        }
+      }
+      @include m.tablet {
+        &:nth-child(odd) {
+          padding-left: calc(50% - 380px);
+          text-align: left;
 
-.career.section {
-  margin-bottom: 5rem;
-}
+          .career__timeline--date {
+            text-align: right;
+          }
+        }
+        &:nth-child(even) {
+          padding-left: calc(50% + 30px);
+          text-align: left;
+        }
+      }
+      @include m.desktop {
+        &:nth-child(odd) {
+          padding-left: calc(50% - 470px);
+          text-align: left;
+        }
+      }
+    }
+    &--title {
+      font-family: v.$text-font;
+      text-align: center;
+      color: v.$dark-blue;
+    }
+    &--dot {
+      height: 21px;
+      width: 21px;
+      background-color: v.$coral;
+      box-shadow: 0 0 25px v.$coral, 0 0 50px v.$coral;
+      position: absolute;
+      left: calc(50% - 8px);
+      border-radius: 50%;
+      top: 10px;
+      margin-bottom: 1rem;
+    }
+    &--date {
+      font-family: v.$main-font;
+      color: v.$black;
+      font-size: 30px;
 
-//,career content
-
-.timeline-items {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-}
-
-.timeline-items::before {
-  content: "";
-  position: absolute;
-  width: 5px;
-  height: 100%;
-  left: calc(50% - 1px);
-  background-color: v.$red;
-}
-
-.timeline-item {
-  position: relative;
-  width: 100%;
-  margin-bottom: 5rem;
-}
-
-@include m.tablet {
-  .timeline-item:nth-child(odd) {
-    padding-right: calc(50% + 30px);
-    text-align: left;
-
-    .timeline-date {
-      text-align: right;
+      @include m.tablet {
+        width: 350px;
+      }
+      @include m.desktop {
+        width: 440px;
+      }
+    }
+    &--content {
+      background-color: v.$violet;
+      color: v.$white;
+      padding: 2rem;
+      // width: 500px;
+      height: auto;
+      border-radius: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      @include m.tablet {
+        width: 350px;
+        height: 260px;
+      }
+      @include m.desktop {
+        width: 440px;
+      }
     }
   }
 
-  .timeline-item:nth-child(even) {
-    padding-left: calc(50% + 30px);
-    text-align: left;
+  &__card {
+    &--titles {
+      position: relative;
+    }
+    &--title {
+      font-family: v.$main-font;
+      font-size: 22px;
+      margin: 0;
+      font-weight: v.$slim;
+    }
+    &--place {
+      font-weight: v.$slim;
+      font-size: 18px;
+      margin: 0;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        background-color: v.$coral;
+        width: 50px;
+        height: 5px;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        border-radius: 2px;
+      }
+    }
+
+    &--bullets {
+      margin-top: 2rem;
+      font-family: v.$text-font;
+      padding: 0.5rem 0 0 0rem;
+      font-size: 14px;
+    }
   }
 }
 
-.timeline-dot {
-  height: 21px;
-  width: 21px;
-  background-color: v.$red;
-  box-shadow: 0 0 25px v.$red, 0 0 50px v.$red;
-  position: absolute;
-  left: calc(50% - 8px);
-  border-radius: 50%;
-  top: 10px;
-  margin-bottom: 1rem;
-}
-
-.timeline-date {
-  font-weight: v.$dark;
-  font-size: 1.5em;
-  margin-bottom: 10px;
-  color: v.$dark-red;
-}
-.timeline-content {
-  padding: 10px;
-  background-color: v.$dark-blue;
-  border-radius: 100px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  width: 100%;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.timeline-content-exp {
-  padding: 10px;
-  background-color: v.$green;
-  border-radius: 100px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  width: 100%;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.title-timeline {
-  &::after {
-    content: "";
-    width: 50px;
-    height: 3px;
-    background-color: v.$yellow;
-    position: absolute;
-    bottom: -8px;
-    left: 50px;
-    border-radius: 2px;
-    transition: width 0.3s ease;
-  }
-}
-
-.place-timeline {
-  display: block;
-  font-style: italic;
-  color: v.$black;
-  font-size: 1.5rem;
-  margin-top: 5px;
-}
-//,EDUCATION CONTENT
-
-.timeline-content:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  &::after {
-    width: 350px;
-  }
-}
-.timeline-content-exp:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  &::after {
-    width: 350px;
-  }
-}
-
-//,info STYLES
-
-.list-bullets {
-  padding: 0px 2rem 2rem 2rem;
-  color: v.$white;
-  font-size: 1.2rem;
-  .ri-check-double-line {
-    margin-right: 0.5rem;
-    color: v.$yellow;
-  }
-  .bullet-point {
-    margin-bottom: 1rem;
-  }
+.ri-check-fill {
+  color: v.$coral;
 }
