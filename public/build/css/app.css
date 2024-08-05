@@ -680,7 +680,7 @@ template {
   }
 }
 .about__grid {
-  margin: 0.5rem auto;
+  margin: 0 auto;
   padding-bottom: 2rem;
   display: grid;
   gap: 2rem;

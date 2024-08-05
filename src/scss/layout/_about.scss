@@ -28,7 +28,7 @@
   }
 
   &__grid {
-    margin: 0.5rem auto;
+    margin: 0 auto;
     padding-bottom: 2rem;
     @include m.grid(1, 2rem);
     @include m.tablet {
