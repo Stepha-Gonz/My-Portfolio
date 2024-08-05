@@ -1,0 +1,88 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+.container_mouse {
+  position: relative;
+  z-index: 2;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  @include m.tablet {
+    margin-top: 0.5rem;
+    padding-bottom: 5rem;
+  }
+  @include m.desktop {
+    margin-top: 0.5rem;
+    padding-bottom: 10rem;
+  }
+}
+.mouse-btn {
+  cursor: pointer;
+  margin: 0px auto;
+  width: 30px;
+  height: 55px;
+  border: 3px solid v.$violet;
+  border-radius: 20px;
+  display: flex;
+  @include m.tablet {
+    border: 3px solid v.$violet;
+  }
+}
+
+.mouse-scroll {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(170deg, v.$dark-blue 45%, rgba(244, 207, 200, 1) 71%);
+  border-radius: 50%;
+  margin: auto;
+  animation: scrolling13 1s linear infinite;
+}
+.mouse-text {
+  font-family: v.$text-font;
+  font-size: 1rem;
+}
+
+@keyframes scrolling13 {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+}
+
+.scroll-up {
+  display: none;
+  cursor: pointer;
+  border: none;
+  position: fixed;
+  right: 3%;
+  bottom: 3%;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background: rgb(220, 124, 123);
+  background: linear-gradient(170deg, rgba(220, 124, 123, 1) 45%, rgba(244, 207, 200, 1) 71%);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: bottom 0.4s, transform 0.4s;
+}
+
+.scroll-up:hover {
+  transform: translateY(-0.25rem);
+}
+
+/* Show scroll-up */
+._show-scroll {
+  bottom: 3rem;
+}

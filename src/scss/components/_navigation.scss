@@ -1,0 +1,175 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.nav {
+  &__container {
+    position: relative;
+    z-index: 99;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  &__bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  &__logo {
+    font-family: v.$title-font;
+    margin-left: 2rem;
+    font-size: 22px;
+    &--title {
+      color: v.$coral;
+    }
+    &--dot {
+      color: v.$dark-beige;
+    }
+    &--lastname {
+      color: v.$red;
+    }
+  }
+
+  &__icon {
+    margin-right: 2rem;
+    transform: scale(1.8);
+    color: v.$red;
+    transition: transform 0.3s ease-in;
+    &:hover {
+      transform: scale(2);
+      cursor: pointer;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: v.$violet;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-in;
+    @include m.desktop {
+      background-color: transparent;
+      position: relative;
+      width: 100%;
+      height: auto;
+      align-items: flex-end;
+    }
+
+    &.show {
+      height: 100%;
+    }
+
+    &--links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @include m.desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        align-items: center;
+      }
+    }
+    &--link {
+      margin: 2rem;
+      position: relative;
+      font-family: v.$main-font;
+      font-size: 25px;
+      color: v.$white;
+      @include m.desktop {
+        font-size: 20px;
+      }
+      &::after {
+        content: "";
+        width: 0;
+        height: 3px;
+        position: absolute;
+        background-color: v.$white;
+        left: 0;
+        bottom: -0.5rem;
+        transition: width 0.3s;
+        @include m.desktop {
+          background-color: v.$red;
+        }
+      }
+
+      &:hover {
+        color: v.$coral;
+        &::after {
+          width: 100%;
+        }
+      }
+
+      @include m.desktop {
+        color: v.$red;
+        margin: 1rem;
+        &:hover {
+          color: v.$coral;
+        }
+      }
+    }
+    &--link-darkmode {
+      margin: 3rem;
+      font-family: v.$main-font;
+      font-size: 25px;
+      color: v.$white;
+
+      &.ri-sun-line {
+        &:hover {
+          cursor: pointer;
+          color: rgb(250, 174, 74);
+        }
+      }
+      &:hover {
+        color: v.$coral;
+      }
+
+      @include m.desktop {
+        color: v.$red;
+        margin: 1rem;
+        &:hover {
+          color: v.$coral;
+        }
+      }
+    }
+    &--link-close {
+      margin: 3rem;
+
+      font-family: v.$main-font;
+      font-size: 25px;
+      color: v.$white;
+
+      &:hover {
+        color: v.$coral;
+      }
+
+      @include m.desktop {
+        color: v.$red;
+        margin: 1rem;
+        &:hover {
+          color: v.$coral;
+        }
+      }
+    }
+  }
+  &__close {
+    cursor: pointer;
+  }
+}
+.ri-close-circle-fill,
+.ri-menu-5-line {
+  @include m.desktop {
+    display: none;
+  }
+}
