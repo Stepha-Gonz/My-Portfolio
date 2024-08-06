@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>https://www.stephagonz.com/</loc>
+  <lastmod>2024-08-06T15:50:56+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.stephagonz.com/CV-Stephanie_Gonzalez.pdf</loc>
+  <lastmod>2024-08-06T15:50:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.stephagonz.com/views/bizexpo</loc>
+  <lastmod>2024-08-06T15:50:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.stephagonz.com/views/tasknexus</loc>
+  <lastmod>2024-08-06T15:50:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.stephagonz.com/views/glowradiance</loc>
+  <lastmod>2024-08-06T15:50:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.stephagonz.com/views/homehunter</loc>
+  <lastmod>2024-08-06T15:50:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.stephagonz.com/views/dentalclinic</loc>
+  <lastmod>2024-08-06T15:50:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.stephagonz.com/views/portfolio</loc>
+  <lastmod>2024-08-06T15:50:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.stephagonz.com/views/audittracker</loc>
+  <lastmod>2024-08-06T15:50:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
