@@ -660,11 +660,12 @@ template {
   text-align: center;
   color: #ffffff;
   margin-top: 0;
-  padding-top: 2rem;
+  padding: 0 2rem;
 }
 @media (min-width: 768px) {
   .about__title--main {
     text-align: left;
+    padding: 0;
   }
 }
 .about__title--text {
@@ -672,11 +673,12 @@ template {
   font-size: 2rem;
   color: #ffffff;
   text-align: center;
-  padding-right: 2rem;
+  padding: 0 2rem;
 }
 @media (min-width: 768px) {
   .about__title--text {
     text-align: left;
+    padding: 0 2rem 0 0;
   }
 }
 .about__grid {
@@ -717,7 +719,7 @@ template {
   color: #ffffff;
   font-family: "Neucha", cursive;
   font-size: 2rem;
-  padding-right: 2rem;
+  padding: 0 2rem;
 }
 .about__description--text span {
   color: #dc7c7b;
@@ -725,6 +727,7 @@ template {
 @media (min-width: 768px) {
   .about__description--text {
     text-align: left;
+    padding: 0 2rem 0 1rem;
   }
 }
 .about__description--button {
