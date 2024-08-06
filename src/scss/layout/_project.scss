@@ -86,8 +86,13 @@
     }
     &--repo-info {
       font-family: v.$text-font;
-      font-size: 2rem;
+      font-size: 1.5rem;
       color: v.$white;
+      padding: 0 3rem;
+      text-align: justify;
+      @include m.tablet {
+        font-size: 2rem;
+      }
     }
     &--repo-link {
       @include m.button(v.$coral, v.$white);
