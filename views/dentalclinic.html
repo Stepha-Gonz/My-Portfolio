@@ -11,7 +11,7 @@
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
       rel="stylesheet" />
-
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="../public/build/css/app.css" />
     <title>Dental Clinic-Stephanie Gonzalez</title>
     <link rel="shortcut icon" href="../public/build/img/SG.png" />
@@ -21,7 +21,7 @@
       <section class="header" id="project-home">
         <div class="nav__container">
           <div class="nav__bar">
-            <div class="nav__logo">
+            <div class="nav__logo" data-aos="zoom-in" data-aos-duration="1500">
               <a href="../index.html#home" class="nav__logo--title"
                 >Stepha<span class="nav__logo--dot">•</span
                 ><span class="nav__logo--lastname">Gonz</span></a
@@ -49,7 +49,7 @@
         <a href="../index.html#projects" class="back-to">
           <h3 class="back-to--text"><i class="ri-arrow-left-circle-fill"></i>Go Back</h3>
         </a>
-        <div class="header__project--container">
+        <div class="header__project--container" data-aos="zoom-in-down" data-aos-duration="1500">
           <h1 class="header__project--title">Dr.Hector Gonzalez</h1>
           <div class="project__video--container">
             <video
@@ -182,6 +182,10 @@
         <span class="footer__copy"> &#169; All Rights Reserved By <span>Stepha-Gonz</span> </span>
       </div>
     </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 
   <script src="../public/build/js/main.min.js"></script>

@@ -11,7 +11,7 @@
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
       rel="stylesheet" />
-
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="public/build/css/app.css" />
     <title>Stephanie Gonzalez | Systems and Chemical Engineer</title>
     <link rel="shortcut icon" href="public/build/img/SG.png" />
@@ -21,7 +21,11 @@
       <section class="header" id="home">
         <div class="nav__container">
           <div class="nav__bar">
-            <div class="nav__logo">
+            <div
+              class="nav__logo"
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2000">
               <a href="#home" class="nav__logo--title"
                 >Stepha<span class="nav__logo--dot">•</span
                 ><span class="nav__logo--lastname">Gonz</span></a
@@ -48,11 +52,19 @@
         </div>
         <div class="header__container-main">
           <div class="header__container">
-            <div class="header__title">
+            <div
+              class="header__title"
+              data-aos="fade-right"
+              data-aos-duration="1500"
+              data-aos-once="true">
               <h2 class="header__title--secondary">Hey There!</h2>
               <h1 class="header__title--main">I'm Stephanie Gonzalez</h1>
             </div>
-            <div class="header__image">
+            <div
+              class="header__image"
+              data-aos="fade-left"
+              data-aos-duration="1500"
+              data-aos-once="true">
               <picture class="header__img-container">
                 <source
                   srcset="public/build/img/header-img.avif"
@@ -72,7 +84,10 @@
                   loading="lazy" />
               </picture>
             </div>
-            <div class="header__description container-sm">
+            <div
+              class="header__description container-sm"
+              data-aos="fade-right"
+              data-aos-duration="1500">
               <div class="header__description--title">
                 <h3 class="header__description--ima">I'm a <b></b></h3>
                 <h3 class="header__description--animation"><span></span></h3>
@@ -125,7 +140,7 @@
         </div>
       </section>
       <section class="about" id="about">
-        <div class="about__grid">
+        <div class="about__grid" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
           <div class="about__image-section">
             <picture class="about__image">
               <source
@@ -170,22 +185,34 @@
           </div>
         </div>
       </section>
-      <section class="skills-services" id="skills-services">
+      <section
+        class="skills-services"
+        id="skills-services"
+        data-aos="zoom-in"
+        data-aos-duration="1500"
+        data-aos-once="true">
         <h1 class="skills-services__title--skills">MY SKILLS</h1>
         <div class="skills-services__skills">
-          <div class="skills-services__skill--container">
-            <img
-              class="skills-services__skill--logo"
-              src="public/build/img/javascript.svg"
-              alt="skill logo" />
-            <p class="skills-services__skill--name">JavaScript</p>
-          </div>
           <div class="skills-services__skill--container">
             <img
               class="skills-services__skill--logo"
               src="public/build/img/python.svg"
               alt="skill logo" />
             <p class="skills-services__skill--name">Python</p>
+          </div>
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/php.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">PHP</p>
+          </div>
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/javascript.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">JavaScript</p>
           </div>
           <div class="skills-services__skill--container">
             <img
@@ -211,58 +238,9 @@
           <div class="skills-services__skill--container">
             <img
               class="skills-services__skill--logo"
-              src="public/build/img/php.svg"
-              alt="skill logo" />
-            <p class="skills-services__skill--name">PHP</p>
-          </div>
-          <div class="skills-services__skill--container">
-            <img
-              class="skills-services__skill--logo"
               src="public/build/img/git.svg"
               alt="skill logo" />
             <p class="skills-services__skill--name">GIT</p>
-          </div>
-          <div class="skills-services__skill--container">
-            <img
-              class="skills-services__skill--logo"
-              src="public/build/img/github.svg"
-              alt="skill logo" />
-            <p class="skills-services__skill--name">Github</p>
-          </div>
-          <div class="skills-services__skill--container">
-            <img
-              class="skills-services__skill--logo"
-              src="public/build/img/mysql.svg"
-              alt="skill logo" />
-            <p class="skills-services__skill--name">MySQL</p>
-          </div>
-          <div class="skills-services__skill--container">
-            <img
-              class="skills-services__skill--logo"
-              src="public/build/img/sql.svg"
-              alt="skill logo" />
-            <p class="skills-services__skill--name">SQL</p>
-          </div>
-          <div class="skills-services__skill--container">
-            <img
-              class="skills-services__skill--logo"
-              src="public/build/img/figma.svg"
-              alt="skill logo" />
-            <p class="skills-services__skill--name">Figma</p>
-          </div>
-          <div class="skills-services__skill--container">
-            <img
-              class="skills-services__skill--logo"
-              src="public/build/img/visual.svg"
-              alt="skill logo" />
-            <p class="skills-services__skill--name">VSC</p>
-          </div>
-          <div class="skills-services__skill--container">
-            <img
-              class="skills-services__skill--logo"
-              src="public/build/img/boot.svg"
-              alt="skill logo" />
-            <p class="skills-services__skill--name">BootStrap</p>
           </div>
           <div class="skills-services__skill--container">
             <img
@@ -274,9 +252,16 @@
           <div class="skills-services__skill--container">
             <img
               class="skills-services__skill--logo"
-              src="public/build/img/responsive.svg"
+              src="public/build/img/mysql.svg"
               alt="skill logo" />
-            <p class="skills-services__skill--name">Responsive Design</p>
+            <p class="skills-services__skill--name">MySQL</p>
+          </div>
+          <div class="skills-services__skill--container">
+            <img
+              class="skills-services__skill--logo"
+              src="public/build/img/figma.svg"
+              alt="skill logo" />
+            <p class="skills-services__skill--name">Figma</p>
           </div>
           <div class="skills-services__skill--container">
             <img
@@ -284,13 +269,6 @@
               src="public/build/img/api.svg"
               alt="skill logo" />
             <p class="skills-services__skill--name">Restful API’s</p>
-          </div>
-          <div class="skills-services__skill--container">
-            <img
-              class="skills-services__skill--logo"
-              src="public/build/img/office.svg"
-              alt="skill logo" />
-            <p class="skills-services__skill--name">Microsoft Office</p>
           </div>
           <div class="skills-services__skill--container">
             <img
@@ -320,18 +298,6 @@
               <div class="skills-services__card swiper-slide">
                 <div class="skills-services__card--container">
                   <img
-                    src="public/build/img/pallete.svg"
-                    alt="icon-service"
-                    class="skills-services__card--img" />
-                  <h3 class="skills-services__card--title">Web Design</h3>
-                  <p class="skills-services__card--text">
-                    Designing attractive and user-friendly websites for a better user experience
-                  </p>
-                </div>
-              </div>
-              <div class="skills-services__card swiper-slide">
-                <div class="skills-services__card--container">
-                  <img
                     src="public/build/img/bars.svg"
                     alt="icon-service"
                     class="skills-services__card--img" />
@@ -342,6 +308,19 @@
                   </p>
                 </div>
               </div>
+              <div class="skills-services__card swiper-slide">
+                <div class="skills-services__card--container">
+                  <img
+                    src="public/build/img/pallete.svg"
+                    alt="icon-service"
+                    class="skills-services__card--img" />
+                  <h3 class="skills-services__card--title">Web Design</h3>
+                  <p class="skills-services__card--text">
+                    Designing attractive and user-friendly websites for a better user experience
+                  </p>
+                </div>
+              </div>
+
               <div class="skills-services__card swiper-slide">
                 <div class="skills-services__card--container">
                   <img
@@ -376,8 +355,14 @@
         </div>
       </section>
       <section class="work" id="projects">
-        <h1 class="work__title">MY WORK</h1>
-        <div class="work__controls">
+        <h1 class="work__title" data-aos="fade-down" data-aos-duration="1500" data-aos-once="true">
+          MY WORK
+        </h1>
+        <div
+          class="work__controls"
+          data-aos="fade-down"
+          data-aos-duration="1500"
+          data-aos-once="true">
           <div class="work__controls--title"><h1>Filters</h1></div>
           <div class="work__controls--buttons">
             <button class="work__control blue" data-filter="all">Show All</button>
@@ -389,7 +374,11 @@
           </div>
         </div>
 
-        <div class="projects__grid">
+        <div
+          class="projects__grid"
+          data-aos="zoom-in"
+          data-aos-duration="1500"
+          data-aos-once="true">
           <div class="book mix full__stack">
             <div class="work__projectdesc--container">
               <h1 class="work__projectdesc--title">BizExpo</h1>
@@ -644,9 +633,25 @@
       </section>
       <section class="career" id="career">
         <div class="career__container">
-          <h1 class="career__container--title">CAREER</h1>
-          <h3 class="career__timeline--title">EDUCATION</h3>
-          <div class="career__timeline--items">
+          <h1
+            class="career__container--title"
+            data-aos="fade-down"
+            data-aos-duration="1500"
+            data-aos-once="true">
+            CAREER
+          </h1>
+          <h3
+            class="career__timeline--title"
+            data-aos="fade-down"
+            data-aos-duration="1500"
+            data-aos-once="true">
+            EDUCATION
+          </h3>
+          <div
+            class="career__timeline--items"
+            data-aos="flip-left"
+            data-aos-duration="1500"
+            data-aos-once="true">
             <div class="career__timeline--item">
               <div class="career__timeline--dot"></div>
               <div class="career__timeline--date">2021</div>
@@ -753,8 +758,18 @@
               </div>
             </div>
           </div>
-          <h3 class="career__timeline--title">EXPERIENCE</h3>
-          <div class="career__timeline--items">
+          <h3
+            class="career__timeline--title"
+            data-aos="fade-down"
+            data-aos-duration="1500"
+            data-aos-once="true">
+            EXPERIENCE
+          </h3>
+          <div
+            class="career__timeline--items"
+            data-aos="flip-right"
+            data-aos-duration="1500"
+            data-aos-once="true">
             <div class="career__timeline--item">
               <div class="career__timeline--dot"></div>
               <div class="career__timeline--date">2024</div>
@@ -859,7 +874,12 @@
           </div>
         </div>
       </section>
-      <section class="contact" id="contact">
+      <section
+        class="contact"
+        data-aos="fade-down"
+        data-aos-duration="1500"
+        data-aos-once="true"
+        id="contact">
         <div class="contact__container">
           <h1 class="contact__container--title">CONTACT ME</h1>
           <div class="cardContainer">
@@ -1031,6 +1051,10 @@
         <span class="footer__copy"> &#169; All Rights Reserved By <span>Stepha-Gonz</span> </span>
       </div>
     </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
   <script
     type="text/javascript"
