@@ -43,14 +43,12 @@
       }
     }
 
-    // Función para desplazarse a la sección de manera suave
     function scrollToSection(sectionId) {
       const section = document.querySelector(sectionId);
 
-      // Scroll suave hacia la sección calculando su posición
       window.scrollTo({
-        top: section.offsetTop - 100, // Ajusta el -100px
-        behavior: "smooth", // Desplazamiento suave
+        top: section.offsetTop - 100,
+        behavior: "smooth",
       });
     }
   }

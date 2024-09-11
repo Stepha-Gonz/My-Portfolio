@@ -20,8 +20,8 @@
     }
   }
   &__container {
-    height: 100vh;
     position: relative;
+    min-height: 100vh;
     z-index: 2;
     color: v.$white;
     margin: 12rem auto 0 auto;

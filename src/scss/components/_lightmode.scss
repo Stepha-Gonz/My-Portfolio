@@ -9,7 +9,9 @@
   .nav {
     &__menu {
       &--link {
-        color: v.$blue-text;
+        @include m.desktop {
+          color: v.$blue-text;
+        }
       }
     }
   }

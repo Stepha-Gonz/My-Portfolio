@@ -103,8 +103,6 @@
     &--logo-github {
       width: 50px;
       height: 50px;
-      filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(15deg)
-        brightness(106%) contrast(101%);
     }
   }
 }
@@ -119,21 +117,21 @@
   position: absolute;
   top: 100%;
   left: 50%;
-  transform: translateX(-50%) translateY(-10%); /* Adjusted the initial position */
+  transform: translateX(-50%) translateY(-5%);
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   color: #fff;
   border-radius: 0.3em;
   text-align: center;
-  font-size: 14px;
-  width: 120%; /* Adjusted the width */
-  padding: 0.5em 1em; /* Adjusted padding */
-  white-space: nowrap; /* Prevent text wrapping */
+  font-size: 12px;
+  width: 100%;
+  padding: 0;
+  white-space: nowrap;
 }
 
 .tooltip-container:hover .tooltip {
-  top: -100%; /* Adjusted the tooltip position */
+  top: -60%;
   opacity: 1;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);

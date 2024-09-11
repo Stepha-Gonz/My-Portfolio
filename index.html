@@ -204,7 +204,9 @@
         </div>
       </section>
       <section class="career" id="career">
-        <div class="career__container container-sm">
+        <div class="career__container container-sm" data-aos="fade-down"
+          data-aos-duration="1500"
+          data-aos-once="true">
           <div class="career__title">
             <h1 class="career__title--main main-title">CAREER</h1>
             <p class="Career__title--text secondary-title">Experience</p>
@@ -433,7 +435,6 @@
                     (Python, R), Business Intelligence, SQL, and cloud
                     computing. Introduces Google Cloud services and their impact
                     on organizations.</p>
-                  <!-- Modal toggle -->
                   <button
                     data-modal-target="extralarge-modal"
                     data-modal-toggle="extralarge-modal"
@@ -955,10 +956,7 @@
             <p class="work__title--text secondary-title">Filters</p>
           </div>
           <div
-            class="work__controls"
-            data-aos="fade-down"
-            data-aos-duration="1500"
-            data-aos-once="true">
+            class="work__controls">
             <div class="work__controls--buttons">
               <button class="work__control blue" data-filter="all">Show
                 All</button>
@@ -973,10 +971,7 @@
             </div>
           </div>
           <div
-            class="projects__grid"
-            data-aos="zoom-in"
-            data-aos-duration="1500"
-            data-aos-once="true">
+            class="projects__grid">
             <div class="book mix data__analysis">
               <div class="work__projectdesc--container">
                 <h1 class="work__projectdesc--title">Audit Overview</h1>
@@ -993,20 +988,24 @@
               <div class="cover">
                 <div class="work__project--cover">
                   <div class="work__project--img-container">
-                    <div
-                      class=" work__project--laptop relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[120px] max-w-[250px] md:h-[120px] md:max-w-[250px]">
-                      <div
-                        class="rounded-lg overflow-hidden h-[120px] md:h-[120px] bg-white dark:bg-gray-800">
-                        <img src="public/build/img/trackerdashboard-img.png"
-                          class="dark:hidden h-[120px] md:h-[120px] w-full rounded-lg work__project--img"
-                          alt>
-                      </div>
-                    </div>
-                    <div
-                      class="work__project--laptop relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[250px] md:h-[21px] md:max-w-[250px]">
-                      <div
-                        class="absolute left-1/2 top-0 -translate-x-48 rounded-b-xl w-[240px] h-[10px] md:w-[240px] md:h-[10px] bg-gray-800"></div>
-                    </div>
+                    <picture class="work__image">
+                      <source
+                        srcset="public/build/img/trackerdashboard-img.avif"
+                        type="image/avif"
+                        class="work__img"
+                        alt="work image">
+                      <source
+                        srcset="public/build/img/trackerdashboard-img.webp"
+                        type="image/webp"
+                        class="work__img"
+                        alt="work image">
+                      <img
+                        src="public/build/img/trackerdashboard-img.png"
+                        type="image/png"
+                        class="work__img"
+                        alt="work image"
+                        loading="lazy">
+                    </picture>
                   </div>
                   <h1 class="work__project--title">Audit Overview</h1>
                   <div class="work__project--techs">
@@ -1033,20 +1032,24 @@
               <div class="cover">
                 <div class="work__project--cover">
                   <div class="work__project--img-container">
-                    <div
-                      class=" work__project--laptop relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[120px] max-w-[250px] md:h-[120px] md:max-w-[250px]">
-                      <div
-                        class="rounded-lg overflow-hidden h-[120px] md:h-[120px] bg-white dark:bg-gray-800">
-                        <img src="public/build/img/audittracker-img.png"
-                          class="dark:hidden h-[120px] md:h-[120px] w-full rounded-lg"
-                          alt>
-                      </div>
-                    </div>
-                    <div
-                      class="work__project--laptop relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[250px] md:h-[21px] md:max-w-[250px]">
-                      <div
-                        class="absolute left-1/2 top-0 -translate-x-48 rounded-b-xl w-[240px] h-[10px] md:w-[240px] md:h-[10px] bg-gray-800"></div>
-                    </div>
+                    <picture class="work__image">
+                      <source
+                        srcset="public/build/img/audittracker-img.avif"
+                        type="image/avif"
+                        class="work__img"
+                        alt="work image">
+                      <source
+                        srcset="public/build/img/audittracker-img.webp"
+                        type="image/webp"
+                        class="work__img"
+                        alt="work image">
+                      <img
+                        src="public/build/img/audittracker-img.png"
+                        type="image/png"
+                        class="work__img"
+                        alt="work image"
+                        loading="lazy">
+                    </picture>
                   </div>
                   <h1 class="work__project--title">Audit Tracker</h1>
                   <div class="work__project--techs">
@@ -1072,20 +1075,24 @@
               <div class="cover">
                 <div class="work__project--cover">
                   <div class="work__project--img-container">
-                    <div
-                      class=" work__project--laptop relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[120px] max-w-[250px] md:h-[120px] md:max-w-[250px]">
-                      <div
-                        class="rounded-lg overflow-hidden h-[120px] md:h-[120px] bg-white dark:bg-gray-800">
-                        <img src="public/build/img/bizexpo-img.png"
-                          class="dark:hidden h-[120px] md:h-[120px] w-full rounded-lg"
-                          alt>
-                      </div>
-                    </div>
-                    <div
-                      class="work__project--laptop relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[250px] md:h-[21px] md:max-w-[250px]">
-                      <div
-                        class="absolute left-1/2 top-0 -translate-x-48 rounded-b-xl w-[240px] h-[10px] md:w-[240px] md:h-[10px] bg-gray-800"></div>
-                    </div>
+                    <picture class="work__image">
+                      <source
+                        srcset="public/build/img/bizexpo-img.avif"
+                        type="image/avif"
+                        class="work__img"
+                        alt="work image">
+                      <source
+                        srcset="public/build/img/bizexpo-img.webp"
+                        type="image/webp"
+                        class="work__img"
+                        alt="work image">
+                      <img
+                        src="public/build/img/bizexpo-img.png"
+                        type="image/png"
+                        class="work__img"
+                        alt="work image"
+                        loading="lazy">
+                    </picture>
                   </div>
                   <h1 class="work__project--title">BizExpo</h1>
                   <div class="work__project--techs">
@@ -1113,20 +1120,24 @@
               <div class="cover">
                 <div class="work__project--cover">
                   <div class="work__project--img-container">
-                    <div
-                      class=" work__project--laptop relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[120px] max-w-[250px] md:h-[120px] md:max-w-[250px]">
-                      <div
-                        class="rounded-lg overflow-hidden h-[120px] md:h-[120px] bg-white dark:bg-gray-800">
-                        <img src="public/build/img/tasknexus-img.png"
-                          class="dark:hidden h-[120px] md:h-[120px] w-full rounded-lg"
-                          alt>
-                      </div>
-                    </div>
-                    <div
-                      class="work__project--laptop relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[250px] md:h-[21px] md:max-w-[250px]">
-                      <div
-                        class="absolute left-1/2 top-0 -translate-x-48 rounded-b-xl w-[240px] h-[10px] md:w-[240px] md:h-[10px] bg-gray-800"></div>
-                    </div>
+                    <picture class="work__image">
+                      <source
+                        srcset="public/build/img/tasknexus-img.avif"
+                        type="image/avif"
+                        class="work__img"
+                        alt="work image">
+                      <source
+                        srcset="public/build/img/tasknexus-img.webp"
+                        type="image/webp"
+                        class="work__img"
+                        alt="work image">
+                      <img
+                        src="public/build/img/tasknexus-img.png"
+                        type="image/png"
+                        class="work__img"
+                        alt="work image"
+                        loading="lazy">
+                    </picture>
                   </div>
                   <h1 class="work__project--title">Tasknexus</h1>
                   <div class="work__project--techs">
@@ -1156,20 +1167,24 @@
               <div class="cover">
                 <div class="work__project--cover">
                   <div class="work__project--img-container">
-                    <div
-                      class=" work__project--laptop relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[120px] max-w-[250px] md:h-[120px] md:max-w-[250px]">
-                      <div
-                        class="rounded-lg overflow-hidden h-[120px] md:h-[120px] bg-white dark:bg-gray-800">
-                        <img src="public/build/img/glowradiance-img.png"
-                          class="dark:hidden h-[120px] md:h-[120px] w-full rounded-lg"
-                          alt>
-                      </div>
-                    </div>
-                    <div
-                      class="work__project--laptop relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[250px] md:h-[21px] md:max-w-[250px]">
-                      <div
-                        class="absolute left-1/2 top-0 -translate-x-48 rounded-b-xl w-[240px] h-[10px] md:w-[240px] md:h-[10px] bg-gray-800"></div>
-                    </div>
+                    <picture class="work__image">
+                      <source
+                        srcset="public/build/img/glowradiance-img.avif"
+                        type="image/avif"
+                        class="work__img"
+                        alt="work image">
+                      <source
+                        srcset="public/build/img/glowradiance-img.webp"
+                        type="image/webp"
+                        class="work__img"
+                        alt="work image">
+                      <img
+                        src="public/build/img/glowradiance-img.png"
+                        type="image/png"
+                        class="work__img"
+                        alt="work image"
+                        loading="lazy">
+                    </picture>
                   </div>
                   <h1 class="work__project--title">GlowRadiance</h1>
                   <div class="work__project--techs">
@@ -1199,20 +1214,24 @@
               <div class="cover">
                 <div class="work__project--cover">
                   <div class="work__project--img-container">
-                    <div
-                      class=" work__project--laptop relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[120px] max-w-[250px] md:h-[120px] md:max-w-[250px]">
-                      <div
-                        class="rounded-lg overflow-hidden h-[120px] md:h-[120px] bg-white dark:bg-gray-800">
-                        <img src="public/build/img/homehunter2.png"
-                          class="dark:hidden h-[120px] md:h-[120px] w-full rounded-lg"
-                          alt>
-                      </div>
-                    </div>
-                    <div
-                      class="work__project--laptop relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[250px] md:h-[21px] md:max-w-[250px]">
-                      <div
-                        class="absolute left-1/2 top-0 -translate-x-48 rounded-b-xl w-[240px] h-[10px] md:w-[240px] md:h-[10px] bg-gray-800"></div>
-                    </div>
+                    <picture class="work__image">
+                      <source
+                        srcset="public/build/img/homehunter2.avif"
+                        type="image/avif"
+                        class="work__img"
+                        alt="work image">
+                      <source
+                        srcset="public/build/img/homehunter2.webp"
+                        type="image/webp"
+                        class="work__img"
+                        alt="work image">
+                      <img
+                        src="public/build/img/homehunter2.png"
+                        type="image/png"
+                        class="work__img"
+                        alt="work image"
+                        loading="lazy">
+                    </picture>
                   </div>
                   <h1 class="work__project--title">HomeHunter</h1>
                   <div class="work__project--techs">
@@ -1242,20 +1261,24 @@
               <div class="cover">
                 <div class="work__project--cover">
                   <div class="work__project--img-container">
-                    <div
-                      class=" work__project--laptop relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[120px] max-w-[250px] md:h-[120px] md:max-w-[250px]">
-                      <div
-                        class="rounded-lg overflow-hidden h-[120px] md:h-[120px] bg-white dark:bg-gray-800">
-                        <img src="public/build/img/hector-gonzalez.png"
-                          class="dark:hidden h-[120px] md:h-[120px] w-full rounded-lg"
-                          alt>
-                      </div>
-                    </div>
-                    <div
-                      class="work__project--laptop relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[250px] md:h-[21px] md:max-w-[250px]">
-                      <div
-                        class="absolute left-1/2 top-0 -translate-x-48 rounded-b-xl w-[240px] h-[10px] md:w-[240px] md:h-[10px] bg-gray-800"></div>
-                    </div>
+                    <picture class="work__image">
+                      <source
+                        srcset="public/build/img/hector-gonzalez.avif"
+                        type="image/avif"
+                        class="work__img"
+                        alt="work image">
+                      <source
+                        srcset="public/build/img/hector-gonzalez.webp"
+                        type="image/webp"
+                        class="work__img"
+                        alt="work image">
+                      <img
+                        src="public/build/img/hector-gonzalez.png"
+                        type="image/png"
+                        class="work__img"
+                        alt="work image"
+                        loading="lazy">
+                    </picture>
                   </div>
                   <h1 class="work__project--title">Dental Clinic</h1>
                   <div class="work__project--techs">
@@ -1273,7 +1296,9 @@
         </div>
       </section>
       <section class="capabilities" id="capabilities">
-        <div class="capabilities__container ">
+        <div class="capabilities__container " data-aos="zoom-in"
+          data-aos-duration="1500"
+          data-aos-once="true">
           <div class="capabilities__title">
             <h1 class="capabilities__title--main main-title">CAPABILITIES</h1>
             <p class="capabilities__title--text secondary-title">Technical
@@ -1505,7 +1530,7 @@
           <div class="cardContainer">
             <div class="profileDiv">
               <h2 class="profileDiv__title">Connect with me, Click here</h2>
-              <img src="public/build/img/contact.svg" alt="contact image"
+              <img src="public/build/img/contact.png" alt="contact image"
                 class="profileDiv__img">
               <h3 class="profileDiv__title">Stephanie Gonzalez</h3>
             </div>
@@ -1662,7 +1687,7 @@
     <script>
   AOS.init();
         </script>
-    <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="public/build/js/flowbite.min.js"></script>
   </body>
   <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
