@@ -9,10 +9,11 @@
       href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Neucha&family=Pixelify+Sans:wght@400..700&family=Purple+Purse&display=swap"
       rel="stylesheet">
     <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-      rel="stylesheet">
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css "
+      rel="stylesheet" media="all">
     <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      media="all">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="stylesheet" href="public/build/css/app.css">
     <title>Stephanie Gonzalez | Systems and Chemical Engineer</title>
@@ -57,21 +58,17 @@
             <i class="ri-sun-line nav__lightmode"></i>
           </div>
         </div>
-        <div class="header__container">
+        <div class="header__container" data-aos="flip-down"
+          data-aos-duration="1000"
+          data-aos-once="true">
           <div
-            class="header__title"
-            data-aos="flip-down"
-            data-aos-duration="1000"
-            data-aos-once="true">
+            class="header__title">
             <h2 class="header__title--secondary">Hey There!</h2>
             <h1 class="header__title--main">I'm Stephanie Gonzalez</h1>
           </div>
           <div class="header__information">
             <div
-              class="header__description"
-              data-aos="fade-right"
-              data-aos-duration="1500"
-              data-aos-once="true">
+              class="header__description">
               <div class="header__description--title">
                 <h3 class="header__description--ima">I'm a
                   <b></b>
@@ -111,10 +108,7 @@
               </div>
             </div>
             <div
-              class="header__image"
-              data-aos="fade-left"
-              data-aos-duration="1500"
-              data-aos-once="true">
+              class="header__image">
               <picture class="header__img-container">
                 <source
                   srcset="public/build/img/header-img.avif"
@@ -131,7 +125,7 @@
                   alt="header image"
                   type="image/png"
                   class="header__img"
-                  loading="lazy">
+                  loading="eager">
               </picture>
             </div>
           </div>
@@ -1687,12 +1681,13 @@
     <script>
   AOS.init();
         </script>
-    <script src="public/build/js/flowbite.min.js"></script>
+    <script src="public/build/js/flowbite.min.js" defer></script>
   </body>
   <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="public/build/js/mixitup.js"></script>
-  <script src="public/build/js/particles.min.js"></script>
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  <script src="public/build/js/mixitup.js" defer></script>
+  <script src="public/build/js/particles.min.js" defer></script>
   <script src="public/build/js/main.min.js"></script>
 </html>
