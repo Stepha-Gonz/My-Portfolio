@@ -1,73 +1,73 @@
 @use "base/variables" as v;
 @use "base/mixins" as m;
 
-.about {
-  background-color: v.$dark-blue;
+#about {
+  padding-top: 60px;
 
+  @include m.tablet {
+    padding-top: 70px;
+  }
+  @include m.desktop {
+    padding-top: 100px;
+  }
+}
+
+.about {
+  min-height: 100vh;
+  overflow: hidden;
   &__title {
-    &--main {
-      font-family: v.$main-font;
-      text-align: center;
-      color: v.$white;
-      margin-top: 0;
-      padding: 0 2rem;
-      @include m.tablet {
-        text-align: left;
-        padding: 0;
-      }
-    }
     &--text {
-      font-family: v.$text-font;
-      font-size: 2rem;
       color: v.$white;
       text-align: center;
-      padding: 0 2rem;
-      @include m.tablet {
-        text-align: left;
-        padding: 0 2rem 0 0;
+      @include m.desktop {
+        font-size: 24px;
       }
     }
   }
-
   &__grid {
+    padding-top: 3rem;
+    place-items: center;
     margin: 0 auto;
     padding-bottom: 2rem;
     @include m.grid(1, 2rem);
-    @include m.tablet {
-      @include m.grid(2, 2rem);
-    }
     @include m.desktop {
-      width: 1200px;
+      @include m.grid(2, 2rem);
+      padding-top: 10rem;
+      max-width: 1200px;
     }
   }
   &__img {
     margin-top: 2rem;
-    max-width: 300px;
+    max-width: 450px;
+    @include m.desktop {
+      width: 400px;
+    }
   }
   &__description {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
-
+    font-family: v.$text-font;
+    color: v.$white;
+    font-size: 18px;
+    text-align: center;
+    margin: 1.5rem;
+    @include m.desktop {
+      text-align: left;
+      font-size: 24px;
+    }
     &--text {
-      margin-top: 0;
-      text-align: center;
-      color: v.$white;
-      font-family: v.$text-font;
-      font-size: 2rem;
-      padding: 0 2rem;
       span {
-        color: v.$coral;
-      }
-      @include m.tablet {
-        text-align: left;
-        padding: 0 2rem 0 1rem;
+        background: v.$gradient-purple-cyan2;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
     &--button {
-      @include m.button(v.$dark-beige, v.$red);
+      display: flex;
+      justify-content: center;
+      font-family: v.$small-title;
+      font-size: 28px;
+      background: v.$gradient-pink-blue;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 }

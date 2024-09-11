@@ -8,9 +8,11 @@
   max-width: 350px;
   padding: 20px;
   border-radius: 20px;
-  background-color: v.$beige;
-  color: v.$black;
+  color: v.$white;
   margin: 1rem;
+
+  background-color: #8a5ec410;
+  backdrop-filter: blur(0.4rem);
   @include m.tablet {
     margin: 3rem;
     transform: scale(1.2);
@@ -29,7 +31,9 @@
     display: flex;
     align-items: center;
     padding-left: 60px;
-    color: v.$dark-blue;
+    background: v.$gradient-purple-cyan2;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-align: center;
     &::before,
     &::after {
@@ -39,7 +43,7 @@
       width: 16px;
       border-radius: 50%;
       left: 0px;
-      background-color: v.$dark-blue;
+      background: v.$gradient-purple-cyan2;
     }
     &::before {
       width: 18px;
@@ -53,8 +57,8 @@
   }
   &__message {
     font-size: 14.5px;
-    color: v.$dark-blue;
-    font-family: v.$main-font;
+    color: v.$white;
+    font-family: v.$text-font;
   }
 }
 
@@ -69,8 +73,8 @@
 }
 
 .form label .input {
-  background-color: v.$dark-beige;
-  color: v.$black;
+  background-color: v.$background-secondary;
+  color: v.$white;
   width: 100%;
   padding: 20px 05px 05px 10px;
   outline: 0;
@@ -79,7 +83,7 @@
 }
 
 .form label .input + span {
-  color: v.$dark-blue;
+  color: v.$cyan;
   position: absolute;
   left: 10px;
   top: 0px;
@@ -95,7 +99,7 @@
 
 .form label .input:focus + span,
 .form label .input:valid + span {
-  color: v.$dark-blue;
+  color: v.$purple;
   top: 0px;
   font-size: 0.7em;
   font-weight: 600;
@@ -114,11 +118,11 @@
   color: #fff;
   font-size: 16px;
   transform: 0.3s ease;
-  background-color: v.$dark-blue;
+  background: v.$gradient-purple-cyan1;
 }
 
 .submit:hover {
-  background-color: lighten(v.$dark-blue, 15%);
+  background-color: lighten(v.$cyan, 15%);
 }
 
 @keyframes pulse {

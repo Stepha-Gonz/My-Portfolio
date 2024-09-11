@@ -1,0 +1,168 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+#capabilities {
+  padding-top: 60px;
+
+  @include m.tablet {
+    padding-top: 70px;
+  }
+  @include m.desktop {
+    padding-top: 100px;
+  }
+}
+
+.capabilities {
+  min-height: 100vh;
+  overflow: hidden;
+  @include m.grid(1, 2rem);
+  &__title {
+    &--text {
+      margin: 2rem auto 2rem auto;
+    }
+  }
+  &__card {
+    &--container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      height: 280px;
+      background-color: #8a5ec410;
+      backdrop-filter: blur(0.4rem);
+      border-radius: 30px;
+      padding: 2rem;
+      margin: 1rem auto;
+    }
+    &--img {
+      width: 80px;
+      height: 80px;
+    }
+    &--title {
+      font-family: v.$main-title;
+      font-size: 28px;
+      background: v.$gradient-purple-cyan1;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0.5rem;
+      text-align: center;
+    }
+    &--text {
+      font-family: v.$text-font;
+      font-size: 16px;
+      color: v.$white;
+      text-align: center;
+    }
+  }
+}
+
+.technical-skills {
+  @include m.grid(1, 2rem);
+  @include m.desktop {
+    @include m.grid(2, 2rem);
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    background-color: #8a5ec410;
+    backdrop-filter: blur(0.4rem);
+    border-radius: 2rem;
+    width: 300px;
+    @include m.tablet {
+      width: 500px;
+    }
+    @include m.desktop {
+      width: 500px;
+    }
+  }
+  &__subtitle {
+    font-size: 20px;
+    font-family: v.$small-title;
+    text-align: center;
+    background: v.$gradient-purple-cyan1;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &__container {
+    margin: 4rem 2rem 2rem 3rem;
+    @include m.grid(3, 4rem);
+    @include m.tablet {
+      @include m.grid(4, 4rem);
+    }
+    @include m.desktop {
+      @include m.grid(5, 4rem);
+    }
+  }
+
+  &__skill {
+    &--logo {
+      width: 50px;
+      height: 50px;
+    }
+    &--logo-github {
+      width: 50px;
+      height: 50px;
+      filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(15deg)
+        brightness(106%) contrast(101%);
+    }
+  }
+}
+
+.tooltip-container {
+  position: relative;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.tooltip {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10%); /* Adjusted the initial position */
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  color: #fff;
+  border-radius: 0.3em;
+  text-align: center;
+  font-size: 14px;
+  width: 120%; /* Adjusted the width */
+  padding: 0.5em 1em; /* Adjusted padding */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.tooltip-container:hover .tooltip {
+  top: -100%; /* Adjusted the tooltip position */
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.swiper {
+  width: 350px;
+  height: 350px;
+  @include m.tablet {
+    width: 700px;
+  }
+  @include m.desktop {
+    width: 1200px;
+  }
+}
+
+.swiper-container {
+  margin-bottom: 5rem;
+}
+
+.swiper-container .swiper-button-next,
+.swiper-container .swiper-button-prev {
+  color: v.$cyan !important;
+}
+
+.swiper-container .swiper-pagination-bullet {
+  background: v.$purple !important;
+}
+
+.swiper-container .swiper-pagination-bullet-active {
+  background: v.$purple !important;
+}

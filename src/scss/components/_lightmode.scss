@@ -1,0 +1,148 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.light-mode {
+  background-color: v.$white;
+  #particles-js {
+    background-color: #fcfcfc;
+  }
+  .nav {
+    &__menu {
+      &--link {
+        color: v.$blue-text;
+      }
+    }
+  }
+
+  .header {
+    &__description {
+      &--ima {
+        color: v.$blue-text;
+      }
+      &--text {
+        color: v.$blue-text;
+      }
+      &--animation {
+        span {
+          &::after {
+            background-color: #fcfcfc;
+            border-left: 5px solid #fcfcfc;
+          }
+        }
+      }
+    }
+  }
+  .about {
+    &__title {
+      &--text {
+        color: v.$blue-text;
+      }
+    }
+    &__description {
+      color: v.$blue-text;
+    }
+  }
+  .career {
+    &__timeline {
+      &--text {
+        color: v.$blue-text;
+      }
+      &--date {
+        color: #646777;
+      }
+    }
+    &__accordion {
+      &--title {
+        background: v.$gradient-pink-blue;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+    &__drop {
+      &--desc {
+        color: v.$blue-text;
+      }
+      &--text {
+        color: v.$blue-text;
+      }
+    }
+  }
+  .work {
+    &__controls {
+      &--buttons {
+        border: solid 2px v.$blue-text;
+      }
+    }
+    &__projectdesc {
+      &--text {
+        color: v.$blue-text;
+      }
+    }
+  }
+
+  .capabilities {
+    &__card {
+      &--text {
+        color: v.$blue-text;
+      }
+    }
+  }
+  .tooltip {
+    color: v.$blue-text;
+  }
+  .cardContainer {
+    border: solid 0.5px v.$blue-text;
+  }
+  .contact {
+    &__info {
+      &--text {
+        color: v.$blue-text;
+      }
+    }
+  }
+  .form {
+    &__message {
+      color: v.$blue-text;
+    }
+  }
+  .footer {
+    &__container {
+      &--link {
+        color: v.$blue-text;
+      }
+      &--title,
+      &--text {
+        color: v.$blue-text;
+      }
+    }
+    &__copy {
+      color: v.$blue-text;
+    }
+  }
+  .project {
+    &__description {
+      &--title {
+        color: v.$blue-text;
+      }
+    }
+    &__resume {
+      &--overview {
+        color: v.$blue-text;
+      }
+      &--title {
+        color: v.$blue-text;
+      }
+      &--info {
+        color: v.$blue-text;
+      }
+    }
+    &__tools {
+      &--title {
+        color: v.$blue-text;
+      }
+      &--title-secondary {
+        color: v.$blue-text;
+      }
+    }
+  }
+}

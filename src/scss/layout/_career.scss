@@ -1,166 +1,97 @@
 @use "base/variables" as v;
 @use "base/mixins" as m;
+#career {
+  padding-top: 60px;
 
-.career {
-  background-color: v.$beige;
-  &__container {
-    &--title {
-      margin: 0 auto 2rem auto;
-      color: v.$red;
-      text-align: center;
-    }
+  @include m.tablet {
+    padding-top: 70px;
   }
-  &__timeline {
-    &--items {
-      display: flex;
-      flex-wrap: wrap;
-      position: relative;
-      margin: auto;
-      &::before {
-        content: "";
-        position: absolute;
-        width: 5px;
-        height: 100%;
-        left: calc(50% - 1px);
-        background-color: v.$coral;
-      }
-    }
-    &--item {
-      position: relative;
-      width: 100%;
-      margin-bottom: 5rem;
-      transition: transform 0.5s ease-in-out;
-      &:hover {
-        transform: scale(1.02);
-        @include m.tablet {
-          transform: scale(1.05);
-        }
-      }
-      &:nth-child(odd) {
-        .career__timeline--date {
-          padding-left: calc(50% - 80px);
-          @include m.tablet {
-            padding-left: unset;
-          }
-        }
-      }
-      &:nth-child(even) {
-        .career__timeline--date {
-          padding-right: calc(50% - 90px);
-          text-align: right;
-          @include m.tablet {
-            padding-right: unset;
-            text-align: left;
-          }
-        }
-      }
-      @include m.tablet {
-        &:nth-child(odd) {
-          padding-left: calc(50% - 380px);
-          text-align: left;
-
-          .career__timeline--date {
-            text-align: right;
-          }
-        }
-        &:nth-child(even) {
-          padding-left: calc(50% + 30px);
-          text-align: left;
-        }
-      }
-      @include m.desktop {
-        &:nth-child(odd) {
-          padding-left: calc(50% - 470px);
-          text-align: left;
-        }
-      }
-    }
-    &--title {
-      font-family: v.$text-font;
-      text-align: center;
-      color: v.$dark-blue;
-    }
-    &--dot {
-      height: 21px;
-      width: 21px;
-      background-color: v.$coral;
-      box-shadow: 0 0 25px v.$coral, 0 0 50px v.$coral;
-      position: absolute;
-      left: calc(50% - 8px);
-      border-radius: 50%;
-      top: 10px;
-      margin-bottom: 1rem;
-    }
-    &--date {
-      font-family: v.$main-font;
-      color: v.$black;
-      font-size: 30px;
-
-      @include m.tablet {
-        width: 350px;
-      }
-      @include m.desktop {
-        width: 440px;
-      }
-    }
-    &--content {
-      background-color: v.$violet;
-      color: v.$white;
-      padding: 2rem;
-      // width: 500px;
-      height: auto;
-      border-radius: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      @include m.tablet {
-        width: 350px;
-        height: 260px;
-      }
-      @include m.desktop {
-        width: 440px;
-      }
-    }
-  }
-
-  &__card {
-    &--titles {
-      position: relative;
-    }
-    &--title {
-      font-family: v.$main-font;
-      font-size: 22px;
-      margin: 0;
-      font-weight: v.$slim;
-    }
-    &--place {
-      font-weight: v.$slim;
-      font-size: 18px;
-      margin: 0;
-      position: relative;
-
-      &::after {
-        content: "";
-        display: block;
-        background-color: v.$coral;
-        width: 50px;
-        height: 5px;
-        position: absolute;
-        bottom: -10px;
-        left: 0;
-        border-radius: 2px;
-      }
-    }
-
-    &--bullets {
-      margin-top: 2rem;
-      font-family: v.$text-font;
-      padding: 0.5rem 0 0 0rem;
-      font-size: 14px;
-    }
+  @include m.desktop {
+    padding-top: 100px;
   }
 }
 
-.ri-check-fill {
-  color: v.$coral;
+.career {
+  min-height: 100vh;
+  overflow: hidden;
+  &__timeline {
+    background-color: #8a5ec410;
+    backdrop-filter: blur(0.4rem);
+    padding: 0 3rem 2rem 4rem;
+    border-radius: 2rem;
+    margin: 3rem auto;
+    @include m.tablet {
+      max-width: 120rem;
+    }
+    &--information {
+      display: flex;
+      flex-direction: column;
+      @include m.tablet {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    &--title {
+      @include m.desktop {
+        width: 300px;
+      }
+    }
+    &--description {
+      @include m.tablet {
+        margin-left: 2rem;
+        max-width: 60rem;
+      }
+    }
+    &--position {
+      font-family: v.$secondary-title;
+      background: v.$gradient-purple-cyan1;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    &--positionedu {
+      font-family: v.$secondary-title;
+      background: v.$gradient-pink-blue;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    &--site {
+      font-family: v.$small-title;
+    }
+    &--text {
+      font-family: v.$text-font;
+      font-size: 1.5rem;
+      @include m.desktop {
+        font-size: 2rem;
+      }
+    }
+  }
+  &__accordion {
+    &--title {
+      font-family: v.$small-title;
+      background: v.$gradient-purple-cyan1;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    &--info {
+      display: flex;
+      flex-direction: column;
+      @include m.tablet {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+  &__modal {
+    &--bg {
+      background-color: #3b176950;
+      backdrop-filter: blur(0.4rem);
+    }
+    &--img {
+      max-width: 300px;
+    }
+  }
+}
+#accordion-flush {
+  width: 100%;
 }

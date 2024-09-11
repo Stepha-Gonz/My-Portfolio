@@ -1,21 +1,53 @@
 //*fonts
 
-$main-font: "Arapey", serif;
-$title-font: "Purple Purse", serif;
-$text-font: "Neucha", cursive;
+$main-title: "Pixelify Sans", system-ui;
+$secondary-title: "Purple Purse", system-ui;
+$small-title: "Neucha", cursive;
+$text-font: "League Spartan", system-ui;
 
 //*Colors
 
-$violet: #313444;
-$red: #590d22;
-$coral: #dc7c7b;
-$beige: #fef4ea;
+$background-primary: #190b2d;
+$background-secondary: #0f0023;
+$purple: #928be8;
+$cyan: #80d9ea;
+$blue: #2497d1;
+$pink: #e69eca;
+$blue-text: #254176;
 $white: #ffffff;
 $black: #000000;
-$grey: #f5f5f5;
-$dark-beige: #eecdbb;
-$dark-blue: #232e45;
-$light-beige: #fbf7f3;
+$gradient-purple-cyan1: linear-gradient(
+  170deg,
+  rgba(128, 217, 234, 1) 30%,
+  rgba(146, 139, 232, 1) 80%
+);
+$gradient-purple-cyan2: linear-gradient(
+  0deg,
+  rgba(146, 139, 232, 1) 9%,
+  rgba(134, 190, 233, 1) 35%,
+  rgba(130, 207, 234, 1) 65%,
+  rgba(128, 217, 234, 1) 74%
+);
+$gradient-purple-cyan3: linear-gradient(
+  0deg,
+  rgba(146, 139, 232, 1) 40%,
+  rgba(130, 207, 234, 1) 65%,
+  rgba(128, 217, 234, 1) 74%
+);
+$gradient-pink-blue: linear-gradient(
+  0deg,
+  rgba(36, 151, 209, 1) 9%,
+  rgba(68, 148, 216, 1) 19%,
+  rgba(137, 148, 217, 1) 37%,
+  rgba(186, 148, 218, 1) 60%,
+  rgba(230, 158, 202, 1) 90%
+);
+$gradient-dark: linear-gradient(
+  263deg,
+  rgba(25, 11, 45, 0.7336311233477766) 4%,
+  rgba(67, 55, 84, 0.809261375448617) 50%,
+  rgba(25, 11, 45, 0.7336311233477766) 100%
+);
 
 //*font-size
 $slim: 300;

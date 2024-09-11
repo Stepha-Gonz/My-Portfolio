@@ -4,17 +4,18 @@ import { glob } from "glob";
 import { src, dest, watch, series } from "gulp";
 import * as dartSass from "sass";
 import gulpSass from "gulp-sass";
-import concat from "gulp-concat";
 import terser from "gulp-terser";
 import sharp from "sharp";
 import rename from "gulp-rename";
 import postcss from "gulp-postcss";
 import autoprefixer from "autoprefixer";
+import tailwindcss from "tailwindcss";
 import webpack from "webpack-stream";
 import sourcemaps from "gulp-sourcemaps";
 import { deleteAsync } from "del";
 
-const sass = gulpSass(dartSass);
+// Configuración de gulp-sass con dartSass
+const sassCompiler = gulpSass(dartSass);
 
 const paths = {
   scss: "src/scss/**/*.scss",
@@ -28,38 +29,33 @@ function handleError(err) {
 }
 
 export function css() {
-  return src(paths.scss, { sourcemaps: true })
-    .pipe(sass({ outputStyle: "expanded" }).on("error", handleError))
-    .pipe(postcss([autoprefixer()]))
-    .pipe(dest("./public/build/css", { sourcemaps: "." }))
-    .on("error", handleError);
+  return src("./src/scss/app.scss", { sourcemaps: true })
+    .pipe(sassCompiler().on("error", sassCompiler.logError))
+    .pipe(postcss([tailwindcss(), autoprefixer()])) // Procesa Tailwind y Autoprefixer
+    .pipe(dest("./public/build/css", { sourcemaps: "." }));
 }
 
 export function js() {
-  return (
-    src(paths.js, { sourcemaps: true })
-      .pipe(
-        webpack({
-          module: {
-            rules: [
-              {
-                test: /\.css$/i,
-                use: ["style-loader", "css-loader"],
-              },
-            ],
-          },
-          mode: "production",
-          //.watch: true,
-          entry: "./src/js/app.js",
-        }).on("error", handleError)
-      )
-      //.pipe(concat("bundle.js").on("error", handleError))
-      .pipe(sourcemaps.init())
-      .pipe(terser().on("error", handleError))
-      .pipe(rename({ suffix: ".min" }).on("error", handleError))
-      .pipe(dest("./public/build/js", { sourcemaps: "." }))
-      .on("error", handleError)
-  );
+  return src(paths.js, { sourcemaps: true })
+    .pipe(
+      webpack({
+        module: {
+          rules: [
+            {
+              test: /\.css$/i,
+              use: ["style-loader", "css-loader"],
+            },
+          ],
+        },
+        mode: "production",
+        entry: "./src/js/app.js",
+      }).on("error", handleError)
+    )
+    .pipe(sourcemaps.init())
+    .pipe(terser().on("error", handleError))
+    .pipe(rename({ suffix: ".min" }).on("error", handleError))
+    .pipe(dest("./public/build/js", { sourcemaps: "." }))
+    .on("error", handleError);
 }
 
 export async function imagenes() {
@@ -93,7 +89,6 @@ async function procesarImagenes(file, outputSubDir) {
     if (extName === ".svg") {
       fs.copyFileSync(file, outputFile);
     } else if (extName === ".png") {
-      // Procesa PNGs sin perder la transparencia
       await sharp(file).toFile(outputFile).catch(handleError);
       await sharp(file)
         .webp({ quality: 80, lossless: true })

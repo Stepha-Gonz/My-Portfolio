@@ -2,45 +2,62 @@
 @use "base/mixins" as m;
 
 .nav {
+  a {
+    all: unset;
+    display: inline;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
   &__container {
-    position: relative;
-    z-index: 99;
+    width: 100%;
+    top: 0;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
+    position: fixed;
+    z-index: 99;
     align-items: center;
     padding: 1rem;
+    border: 2px solid #fafafa10;
+    &.active {
+      background-color: #8a5ec410;
+      backdrop-filter: blur(0.4rem);
+    }
   }
   &__bar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+    z-index: 4;
+    width: 200px;
   }
   &__logo {
-    font-family: v.$title-font;
-    margin-left: 2rem;
     font-size: 22px;
-    &--title {
-      color: v.$coral;
-    }
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-family: v.$secondary-title;
+    background: v.$gradient-purple-cyan2;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
     &--dot {
-      color: v.$dark-beige;
-    }
-    &--lastname {
-      color: v.$red;
+      background: v.$gradient-pink-blue;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 
   &__icon {
+    z-index: 4;
     margin-right: 2rem;
     transform: scale(1.8);
-    color: v.$red;
+    background: v.$gradient-pink-blue;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     transition: transform 0.3s ease-in;
     &:hover {
       transform: scale(2);
       cursor: pointer;
+    }
+    @include m.desktop {
+      display: none;
     }
   }
 
@@ -49,7 +66,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: v.$violet;
+    background-color: v.$background-secondary;
     position: fixed;
     top: 0;
     left: 0;
@@ -62,11 +79,12 @@
       position: relative;
       width: 100%;
       height: auto;
-      align-items: flex-end;
+      justify-content: center;
+      align-items: center;
     }
 
     &.show {
-      height: 100%;
+      height: 100vh;
     }
 
     &--links {
@@ -84,92 +102,111 @@
     &--link {
       margin: 2rem;
       position: relative;
-      font-family: v.$main-font;
+      font-family: v.$text-font;
       font-size: 25px;
       color: v.$white;
       @include m.desktop {
         font-size: 20px;
+      }
+      &.ri-sun-line {
+        cursor: pointer;
+        &:hover {
+          &::after {
+            width: 0%;
+          }
+        }
       }
       &::after {
         content: "";
         width: 0;
         height: 3px;
         position: absolute;
-        background-color: v.$white;
+        background: v.$gradient-pink-blue;
         left: 0;
         bottom: -0.5rem;
         transition: width 0.3s;
         @include m.desktop {
-          background-color: v.$red;
+          background: v.$gradient-pink-blue;
         }
       }
 
       &:hover {
-        color: v.$coral;
+        background: v.$gradient-purple-cyan1;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         &::after {
           width: 100%;
         }
       }
 
       @include m.desktop {
-        color: v.$red;
+        color: v.$white;
         margin: 1rem;
         &:hover {
-          color: v.$coral;
+          background: v.$gradient-purple-cyan1;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
       }
     }
-    &--link-darkmode {
-      margin: 3rem;
-      font-family: v.$main-font;
-      font-size: 25px;
-      color: v.$white;
 
-      &.ri-sun-line {
-        &:hover {
-          cursor: pointer;
-          color: rgb(250, 174, 74);
-        }
-      }
-      &:hover {
-        color: v.$coral;
-      }
-
-      @include m.desktop {
-        color: v.$red;
-        margin: 1rem;
-        &:hover {
-          color: v.$coral;
-        }
-      }
-    }
     &--link-close {
       margin: 3rem;
-
-      font-family: v.$main-font;
+      font-family: v.$text-font;
       font-size: 25px;
       color: v.$white;
-
       &:hover {
-        color: v.$coral;
+        background: v.$gradient-purple-cyan1;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
 
       @include m.desktop {
-        color: v.$red;
+        background: v.$gradient-purple-cyan1;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         margin: 1rem;
         &:hover {
-          color: v.$coral;
+          background: v.$gradient-purple-cyan1;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
       }
     }
   }
   &__close {
     cursor: pointer;
+    @include m.desktop {
+      display: none;
+    }
   }
-}
-.ri-close-circle-fill,
-.ri-menu-5-line {
-  @include m.desktop {
+  &__socials {
     display: none;
+    @include m.desktop {
+      width: 200px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-right: 2rem;
+    }
+  }
+  &__social,
+  &__lightmode {
+    font-size: 22px;
+    margin: 5px;
+    background: v.$gradient-purple-cyan1;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transition: font-size 0.3s ease-out;
+    &:hover {
+      font-size: 26px;
+    }
+    &--mobile {
+      @include m.desktop {
+        display: none;
+      }
+    }
   }
 }

@@ -1,9 +1,22 @@
 @use "base/variables" as v;
 @use "base/mixins" as m;
+#contact {
+  padding-top: 60px;
+
+  @include m.tablet {
+    padding-top: 70px;
+  }
+  @include m.desktop {
+    padding-top: 100px;
+  }
+}
 
 .contact {
+  min-height: 100vh;
+  overflow: hidden;
+
+  margin-bottom: 3rem;
   &__container {
-    background-color: v.$dark-blue;
     @include m.grid(1, 2rem);
     &--title {
       color: v.$white;
@@ -15,11 +28,14 @@
       color: v.$white;
       font-size: 24px;
       font-family: v.$text-font;
+      @include m.desktop {
+        margin-bottom: 3rem;
+      }
     }
   }
 }
 .cardContainer {
-  margin-top: 3rem;
+  margin-top: 4rem;
   width: 250px;
   height: 300px;
   background-color: rgb(255, 255, 255);
@@ -39,15 +55,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: v.$beige;
+  background-color: v.$background-secondary;
   transition-duration: 0.5s;
-  color: v.$red;
+  color: v.$white;
   &__title {
     text-align: center;
-    font-family: v.$title-font;
+    font-family: v.$secondary-title;
+    font-weight: v.$slim;
   }
   &__img {
-    width: 200px;
+    width: 150px;
   }
 }
 
@@ -80,8 +97,12 @@
   align-items: flex-start;
   justify-content: flex-end;
   background-color: v.$white;
-  gap: 2px;
+  gap: 1px;
   padding: 0.5rem;
+
+  i {
+    margin-right: 1rem;
+  }
 }
 
 .email {
@@ -90,9 +111,9 @@
   font-size: 15px;
   font-weight: v.$regular;
   color: v.$black;
-  font-family: v.$main-font;
+  font-family: v.$text-font;
   span {
-    color: v.$dark-blue;
+    color: v.$background-secondary;
     margin-right: 2rem;
   }
 }
@@ -103,7 +124,7 @@
   font-weight: v.$regular;
   color: v.$black;
   span {
-    color: v.$dark-blue;
+    color: v.$background-primary;
     margin-right: 2rem;
   }
 }
@@ -114,7 +135,7 @@
   font-weight: v.$regular;
   color: v.$black;
   span {
-    color: v.$dark-blue;
+    color: v.$background-primary;
     margin-right: 2rem;
   }
 }
@@ -126,7 +147,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: v.$dark-blue;
+  color: v.$background-secondary;
   gap: 25px;
 }
 
@@ -136,92 +157,5 @@
 
 .socials {
   width: 100%;
-  fill: v.$dark-blue;
-}
-
-//*links
-
-.wrapper {
-  display: inline-flex;
-  list-style: none;
-  height: 120px;
-  width: 100%;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
-  justify-content: center;
-}
-
-.wrapper .icon {
-  position: relative;
-  background: #fff;
-  border-radius: 50%;
-  margin: 10px;
-  width: 50px;
-  height: 50px;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  color: v.$black;
-
-  svg {
-    width: 35px;
-    height: 35px;
-  }
-}
-
-.wrapper .tooltip {
-  position: absolute;
-  top: 0;
-  font-size: 14px;
-  background: #fff;
-  color: #fff;
-  padding: 5px 8px;
-  border-radius: 5px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .tooltip::before {
-  position: absolute;
-  content: "";
-  height: 8px;
-  width: 8px;
-  background: #fff;
-  bottom: -3px;
-  left: 50%;
-  transform: translate(-50%) rotate(45deg);
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .icon:hover .tooltip {
-  top: -45px;
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.wrapper .icon:hover span,
-.wrapper .icon:hover .tooltip {
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
-}
-
-.wrapper .linkedin:hover,
-.wrapper .linkedin:hover .tooltip,
-.wrapper .linkedin:hover .tooltip::before {
-  background: #1877f2;
-  color: #fff;
-}
-
-.wrapper .github:hover,
-.wrapper .github:hover .tooltip,
-.wrapper .github:hover .tooltip::before {
-  background: v.$black;
-  color: #fff;
+  fill: v.$background-secondary;
 }
