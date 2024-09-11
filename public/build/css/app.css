@@ -402,7 +402,7 @@ template {
 }
 
 .header {
-  min-height: 100vh;
+  min-height: calc(100vh + 100px);
   overflow: hidden;
 }
 .header__wave {
@@ -412,14 +412,15 @@ template {
   .header__wave {
     display: block;
     position: absolute;
-    bottom: 100px;
+    bottom: -120px;
+    left: 0;
     width: 100%;
+    height: auto;
     z-index: 1;
   }
 }
 .header__container {
   position: relative;
-  min-height: 100vh;
   z-index: 2;
   color: #ffffff;
   margin: 12rem auto 0 auto;
@@ -2851,9 +2852,6 @@ video {
 .collapse {
   visibility: collapse;
 }
-.static {
-  position: static;
-}
 .fixed {
   position: fixed;
 }
@@ -3212,16 +3210,6 @@ video {
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 
-  .dark\:bg-gray-900 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(17 24 39 / var(--tw-bg-opacity));
-  }
-
-  .dark\:bg-gray-200 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-  }
-
   .dark\:bg-transparent {
     background-color: transparent;
   }
@@ -3241,14 +3229,14 @@ video {
     color: rgb(107 114 128 / var(--tw-text-opacity));
   }
 
-  .dark\:text-white {
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
-  }
-
   .dark\:text-violet-600 {
     --tw-text-opacity: 1;
     color: rgb(124 58 237 / var(--tw-text-opacity));
+  }
+
+  .dark\:text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
   .dark\:text-zinc-100 {

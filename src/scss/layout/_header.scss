@@ -5,7 +5,7 @@
   margin-top: -100px;
 }
 .header {
-  min-height: 100vh;
+  min-height: calc(100vh + 100px);
   overflow: hidden;
 
   &__wave {
@@ -14,14 +14,16 @@
     @include m.desktop {
       display: block;
       position: absolute;
-      bottom: 100px;
+      bottom: -120px;
+      left: 0;
       width: 100%;
+      height: auto;
       z-index: 1;
     }
   }
   &__container {
     position: relative;
-    min-height: 100vh;
+    //min-height: 100vh;
     z-index: 2;
     color: v.$white;
     margin: 12rem auto 0 auto;
