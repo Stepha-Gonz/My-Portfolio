@@ -397,12 +397,11 @@ template {
 }
 
 #home {
-  padding-top: 100px;
-  margin-top: -100px;
+  margin-top: 0px;
 }
 
 .header {
-  min-height: calc(100vh + 100px);
+  min-height: 100vh;
   overflow: hidden;
 }
 .header__wave {
@@ -2851,6 +2850,9 @@ video {
 }
 .collapse {
   visibility: collapse;
+}
+.static {
+  position: static;
 }
 .fixed {
   position: fixed;

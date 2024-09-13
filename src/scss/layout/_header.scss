@@ -1,11 +1,12 @@
 @use "base/variables" as v;
 @use "base/mixins" as m;
 #home {
-  padding-top: 100px;
-  margin-top: -100px;
+  //padding-top: 30px;
+  margin-top: 0px;
 }
 .header {
-  min-height: calc(100vh + 100px);
+  //min-height: calc(100vh + 100px);
+  min-height: 100vh;
   overflow: hidden;
 
   &__wave {
@@ -23,7 +24,7 @@
   }
   &__container {
     position: relative;
-    //min-height: 100vh;
+
     z-index: 2;
     color: v.$white;
     margin: 12rem auto 0 auto;
