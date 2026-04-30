@@ -684,40 +684,59 @@ function renderCerts() {
     card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') open(); });
   });
 
-  // Controls
+  // Drag-to-scroll
   const track = document.getElementById('certsTrack');
-  let playing = true;
-  const STEP = 280;
+  if (!track) return;
 
-  const prevBtn = document.getElementById('certsPrev');
-  const nextBtn = document.getElementById('certsNext');
-  const playBtn = document.getElementById('certsPlay');
+  let isDragging = false;
+  let startX = 0;
+  let dragOffset = 0;
+  let resumeTimer = null;
 
-  if (prevBtn && nextBtn && playBtn && track) {
-    nextBtn.addEventListener('click', () => {
-      track.classList.add('paused');
-      playing = false;
-      playBtn.textContent = '▶';
-      track.style.transform = `translateX(${(parseFloat(track.style.transform?.match(/-?\d+(\.\d+)?/) || [0]) || 0) - STEP}px)`;
-    });
-    prevBtn.addEventListener('click', () => {
-      track.classList.add('paused');
-      playing = false;
-      playBtn.textContent = '▶';
-      track.style.transform = `translateX(${(parseFloat(track.style.transform?.match(/-?\d+(\.\d+)?/) || [0]) || 0) + STEP}px)`;
-    });
-    playBtn.addEventListener('click', () => {
-      playing = !playing;
-      if (playing) {
-        track.classList.remove('paused');
-        track.style.transform = '';
-        playBtn.textContent = '⏸';
-      } else {
-        track.classList.add('paused');
-        playBtn.textContent = '▶';
-      }
-    });
-  }
+  const pauseAnim = () => { track.classList.add('paused'); };
+  const resumeAnim = () => {
+    track.style.transform = '';
+    track.classList.remove('paused');
+  };
+
+  el.addEventListener('mousedown', e => {
+    isDragging = true;
+    startX = e.clientX;
+    dragOffset = 0;
+    clearTimeout(resumeTimer);
+    pauseAnim();
+    el.style.cursor = 'grabbing';
+    e.preventDefault();
+  });
+
+  window.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    dragOffset = e.clientX - startX;
+    track.style.transform = `translateX(${dragOffset}px)`;
+  });
+
+  window.addEventListener('mouseup', e => {
+    if (!isDragging) return;
+    isDragging = false;
+    el.style.cursor = '';
+    resumeTimer = setTimeout(resumeAnim, 800);
+  });
+
+  el.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    dragOffset = 0;
+    clearTimeout(resumeTimer);
+    pauseAnim();
+  }, { passive: true });
+
+  el.addEventListener('touchmove', e => {
+    dragOffset = e.touches[0].clientX - startX;
+    track.style.transform = `translateX(${dragOffset}px)`;
+  }, { passive: true });
+
+  el.addEventListener('touchend', () => {
+    resumeTimer = setTimeout(resumeAnim, 800);
+  });
 }
 
 
