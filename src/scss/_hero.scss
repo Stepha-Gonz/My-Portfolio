@@ -13,8 +13,8 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
-  opacity: 0.5;
+  pointer-events: auto;
+  opacity: 1;
 }
 
 .hero-inner {
@@ -43,6 +43,20 @@
   color: var(--ink-soft);
   text-transform: uppercase;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-eyebrow-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 10px #22c55e80;
+  flex-shrink: 0;
+  animation: glowPulse 2.5s ease-in-out infinite;
 }
 
 .hero-headline {
@@ -165,34 +179,56 @@
   }
 }
 
-.hero-social {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-top: 8px;
-}
-
-.hero-social-link {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--ink-soft);
-  transition: color var(--transition);
-
-  &:hover { color: var(--accent); }
-}
-
-// Scroll arrow
-.hero-scroll-arrow {
-  position: absolute;
-  bottom: 36px;
-  left: 50%;
-  transform: translateX(-50%);
+// Hero bottom row: scroll link + social links
+.hero-bottom {
+  position: relative;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 36px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
   color: var(--ink-soft);
-  animation: bounceArrow 2s ease-in-out infinite;
+  text-transform: uppercase;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+.hero-scroll-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink-soft);
   transition: color var(--transition);
+  text-decoration: none;
 
   &:hover { color: var(--ink); }
+}
 
-  svg { display: block; }
+.hero-scroll-icon {
+  animation: bounceArrow 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+.hero-bottom-links {
+  display: flex;
+  gap: 18px;
+
+  a {
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: lowercase;
+    transition: color var(--transition);
+    text-decoration: none;
+
+    &:hover { color: var(--accent); }
+  }
 }

@@ -1,223 +1,251 @@
-// ── Data ───────────────────────────────────────────────────────────────────
+// ── Data (from Claude Design handoff) ──────────────────────────────────────
 
 const DATA = {
   roles: {
-    en: ['Data & AI Strategist', 'BI Engineer', 'Data Analyst', 'Web Developer'],
-    es: ['Estratega de Datos e IA', 'Ingeniera BI', 'Analista de Datos', 'Desarrolladora Web'],
+    en: ['Data & AI Strategist', 'BI Engineer', 'Systems Engineer', 'Process Automation Lead', 'Power BI Architect'],
+    es: ['Estratega Data & AI', 'Ingeniera BI', 'Ingeniera de Sistemas', 'Líder de Automatización', 'Arquitecta Power BI'],
   },
 
   projects: [
     {
-      slug: 'audit-tracker',
+      slug: 'audittracker',
       tag: 'bi',
-      img: 'src/img/trackerdashboard-img.png',
+      img: 'src/img/audittracker-img.png',
       title: 'Audit Tracker Dashboard',
       year: '2024',
-      kind: { en: 'Dashboard', es: 'Dashboard' },
+      kind: { en: 'Power BI · Process Automation', es: 'Power BI · Automatización' },
       summary: {
-        en: 'End-to-end Power BI solution tracking regulatory audit findings across 12 business units.',
-        es: 'Solución Power BI de extremo a extremo para seguimiento de hallazgos de auditoría regulatoria.',
+        en: 'Centralized audit tracking system consolidating data from multiple sources, generating visual reports for management decision-making.',
+        es: 'Sistema centralizado de seguimiento de auditorías que consolida datos de múltiples fuentes y genera reportes visuales para gerencia.',
       },
       detail: {
-        en: 'Built a full Power BI reporting suite to track and escalate audit findings in real time. Automated data refresh pipelines from SQL Server, reducing reporting lag from 3 days to 4 hours. The solution covered 12 business units across 3 regions.',
-        es: 'Construí un conjunto completo de reportes Power BI para rastrear y escalar hallazgos de auditoría en tiempo real. Pipelines de datos automatizados desde SQL Server, reduciendo el rezago de reportes de 3 días a 4 horas.',
+        en: 'Centralized audit tracking system consolidating data from multiple sources, generating visual reports for management decision-making. Built with Excel, VBA macros for data automation, and Power BI for executive reporting.',
+        es: 'Sistema centralizado de seguimiento de auditorías consolidando datos de múltiples fuentes. Construido con Excel, macros VBA para automatización y Power BI para reportes ejecutivos.',
       },
-      stack: ['Power BI', 'SQL', 'Python'],
+      stack: ['Excel', 'VBA', 'Power BI'],
     },
     {
-      slug: 'market-food',
+      slug: 'marketfood',
       tag: 'bi',
       img: 'src/img/Market-food-beverage.png',
-      title: 'Food & Beverage Market Analysis',
+      title: 'Market Analysis — Food & Beverage',
       year: '2024',
-      kind: { en: 'Analysis', es: 'Análisis' },
+      kind: { en: 'Power BI · Sector Analytics', es: 'Power BI · Analítica Sectorial' },
       summary: {
-        en: 'Competitive landscape analysis for a regional food & beverage distributor using web-scraped data.',
-        es: 'Análisis de panorama competitivo para distribuidora regional usando datos web scrapeados.',
+        en: 'Sector-wide market analysis with sales, inventory and projection breakdowns by region, channel and price tier.',
+        es: 'Análisis de mercado sectorial con ventas, inventario y proyecciones por región, canal y rango de precio.',
       },
       detail: {
-        en: 'Scraped product and pricing data from 8 competitor websites using Python. Built a Power BI dashboard to track market positioning and identify pricing gaps. Delivered actionable recommendations that led to a 12% revenue increase.',
-        es: 'Recopilé datos de productos y precios de 8 sitios competidores con Python. Construí un dashboard en Power BI para rastrear posicionamiento de mercado e identificar brechas de precio.',
+        en: 'Sector-wide market analysis with sales, inventory and projection breakdowns by region, channel and price tier. DAX measures and Power Query transformations for automated data refresh.',
+        es: 'Análisis de mercado sectorial con ventas, inventario y proyecciones por región, canal y rango de precio. Medidas DAX y transformaciones Power Query para actualización automatizada.',
       },
-      stack: ['Python', 'Power BI', 'Excel'],
+      stack: ['Power BI', 'DAX', 'Power Query'],
     },
     {
-      slug: 'glow-radiance',
+      slug: 'trackerdashboard',
+      tag: 'bi',
+      img: 'src/img/trackerdashboard-img.png',
+      title: 'Performance Tracker',
+      year: '2024',
+      kind: { en: 'Power BI · KPI Dashboard', es: 'Power BI · Dashboard KPI' },
+      summary: {
+        en: 'KPI dashboard for evaluator teams — coaching insights, trend tracking, and weekly performance review.',
+        es: 'Dashboard de KPIs para equipos de evaluación — insights de coaching, tendencias y revisión semanal.',
+      },
+      detail: {
+        en: 'KPI dashboard for evaluator teams enabling coaching insights, trend tracking, and weekly performance review. Integrated with operational data sources for real-time visibility.',
+        es: 'Dashboard de KPIs para equipos de evaluación con insights de coaching, seguimiento de tendencias y revisión semanal. Integrado con fuentes operativas para visibilidad en tiempo real.',
+      },
+      stack: ['Power BI', 'Excel'],
+    },
+    {
+      slug: 'bizexpo',
       tag: 'web',
-      img: 'src/img/glowradiance-img.png',
-      title: 'Glow Radiance',
-      year: '2023',
-      kind: { en: 'E-commerce', es: 'E-commerce' },
+      img: 'src/img/bizexpo-img.png',
+      title: 'BizExpo — Tech Event Platform',
+      year: '2024',
+      kind: { en: 'Full-Stack Web · PHP + MySQL', es: 'Full-Stack Web · PHP + MySQL' },
       summary: {
-        en: 'Full-stack e-commerce for a cosmetics brand, with custom inventory management system.',
-        es: 'E-commerce full-stack para marca de cosméticos con sistema de inventario personalizado.',
+        en: 'Web platform with auth, admin analytics, and dynamic Leaflet mapping. Built end-to-end with RESTful principles.',
+        es: 'Plataforma web con auth, analytics admin y mapeo dinámico con Leaflet. Construida end-to-end con principios RESTful.',
       },
       detail: {
-        en: 'Designed and built a full e-commerce experience for a local cosmetics brand. Custom PHP backend with MySQL, Stripe integration, and a lightweight inventory management system with low-stock alerts.',
-        es: 'Diseñé y construí una experiencia de e-commerce completa para una marca local de cosméticos. Backend PHP con MySQL, integración Stripe y sistema de inventario con alertas de stock bajo.',
+        en: 'Web platform for a tech event with authentication, admin analytics dashboard, and dynamic Leaflet.js mapping for venue navigation. Built end-to-end applying RESTful architecture principles.',
+        es: 'Plataforma web para evento tech con autenticación, dashboard analytics admin y mapeo dinámico Leaflet.js. Construida end-to-end aplicando principios de arquitectura RESTful.',
       },
-      stack: ['PHP', 'MySQL', 'Bootstrap'],
+      stack: ['PHP', 'MySQL', 'JS', 'SASS'],
     },
     {
-      slug: 'home-hunter',
+      slug: 'dentalclinic',
+      tag: 'web',
+      img: 'src/img/hector-gonzalez.png',
+      title: 'Dental Clinic — Dr. Héctor González',
+      year: '2024',
+      kind: { en: 'Web Design & Development', es: 'Diseño y Desarrollo Web' },
+      summary: {
+        en: 'Responsive site for a dental practice. Mockups in Figma, full-cycle delivery from requirements to deployment.',
+        es: 'Sitio responsive para clínica dental. Mockups en Figma, entrega de ciclo completo desde requerimientos a deploy.',
+      },
+      detail: {
+        en: 'Responsive website for a dental practice including service pages, appointment request form, and Google Maps integration. Full cycle: requirements gathering → Figma mockups → development → deployment.',
+        es: 'Sitio web responsive para clínica dental con páginas de servicios, formulario de cita y integración Google Maps. Ciclo completo: requerimientos → mockups Figma → desarrollo → deployment.',
+      },
+      stack: ['HTML', 'CSS', 'JS', 'Figma'],
+    },
+    {
+      slug: 'homehunter',
       tag: 'web',
       img: 'src/img/homehunter2.png',
       title: 'HomeHunter',
-      year: '2023',
-      kind: { en: 'Real Estate App', es: 'App Inmobiliaria' },
+      year: '2024',
+      kind: { en: 'Real Estate Web App', es: 'Web App Inmobiliaria' },
       summary: {
-        en: 'Property search platform with advanced filtering, map integration, and agent contact flow.',
-        es: 'Plataforma de búsqueda de propiedades con filtros avanzados, integración de mapa y contacto.',
+        en: 'Property listing app with search, filters and saved favorites.',
+        es: 'App de listado de propiedades con búsqueda, filtros y favoritos.',
       },
       detail: {
-        en: 'Full-stack React application for property search with Mapbox integration, advanced filtering (price, area, amenities), and a streamlined agent contact flow. Backend built with Node.js and PostgreSQL.',
-        es: 'Aplicación React full-stack para búsqueda de propiedades con integración Mapbox, filtros avanzados y flujo de contacto con agentes. Backend con Node.js y PostgreSQL.',
+        en: 'Property listing application with advanced search, category filters (price, location, type), and a saved favorites system. Integrates with a real estate API for live listings.',
+        es: 'Aplicación de listado de propiedades con búsqueda avanzada, filtros por categoría y sistema de favoritos guardados. Integra una API inmobiliaria para listados en vivo.',
       },
-      stack: ['React', 'Node.js', 'PostgreSQL'],
+      stack: ['JS', 'CSS', 'API'],
     },
     {
-      slug: 'task-nexus',
+      slug: 'glowradiance',
       tag: 'web',
-      img: 'src/img/tasknexus-img.png',
-      title: 'TaskNexus',
-      year: '2022',
-      kind: { en: 'Project Management', es: 'Gestión de Proyectos' },
+      img: 'src/img/glowradiance-img.png',
+      title: 'GlowRadiance',
+      year: '2024',
+      kind: { en: 'E-commerce UI', es: 'UI de E-commerce' },
       summary: {
-        en: 'Collaborative project management tool with real-time updates and role-based access control.',
-        es: 'Herramienta de gestión de proyectos colaborativa con actualizaciones en tiempo real y control de acceso.',
+        en: 'Skincare e-commerce concept with product catalog and cart flow.',
+        es: 'Concepto e-commerce de skincare con catálogo y flujo de carrito.',
       },
       detail: {
-        en: 'Built a Trello-style project management app with Vue.js and Firebase. Features include real-time updates via Firestore, drag-and-drop boards, role-based access (admin/member/viewer), and email notifications.',
-        es: 'Construí una app de gestión de proyectos estilo Trello con Vue.js y Firebase. Actualizaciones en tiempo real, tableros drag-and-drop, acceso por roles y notificaciones por correo.',
+        en: 'Skincare e-commerce concept featuring a full product catalog, category browsing, add-to-cart flow, and checkout mockup. Built with clean HTML/CSS/JS — no frameworks.',
+        es: 'Concepto e-commerce de skincare con catálogo de productos completo, navegación por categorías, flujo add-to-cart y mockup de checkout. Construido con HTML/CSS/JS limpio sin frameworks.',
       },
-      stack: ['Vue.js', 'Firebase', 'Tailwind'],
-    },
-    {
-      slug: 'biz-expo',
-      tag: 'web',
-      img: 'src/img/bizexpo-img.png',
-      title: 'BizExpo',
-      year: '2022',
-      kind: { en: 'Business Directory', es: 'Directorio Empresarial' },
-      summary: {
-        en: 'Regional business directory with geolocation, category filtering, and promoted listings.',
-        es: 'Directorio empresarial regional con geolocalización, filtro por categoría y listados promocionados.',
-      },
-      detail: {
-        en: 'WordPress-based business directory with custom post types, Google Maps integration for geolocation browsing, advanced category filtering, and a promoted listing system with PayPal checkout.',
-        es: 'Directorio empresarial en WordPress con tipos de contenido personalizados, integración Google Maps, filtrado por categorías y sistema de listados promocionados con pago PayPal.',
-      },
-      stack: ['WordPress', 'PHP', 'MySQL'],
+      stack: ['HTML', 'CSS', 'JS'],
     },
   ],
 
   experience: [
     {
-      date: { en: 'Jan 2026 — Present', es: 'Ene 2026 — Presente' },
+      date: { en: 'Apr 2026 — Present', es: 'Abr 2026 — Presente' },
       current: true,
       company: 'DiDi Global',
-      role: { en: 'Senior Data Analyst', es: 'Analista de Datos Senior' },
+      role: { en: 'CX & Relationship Sr Analyst', es: 'Analista Sr CX & Relationship' },
       desc: {
-        en: 'Building an AI-powered QA agent to automate quality assurance workflows across operations teams. Designing real-time dashboards and data pipelines to surface operational insights.',
-        es: 'Construyendo un agente IA para automatizar flujos de control de calidad en equipos de operaciones. Diseñando dashboards en tiempo real y pipelines de datos para visibilidad operativa.',
+        en: "Promoted into the CX Intelligence team to lead the QA-AI initiative. Designed and shipped 'QA Hero' — a custom AI agent that turns CX QA dashboard data into root-cause analyses, priority playbooks and action plans across 6 LATAM countries (BR, MX, AR, CO, CL, PE).",
+        es: "Promovida al equipo de CX Intelligence para liderar la iniciativa QA-AI. Diseñé y lancé 'QA Hero' — agente IA propio que convierte la data del dashboard QA en análisis de causa raíz, playbooks de prioridad y planes de acción en 6 países LATAM (BR, MX, AR, CO, CL, PE).",
       },
-      stack: ['Python', 'SQL', 'Power BI', 'Azure'],
+      stack: ['AI Agents', 'Power BI', 'AWS Bedrock', 'Python', 'SQL'],
     },
     {
-      date: { en: 'Mar 2024 — Dec 2025', es: 'Mar 2024 — Dic 2025' },
+      date: { en: 'Aug 2025 — Apr 2026', es: 'Ago 2025 — Abr 2026' },
       current: false,
-      company: 'OPPO Colombia',
-      role: { en: 'Data Analyst', es: 'Analista de Datos' },
+      company: 'DiDi Global',
+      role: { en: 'CX Quality Senior Analyst', es: 'Analista Senior CX Quality' },
       desc: {
-        en: 'Reduced outstanding debt portfolio from $379M to $12M through predictive analytics. Automated $1B+ COP in monthly commissions via VBA-integrated Excel systems.',
-        es: 'Reduje cartera de deuda de $379M a $12M mediante analítica predictiva. Automaticé más de $1B COP en comisiones mensuales mediante sistemas Excel con VBA.',
+        en: 'Designed a centralized Power BI ecosystem unifying 5+ data sources, eliminating silos and enabling WoW tracking. Built Python automation for Deep-Dive analyses on operational data.',
+        es: 'Diseñé un ecosistema centralizado en Power BI unificando 5+ fuentes, eliminando silos y permitiendo seguimiento WoW. Construí automatización Python para análisis Deep-Dive de datos operativos.',
       },
-      stack: ['Python', 'Excel / VBA', 'SQL', 'Power BI'],
+      stack: ['Power BI', 'Python', 'ETL', 'SQL'],
     },
     {
-      date: { en: 'Jun 2023 — Feb 2024', es: 'Jun 2023 — Feb 2024' },
+      date: { en: 'Jan 2025 — Aug 2025', es: 'Ene 2025 — Ago 2025' },
       current: false,
-      company: 'Freelance',
-      role: { en: 'Full Stack Developer', es: 'Desarrolladora Full Stack' },
+      company: 'Sky Friend (OPPO Colombia)',
+      role: { en: 'BI Data Analyst', es: 'Analista de Datos BI' },
       desc: {
-        en: 'Delivered custom web applications for SMEs across retail, real estate, and services sectors. Focused on clean UX, solid backend architecture, and maintainable codebases.',
-        es: 'Desarrollé aplicaciones web para PYMEs en retail, inmobiliaria y servicios. Enfoque en UX limpia, arquitectura backend sólida y código mantenible.',
+        en: 'Built dashboards tracking commercial spend vs. budget across Alkosto, Éxito, Falabella. Automated commissions handling COP $1B+ and reduced outstanding debt from $379M to $12M.',
+        es: 'Construí dashboards de gasto comercial vs. presupuesto para Alkosto, Éxito, Falabella. Automaticé comisiones por COP $1B+ y reduje deuda pendiente de $379M a $12M.',
       },
-      stack: ['React', 'PHP', 'MySQL', 'WordPress'],
+      stack: ['Power BI', 'Power Query', 'DAX', 'Excel'],
     },
     {
-      date: { en: 'Jan 2022 — May 2023', es: 'Ene 2022 — May 2023' },
+      date: { en: 'Aug 2023 — Jan 2024', es: 'Ago 2023 — Ene 2024' },
       current: false,
-      company: 'EAN University',
-      role: { en: 'Research Assistant — Data Lab', es: 'Asistente de Investigación — Data Lab' },
+      company: 'Concentrix',
+      role: { en: 'Bilingual Training & Quality Supervisor', es: 'Supervisora de Capacitación y Calidad' },
       desc: {
-        en: 'Supported faculty research on business intelligence applications in SME contexts. Built datasets, ran statistical analyses, and contributed to two published working papers.',
-        es: 'Apoyé investigación docente sobre aplicaciones de inteligencia de negocios en PYMEs. Construí datasets, ejecuté análisis estadísticos y contribuí a dos working papers publicados.',
+        en: 'Led 8 evaluators with data-driven coaching. Automated workflows via Excel VBA macros, lifting team efficiency and reporting speed.',
+        es: 'Lideré 8 evaluadores con coaching basado en datos. Automaticé flujos con macros Excel VBA, mejorando eficiencia y velocidad de reporting.',
       },
-      stack: ['Python', 'R', 'SPSS', 'Power BI'],
+      stack: ['VBA', 'Excel', 'KPI Design'],
     },
     {
-      date: { en: 'Jun 2021 — Dec 2021', es: 'Jun 2021 — Dic 2021' },
+      date: { en: '2022 — 2023', es: '2022 — 2023' },
       current: false,
-      company: 'Colfondos',
-      role: { en: 'Data & Reporting Intern', es: 'Practicante de Datos y Reportes' },
+      company: 'Concentrix',
+      role: { en: 'Senior Quality Analyst', es: 'Analista Senior de Calidad' },
       desc: {
-        en: 'Automated weekly regulatory reports, cutting production time by 70%. Built Excel dashboards for pension fund performance tracking.',
-        es: 'Automaticé reportes regulatorios semanales reduciendo el tiempo de producción en 70%. Construí dashboards Excel para seguimiento de fondos de pensión.',
+        en: 'Audit analysis, trend identification, and service script optimization. Foundation for the data work that came after.',
+        es: 'Análisis de auditorías, identificación de tendencias y optimización de scripts. Base para el trabajo de datos que vino después.',
       },
-      stack: ['Excel', 'SQL', 'VBA'],
+      stack: ['Excel', 'QA', 'Reporting'],
+    },
+    {
+      date: { en: '2021 — 2022', es: '2021 — 2022' },
+      current: false,
+      company: 'Concentrix',
+      role: { en: 'Customer Service Associate', es: 'Asesora de Servicio al Cliente' },
+      desc: {
+        en: 'Front-line bilingual customer support. Where I learned how operations actually feel from the inside — context that still shapes every dashboard I build.',
+        es: 'Atención al cliente bilingüe en primera línea. Donde aprendí cómo se siente realmente la operación desde adentro — contexto que sigue guiando cada dashboard que construyo.',
+      },
+      stack: ['Customer Support', 'Bilingual EN/ES', 'CRM'],
     },
   ],
 
   capabilities: [
     {
-      area: { en: 'Business Intelligence', es: 'Inteligencia de Negocios' },
-      items: ['Power BI', 'Tableau', 'Excel / VBA', 'DAX', 'ETL Design', 'KPI Frameworks'],
+      area: { en: 'Business Intelligence', es: 'Business Intelligence' },
+      items: ['Power BI', 'DAX', 'Power Query', 'Tableau', 'Data Modeling'],
     },
     {
       area: { en: 'Data Engineering', es: 'Ingeniería de Datos' },
-      items: ['Python', 'SQL', 'PostgreSQL', 'MySQL', 'Azure', 'Data Modeling'],
+      items: ['Python', 'SQL', 'ETL Processes', 'Macros / VBA', 'Pandas'],
     },
     {
-      area: { en: 'AI & Automation', es: 'IA y Automatización' },
-      items: ['LLM Integration', 'Prompt Engineering', 'Workflow Automation', 'Python Scripting', 'API Design'],
+      area: { en: 'AI & Automation', es: 'IA & Automatización' },
+      items: ['Custom AI Agents', 'Process Automation', 'Workflow Design'],
     },
     {
       area: { en: 'Web Development', es: 'Desarrollo Web' },
-      items: ['React', 'HTML / CSS / SASS', 'JavaScript', 'PHP', 'MySQL', 'WordPress'],
+      items: ['HTML / CSS / JS', 'PHP / MySQL', 'Figma', 'Responsive Design'],
     },
   ],
 
   certs: [
     {
       img: 'src/img/certificate-DataAnalytics.png',
-      title: 'Google Data Analytics Professional Certificate',
-      org: 'Google / Coursera',
-      date: '2023',
+      title: 'Data Analytics Specialization',
+      org: 'San Ignacio University (Miami) · Netzun',
+      date: 'Jul — Aug 2024',
     },
     {
       img: 'src/img/certificate-WebDevelopment.png',
-      title: 'Full Stack Web Development Bootcamp',
-      org: 'Platzi',
-      date: '2022',
+      title: 'Full-Stack Web Development',
+      org: 'Udemy',
+      date: 'Feb — Jul 2024',
     },
     {
       img: 'src/img/certificate-AutomatedTesting.png',
-      title: 'Automated Testing with Python',
-      org: 'Udemy',
-      date: '2024',
+      title: 'Introduction to Automated Testing',
+      org: 'EPAM Campus',
+      date: 'May — Jun 2024',
     },
     {
-      img: 'src/img/SG.png',
-      title: 'Power BI Data Analyst Associate',
-      org: 'Microsoft',
-      date: '2023',
+      img: 'src/img/systemsengineer-degree.png',
+      title: 'Systems Engineering',
+      org: 'EAN University',
+      date: '2019 — 2023',
     },
     {
-      img: 'src/img/SG.png',
-      title: 'SQL for Data Science',
-      org: 'UC Davis / Coursera',
-      date: '2022',
+      img: 'src/img/chemicalsengineer-degree.png',
+      title: 'Chemical Engineering',
+      org: 'EAN University',
+      date: '2017 — 2021',
     },
   ],
 };
@@ -272,7 +300,6 @@ function setLang(l, save = true) {
   document.documentElement.dataset.lang = l;
   document.documentElement.lang = l;
   if (save) localStorage.setItem('lang', l);
-  // Re-render dynamic sections
   renderProjects();
   renderCareer();
   renderCaps();
@@ -297,22 +324,19 @@ function initToggleButtons() {
 // ── Nav ────────────────────────────────────────────────────────────────────
 
 function initNav() {
-  const nav  = document.getElementById('nav');
-  const btn  = document.getElementById('menuToggle');
-  const mob  = document.getElementById('navMobile');
+  const nav = document.getElementById('nav');
+  const btn = document.getElementById('menuToggle');
+  const mob = document.getElementById('navMobile');
 
-  // Frosted glass on scroll
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 40);
   }, { passive: true });
 
-  // Mobile menu
   btn.addEventListener('click', () => {
     const open = mob.classList.toggle('open');
     btn.setAttribute('aria-expanded', open);
   });
 
-  // Close mobile nav on link click
   mob.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       mob.classList.remove('open');
@@ -335,95 +359,115 @@ function restartRoleRotator() {
 
   const roles = DATA.roles[lang];
   roleIndex = 0;
-
   el.innerHTML = `<span class="role-item active">${roles[roleIndex]}</span>`;
 
   roleTimer = setInterval(() => {
     const items = el.querySelectorAll('.role-item');
     items.forEach(i => i.classList.remove('active'));
-
     roleIndex = (roleIndex + 1) % roles.length;
     const next = document.createElement('span');
     next.className = 'role-item';
     next.textContent = roles[roleIndex];
     el.appendChild(next);
-
-    // trigger reflow then animate in
     requestAnimationFrame(() => next.classList.add('active'));
-
-    // remove old items
     if (el.children.length > 2) el.removeChild(el.children[0]);
-  }, 2800);
+  }, 2400);
 }
 
 
 // ── Hero reveal ────────────────────────────────────────────────────────────
 
 function initHeroReveal() {
-  // Split headline words for staggered animation
   const headline = document.getElementById('heroHeadline');
   if (!headline) return;
-
-  // Add animation class to headline
   headline.style.animation = 'slideUp 0.8s ease both';
   headline.style.animationDelay = '0.1s';
 
-  // Animate blurb + role row
   const blurb = headline.closest('.hero-text')?.querySelector('.hero-blurb');
   const roleRow = headline.closest('.hero-text')?.querySelector('.hero-role-row');
-
-  if (blurb) { blurb.style.animation = 'slideUp 0.7s ease 0.35s both'; }
-  if (roleRow) { roleRow.style.animation = 'slideUp 0.6s ease 0.55s both'; }
+  if (blurb) blurb.style.animation = 'slideUp 0.7s ease 0.35s both';
+  if (roleRow) roleRow.style.animation = 'slideUp 0.6s ease 0.55s both';
 }
 
 
-// ── Particles ──────────────────────────────────────────────────────────────
+// ── Particles (with mouse repulsion + line linking) ────────────────────────
 
 function initParticles() {
   const canvas = document.getElementById('heroCanvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
 
-  const particles = [];
+  let w, h;
   const COUNT = 55;
+  const dots = [];
+  let mouse = { x: -1000, y: -1000 };
 
   function resize() {
-    canvas.width  = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
+    w = canvas.width  = canvas.offsetWidth;
+    h = canvas.height = canvas.offsetHeight;
   }
 
   window.addEventListener('resize', resize, { passive: true });
+  canvas.addEventListener('mousemove', e => {
+    const r = canvas.getBoundingClientRect();
+    mouse = { x: e.clientX - r.left, y: e.clientY - r.top };
+  });
   resize();
 
   for (let i = 0; i < COUNT; i++) {
-    particles.push({
-      x:  Math.random() * canvas.width,
-      y:  Math.random() * canvas.height,
-      r:  Math.random() * 1.6 + 0.3,
-      vx: (Math.random() - 0.5) * 0.25,
-      vy: (Math.random() - 0.5) * 0.25,
-      o:  Math.random() * 0.35 + 0.05,
+    dots.push({
+      x:  Math.random() * w,
+      y:  Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      r:  Math.random() * 1.4 + 0.4,
     });
   }
 
   function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    const isDark = document.documentElement.dataset.theme === 'dark';
-    const rgb = isDark ? '200,200,220' : '80,70,100';
+    ctx.clearRect(0, 0, w, h);
 
-    particles.forEach(p => {
-      p.x += p.vx;
-      p.y += p.vy;
-      if (p.x < 0) p.x = canvas.width;
-      if (p.x > canvas.width) p.x = 0;
-      if (p.y < 0) p.y = canvas.height;
-      if (p.y > canvas.height) p.y = 0;
+    // Accent color with alpha — works in all modern browsers
+    const dotColor  = 'oklch(58% 0.16 295 / 0.45)';
+    const lineBase  = 'oklch(58% 0.16 295 / ';
+
+    dots.forEach(d => {
+      d.x += d.vx;
+      d.y += d.vy;
+      // bounce off walls
+      if (d.x < 0 || d.x > w) d.vx *= -1;
+      if (d.y < 0 || d.y > h) d.vy *= -1;
+      // mouse repulsion
+      const dx = mouse.x - d.x, dy = mouse.y - d.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 120) {
+        d.x -= dx / dist * 0.5;
+        d.y -= dy / dist * 0.5;
+      }
 
       ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${rgb},${p.o})`;
+      ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+      ctx.fillStyle = dotColor;
       ctx.fill();
     });
+
+    // Draw links between nearby dots
+    for (let i = 0; i < dots.length; i++) {
+      for (let j = i + 1; j < dots.length; j++) {
+        const dx = dots[i].x - dots[j].x;
+        const dy = dots[i].y - dots[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 110) {
+          const alpha = ((1 - dist / 110) * 0.25).toFixed(3);
+          ctx.strokeStyle = lineBase + alpha + ')';
+          ctx.lineWidth = 0.6;
+          ctx.beginPath();
+          ctx.moveTo(dots[i].x, dots[i].y);
+          ctx.lineTo(dots[j].x, dots[j].y);
+          ctx.stroke();
+        }
+      }
+    }
 
     requestAnimationFrame(draw);
   }
@@ -455,8 +499,7 @@ function initCursor() {
   const ring = document.getElementById('cursorRing');
   if (!dot || !ring) return;
 
-  let rx = 0, ry = 0;
-  let mx = 0, my = 0;
+  let rx = 0, ry = 0, mx = 0, my = 0;
 
   document.addEventListener('mousemove', e => {
     mx = e.clientX;
@@ -519,7 +562,6 @@ function renderProjects() {
     </article>
   `).join('');
 
-  // Re-observe new cards
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
@@ -527,7 +569,6 @@ function renderProjects() {
   }, { threshold: 0.1 });
   grid.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Attach modal triggers
   grid.querySelectorAll('.project-card').forEach(card => {
     const open = () => openProjectModal(card.dataset.slug);
     card.addEventListener('click', open);
@@ -654,20 +695,14 @@ function initModals() {
   const backdrop = document.getElementById('modalBackdrop');
   const closeBtn = document.getElementById('modalClose');
 
-  backdrop.addEventListener('click', e => {
-    if (e.target === backdrop) closeModal();
-  });
+  backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
   closeBtn.addEventListener('click', closeModal);
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeModal();
-  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 }
 
 function openProjectModal(slug) {
   const p = DATA.projects.find(x => x.slug === slug);
   if (!p) return;
-
   document.getElementById('modalBody').innerHTML = `
     <img class="modal-img" src="${p.img}" alt="${p.title}" loading="lazy">
     <p class="modal-kind">${p.kind[lang]}</p>
@@ -683,7 +718,6 @@ function openProjectModal(slug) {
 function openCertModal(index) {
   const cert = DATA.certs[index];
   if (!cert) return;
-
   document.getElementById('modalBody').innerHTML = `
     <img class="modal-cert-img" src="${cert.img}" alt="${cert.title}">
     <p class="modal-kind">${cert.org}</p>
