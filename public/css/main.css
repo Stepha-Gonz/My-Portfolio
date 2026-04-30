@@ -491,7 +491,7 @@ body.cursor-hover .cursor-dot {
   grid-template-columns: 1fr 240px;
   gap: 60px;
   align-items: flex-end;
-  padding-top: 140px;
+  padding-top: 96px;
   padding-bottom: 80px;
   flex: 1;
   position: relative;
@@ -853,11 +853,19 @@ body.cursor-hover .cursor-dot {
 }
 
 .about-img-wrap {
+  position: relative;
   aspect-ratio: 4/5;
-  border-radius: var(--radius);
+  border-radius: 20px;
   overflow: hidden;
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
+  box-shadow: 0 20px 60px oklch(0% 0 0/0.15), 0 4px 16px oklch(0% 0 0/0.08);
+}
+
+.about-img-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, transparent 55%, oklch(58% 0.16 295/0.12) 100%);
+  pointer-events: none;
 }
 
 .about-img {
@@ -865,6 +873,7 @@ body.cursor-hover .cursor-dot {
   height: 100%;
   object-fit: cover;
   object-position: top center;
+  display: block;
 }
 
 .work-header {
@@ -1151,23 +1160,66 @@ body.cursor-hover .cursor-dot {
   color: var(--accent);
 }
 
-.certs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+.certs-carousel {
+  position: relative;
+  overflow: hidden;
+  margin: 0 -36px;
+  padding: 20px 0 8px;
+}
+
+.certs-carousel::before, .certs-carousel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.certs-carousel::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg) 0%, transparent 100%);
+}
+
+.certs-carousel::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg) 0%, transparent 100%);
+}
+
+.certs-track {
+  display: flex;
   gap: 20px;
+  width: max-content;
+  animation: certs-scroll 36s linear infinite;
+  padding: 0 36px;
+}
+
+.certs-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes certs-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .cert-card {
+  flex: 0 0 260px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
   overflow: hidden;
   background: var(--bg-soft);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: none;
+  cursor: pointer;
 }
 
 .cert-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow);
 }
 

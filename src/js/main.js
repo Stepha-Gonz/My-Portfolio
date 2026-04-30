@@ -8,23 +8,6 @@ const DATA = {
 
   projects: [
     {
-      slug: 'audittracker',
-      tag: 'bi',
-      img: 'src/img/audittracker-img.png',
-      title: 'Audit Tracker Dashboard',
-      year: '2024',
-      kind: { en: 'Power BI · Process Automation', es: 'Power BI · Automatización' },
-      summary: {
-        en: 'Centralized audit tracking system consolidating data from multiple sources, generating visual reports for management decision-making.',
-        es: 'Sistema centralizado de seguimiento de auditorías que consolida datos de múltiples fuentes y genera reportes visuales para gerencia.',
-      },
-      detail: {
-        en: 'Centralized audit tracking system consolidating data from multiple sources, generating visual reports for management decision-making. Built with Excel, VBA macros for data automation, and Power BI for executive reporting.',
-        es: 'Sistema centralizado de seguimiento de auditorías consolidando datos de múltiples fuentes. Construido con Excel, macros VBA para automatización y Power BI para reportes ejecutivos.',
-      },
-      stack: ['Excel', 'VBA', 'Power BI'],
-    },
-    {
       slug: 'marketfood',
       tag: 'bi',
       img: 'src/img/Market-food-beverage.png',
@@ -42,23 +25,6 @@ const DATA = {
       stack: ['Power BI', 'DAX', 'Power Query'],
     },
     {
-      slug: 'trackerdashboard',
-      tag: 'bi',
-      img: 'src/img/trackerdashboard-img.png',
-      title: 'Performance Tracker',
-      year: '2024',
-      kind: { en: 'Power BI · KPI Dashboard', es: 'Power BI · Dashboard KPI' },
-      summary: {
-        en: 'KPI dashboard for evaluator teams — coaching insights, trend tracking, and weekly performance review.',
-        es: 'Dashboard de KPIs para equipos de evaluación — insights de coaching, tendencias y revisión semanal.',
-      },
-      detail: {
-        en: 'KPI dashboard for evaluator teams enabling coaching insights, trend tracking, and weekly performance review. Integrated with operational data sources for real-time visibility.',
-        es: 'Dashboard de KPIs para equipos de evaluación con insights de coaching, seguimiento de tendencias y revisión semanal. Integrado con fuentes operativas para visibilidad en tiempo real.',
-      },
-      stack: ['Power BI', 'Excel'],
-    },
-    {
       slug: 'bizexpo',
       tag: 'web',
       img: 'src/img/bizexpo-img.png',
@@ -74,6 +40,74 @@ const DATA = {
         es: 'Plataforma web para evento tech con autenticación, dashboard analytics admin y mapeo dinámico Leaflet.js. Construida end-to-end aplicando principios de arquitectura RESTful.',
       },
       stack: ['PHP', 'MySQL', 'JS', 'SASS'],
+    },
+    {
+      slug: 'glowradiance',
+      tag: 'web',
+      img: 'src/img/glowradiance-img.png',
+      title: 'GlowRadiance',
+      year: '2024',
+      kind: { en: 'E-commerce UI', es: 'UI de E-commerce' },
+      summary: {
+        en: 'Skincare e-commerce concept with product catalog and cart flow.',
+        es: 'Concepto e-commerce de skincare con catálogo y flujo de carrito.',
+      },
+      detail: {
+        en: 'Skincare e-commerce concept featuring a full product catalog, category browsing, add-to-cart flow, and checkout mockup. Built with clean HTML/CSS/JS — no frameworks.',
+        es: 'Concepto e-commerce de skincare con catálogo de productos completo, navegación por categorías, flujo add-to-cart y mockup de checkout. Construido con HTML/CSS/JS limpio sin frameworks.',
+      },
+      stack: ['HTML', 'CSS', 'JS'],
+    },
+    {
+      slug: 'tasknexus',
+      tag: 'web',
+      img: 'src/img/tasknexus-img.png',
+      title: 'TaskNexus',
+      year: '2024',
+      kind: { en: 'Task Management Web App', es: 'App de Gestión de Tareas' },
+      summary: {
+        en: 'Task and project management app with kanban boards, priority labels and progress tracking.',
+        es: 'App de gestión de tareas con tableros kanban, etiquetas de prioridad y seguimiento de progreso.',
+      },
+      detail: {
+        en: 'Full-featured task management application with kanban-style boards, task prioritization, deadline tracking, and local persistence. Built with vanilla JS/CSS — no frameworks.',
+        es: 'Aplicación de gestión de tareas con tableros estilo kanban, priorización, seguimiento de fechas límite y persistencia local. Construida con JS/CSS puro sin frameworks.',
+      },
+      stack: ['JS', 'CSS', 'HTML'],
+    },
+    {
+      slug: 'audittracker',
+      tag: 'bi',
+      img: 'src/img/audittracker-img.png',
+      title: 'Audit Tracker Dashboard',
+      year: '2024',
+      kind: { en: 'Power BI · Process Automation', es: 'Power BI · Automatización' },
+      summary: {
+        en: 'Centralized audit tracking system consolidating data from multiple sources, generating visual reports for management decision-making.',
+        es: 'Sistema centralizado de seguimiento de auditorías que consolida datos de múltiples fuentes y genera reportes visuales para gerencia.',
+      },
+      detail: {
+        en: 'Centralized audit tracking system consolidating data from multiple sources, generating visual reports for management decision-making. Built with Excel, VBA macros for data automation, and Power BI for executive reporting.',
+        es: 'Sistema centralizado de seguimiento de auditorías consolidando datos de múltiples fuentes. Construido con Excel, macros VBA para automatización y Power BI para reportes ejecutivos.',
+      },
+      stack: ['Excel', 'VBA', 'Power BI'],
+    },
+    {
+      slug: 'trackerdashboard',
+      tag: 'bi',
+      img: 'src/img/trackerdashboard-img.png',
+      title: 'Performance Tracker',
+      year: '2024',
+      kind: { en: 'Power BI · KPI Dashboard', es: 'Power BI · Dashboard KPI' },
+      summary: {
+        en: 'KPI dashboard for evaluator teams — coaching insights, trend tracking, and weekly performance review.',
+        es: 'Dashboard de KPIs para equipos de evaluación — insights de coaching, tendencias y revisión semanal.',
+      },
+      detail: {
+        en: 'KPI dashboard for evaluator teams enabling coaching insights, trend tracking, and weekly performance review. Integrated with operational data sources for real-time visibility.',
+        es: 'Dashboard de KPIs para equipos de evaluación con insights de coaching, seguimiento de tendencias y revisión semanal. Integrado con fuentes operativas para visibilidad en tiempo real.',
+      },
+      stack: ['Power BI', 'Excel'],
     },
     {
       slug: 'dentalclinic',
@@ -108,23 +142,6 @@ const DATA = {
         es: 'Aplicación de listado de propiedades con búsqueda avanzada, filtros por categoría y sistema de favoritos guardados. Integra una API inmobiliaria para listados en vivo.',
       },
       stack: ['JS', 'CSS', 'API'],
-    },
-    {
-      slug: 'glowradiance',
-      tag: 'web',
-      img: 'src/img/glowradiance-img.png',
-      title: 'GlowRadiance',
-      year: '2024',
-      kind: { en: 'E-commerce UI', es: 'UI de E-commerce' },
-      summary: {
-        en: 'Skincare e-commerce concept with product catalog and cart flow.',
-        es: 'Concepto e-commerce de skincare con catálogo y flujo de carrito.',
-      },
-      detail: {
-        en: 'Skincare e-commerce concept featuring a full product catalog, category browsing, add-to-cart flow, and checkout mockup. Built with clean HTML/CSS/JS — no frameworks.',
-        es: 'Concepto e-commerce de skincare con catálogo de productos completo, navegación por categorías, flujo add-to-cart y mockup de checkout. Construido con HTML/CSS/JS limpio sin frameworks.',
-      },
-      stack: ['HTML', 'CSS', 'JS'],
     },
   ],
 
@@ -427,9 +444,9 @@ function initParticles() {
   function draw() {
     ctx.clearRect(0, 0, w, h);
 
-    // Accent color with alpha — works in all modern browsers
-    const dotColor  = 'oklch(58% 0.16 295 / 0.45)';
-    const lineBase  = 'oklch(58% 0.16 295 / ';
+    const isDark = document.documentElement.dataset.theme === 'dark';
+    const dotColor = isDark ? 'oklch(68% 0.18 295 / 0.75)' : 'oklch(52% 0.18 295 / 0.55)';
+    const lineBase = isDark ? 'oklch(68% 0.18 295 / ' : 'oklch(52% 0.18 295 / ';
 
     dots.forEach(d => {
       d.x += d.vx;
@@ -458,7 +475,7 @@ function initParticles() {
         const dy = dots[i].y - dots[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < 110) {
-          const alpha = ((1 - dist / 110) * 0.25).toFixed(3);
+          const alpha = ((1 - dist / 110) * (isDark ? 0.4 : 0.3)).toFixed(3);
           ctx.strokeStyle = lineBase + alpha + ')';
           ctx.lineWidth = 0.6;
           ctx.beginPath();
@@ -548,7 +565,6 @@ function renderProjects() {
         <img src="${p.img}" alt="${p.title}" loading="lazy">
         <div class="project-badge">
           <span class="project-tag">${p.tag.toUpperCase()}</span>
-          <span class="project-year">${p.year}</span>
         </div>
       </div>
       <div class="project-info">
@@ -640,10 +656,9 @@ function renderCerts() {
   const el = document.getElementById('certsGrid');
   if (!el) return;
 
-  el.innerHTML = DATA.certs.map((cert, i) => `
+  const cardHTML = DATA.certs.map((cert, i) => `
     <div
-      class="cert-card reveal"
-      style="animation-delay:${i * 60}ms"
+      class="cert-card"
       data-cert="${i}"
       role="button"
       tabindex="0"
@@ -660,15 +675,10 @@ function renderCerts() {
     </div>
   `).join('');
 
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.1 });
-  el.querySelectorAll('.reveal').forEach(r => io.observe(r));
+  el.innerHTML = `<div class="certs-track">${cardHTML}${cardHTML}</div>`;
 
   el.querySelectorAll('.cert-card').forEach(card => {
-    const open = () => openCertModal(parseInt(card.dataset.cert));
+    const open = () => openCertModal(parseInt(card.dataset.cert) % DATA.certs.length);
     card.addEventListener('click', open);
     card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') open(); });
   });
