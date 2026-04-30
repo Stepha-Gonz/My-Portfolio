@@ -58,7 +58,7 @@
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.3fr 1fr;
   gap: 80px;
   align-items: start;
 
@@ -141,6 +141,9 @@
   img {
     width: 100%;
     height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    object-position: top center;
     display: block;
   }
 }
