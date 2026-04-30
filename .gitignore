@@ -1,3 +1,6 @@
 
 /vendor/
-/node_modules
+/node_modules/
+/.claude/
+__pycache__/
+*.pyc
