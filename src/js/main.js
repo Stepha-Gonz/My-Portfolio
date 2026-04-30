@@ -138,7 +138,7 @@ const DATA = {
         en: "Promoted into the CX Intelligence team to lead the QA-AI initiative. Designed and shipped 'QA Hero' — a custom AI agent that turns CX QA dashboard data into root-cause analyses, priority playbooks and action plans across 6 LATAM countries (BR, MX, AR, CO, CL, PE).",
         es: "Promovida al equipo de CX Intelligence para liderar la iniciativa QA-AI. Diseñé y lancé 'QA Hero' — agente IA propio que convierte la data del dashboard QA en análisis de causa raíz, playbooks de prioridad y planes de acción en 6 países LATAM (BR, MX, AR, CO, CL, PE).",
       },
-      stack: ['AI Agents', 'Power BI', 'AWS Bedrock', 'Python', 'SQL'],
+      stack: ['AI Agents', 'Power BI', 'Python', 'SQL'],
     },
     {
       date: { en: 'Aug 2025 — Apr 2026', es: 'Ago 2025 — Abr 2026' },
@@ -200,11 +200,11 @@ const DATA = {
   capabilities: [
     {
       area: { en: 'Business Intelligence', es: 'Business Intelligence' },
-      items: ['Power BI', 'DAX', 'Power Query', 'Tableau', 'Data Modeling'],
+      items: ['Power BI', 'DAX', 'Power Query', 'Data Modeling'],
     },
     {
       area: { en: 'Data Engineering', es: 'Ingeniería de Datos' },
-      items: ['Python', 'SQL', 'ETL Processes', 'Macros / VBA', 'Pandas'],
+      items: ['Python', 'SQL', 'ETL Processes', 'Macros / VBA'],
     },
     {
       area: { en: 'AI & Automation', es: 'IA & Automatización' },
