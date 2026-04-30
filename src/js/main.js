@@ -415,7 +415,8 @@ function initParticles() {
   const ctx = canvas.getContext('2d');
 
   let w, h;
-  const COUNT = 55;
+  const COUNT = 90;
+  const LINK_DIST = 150;
   const dots = [];
   let mouse = { x: -1000, y: -1000 };
 
@@ -437,7 +438,7 @@ function initParticles() {
       y:  Math.random() * h,
       vx: (Math.random() - 0.5) * 0.3,
       vy: (Math.random() - 0.5) * 0.3,
-      r:  Math.random() * 1.4 + 0.4,
+      r:  Math.random() * 1.8 + 0.6,
     });
   }
 
@@ -445,8 +446,8 @@ function initParticles() {
     ctx.clearRect(0, 0, w, h);
 
     const isDark = document.documentElement.dataset.theme === 'dark';
-    const dotColor = isDark ? 'oklch(68% 0.18 295 / 0.75)' : 'oklch(52% 0.18 295 / 0.55)';
-    const lineBase = isDark ? 'oklch(68% 0.18 295 / ' : 'oklch(52% 0.18 295 / ';
+    const dotColor = isDark ? 'oklch(72% 0.20 295 / 0.85)' : 'oklch(48% 0.22 295 / 0.70)';
+    const lineBase = isDark ? 'oklch(72% 0.20 295 / ' : 'oklch(48% 0.22 295 / ';
 
     dots.forEach(d => {
       d.x += d.vx;
@@ -474,8 +475,8 @@ function initParticles() {
         const dx = dots[i].x - dots[j].x;
         const dy = dots[i].y - dots[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 110) {
-          const alpha = ((1 - dist / 110) * (isDark ? 0.4 : 0.3)).toFixed(3);
+        if (dist < LINK_DIST) {
+          const alpha = ((1 - dist / LINK_DIST) * (isDark ? 0.55 : 0.45)).toFixed(3);
           ctx.strokeStyle = lineBase + alpha + ')';
           ctx.lineWidth = 0.6;
           ctx.beginPath();
@@ -675,13 +676,48 @@ function renderCerts() {
     </div>
   `).join('');
 
-  el.innerHTML = `<div class="certs-track">${cardHTML}${cardHTML}</div>`;
+  el.innerHTML = `<div class="certs-track" id="certsTrack">${cardHTML}${cardHTML}</div>`;
 
   el.querySelectorAll('.cert-card').forEach(card => {
     const open = () => openCertModal(parseInt(card.dataset.cert) % DATA.certs.length);
     card.addEventListener('click', open);
     card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') open(); });
   });
+
+  // Controls
+  const track = document.getElementById('certsTrack');
+  let playing = true;
+  const STEP = 280;
+
+  const prevBtn = document.getElementById('certsPrev');
+  const nextBtn = document.getElementById('certsNext');
+  const playBtn = document.getElementById('certsPlay');
+
+  if (prevBtn && nextBtn && playBtn && track) {
+    nextBtn.addEventListener('click', () => {
+      track.classList.add('paused');
+      playing = false;
+      playBtn.textContent = '▶';
+      track.style.transform = `translateX(${(parseFloat(track.style.transform?.match(/-?\d+(\.\d+)?/) || [0]) || 0) - STEP}px)`;
+    });
+    prevBtn.addEventListener('click', () => {
+      track.classList.add('paused');
+      playing = false;
+      playBtn.textContent = '▶';
+      track.style.transform = `translateX(${(parseFloat(track.style.transform?.match(/-?\d+(\.\d+)?/) || [0]) || 0) + STEP}px)`;
+    });
+    playBtn.addEventListener('click', () => {
+      playing = !playing;
+      if (playing) {
+        track.classList.remove('paused');
+        track.style.transform = '';
+        playBtn.textContent = '⏸';
+      } else {
+        track.classList.add('paused');
+        playBtn.textContent = '▶';
+      }
+    });
+  }
 }
 
 
