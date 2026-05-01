@@ -690,10 +690,15 @@ function renderCerts() {
 
   let isDragging = false;
   let startX = 0;
-  let dragOffset = 0;
+  let baseOffset = 0;
   let resumeTimer = null;
 
-  const pauseAnim = () => { track.classList.add('paused'); };
+  const pauseAnim = () => {
+    const matrix = new DOMMatrix(getComputedStyle(track).transform);
+    baseOffset = matrix.m41;
+    track.style.transform = `translateX(${baseOffset}px)`;
+    track.classList.add('paused');
+  };
   const resumeAnim = () => {
     track.style.transform = '';
     track.classList.remove('paused');
@@ -702,7 +707,6 @@ function renderCerts() {
   el.addEventListener('mousedown', e => {
     isDragging = true;
     startX = e.clientX;
-    dragOffset = 0;
     clearTimeout(resumeTimer);
     pauseAnim();
     el.style.cursor = 'grabbing';
@@ -711,11 +715,10 @@ function renderCerts() {
 
   window.addEventListener('mousemove', e => {
     if (!isDragging) return;
-    dragOffset = e.clientX - startX;
-    track.style.transform = `translateX(${dragOffset}px)`;
+    track.style.transform = `translateX(${baseOffset + (e.clientX - startX)}px)`;
   });
 
-  window.addEventListener('mouseup', e => {
+  window.addEventListener('mouseup', () => {
     if (!isDragging) return;
     isDragging = false;
     el.style.cursor = '';
@@ -724,14 +727,12 @@ function renderCerts() {
 
   el.addEventListener('touchstart', e => {
     startX = e.touches[0].clientX;
-    dragOffset = 0;
     clearTimeout(resumeTimer);
     pauseAnim();
   }, { passive: true });
 
   el.addEventListener('touchmove', e => {
-    dragOffset = e.touches[0].clientX - startX;
-    track.style.transform = `translateX(${dragOffset}px)`;
+    track.style.transform = `translateX(${baseOffset + (e.touches[0].clientX - startX)}px)`;
   }, { passive: true });
 
   el.addEventListener('touchend', () => {

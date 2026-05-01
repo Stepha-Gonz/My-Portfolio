@@ -58,7 +58,7 @@
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: 1fr 340px;
   gap: 80px;
   align-items: start;
 
@@ -141,9 +141,6 @@
   img {
     width: 100%;
     height: auto;
-    max-height: 500px;
-    object-fit: cover;
-    object-position: top center;
     display: block;
   }
 }
@@ -464,10 +461,10 @@
 
 .certs-track {
   display: flex;
-  gap: 20px;
+  gap: 0;
   width: max-content;
   animation: certs-scroll 36s linear infinite;
-  padding: 0 36px;
+  padding-left: 36px;
 
   &.paused { animation-play-state: paused; }
 }
@@ -479,6 +476,7 @@
 
 .cert-card {
   flex: 0 0 260px;
+  margin-right: 20px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
   overflow: hidden;
