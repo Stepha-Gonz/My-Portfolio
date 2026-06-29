@@ -1,6 +1,10 @@
-
-/vendor/
-/node_modules/
-/.claude/
+backend/.env
+backend/venv/
 __pycache__/
 *.pyc
+/vendor/
+node_modules/
+frontend/dist/
+.DS_Store
+Thumbs.db
+/.claude/

@@ -1,0 +1,30 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "description": "Hi, I'm Stephanie, a recently graduated junior systems engineer with a passion for continuous learning, coding, and data analysis. This portfolio showcases my projects, reflecting my dedication to developing innovative solutions and improving my skills. Explore my repositories to see the work I've created and my journey in the tech world.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "concurrently --names \"API,UI\" --prefix-colors \"yellow,cyan\" \"npm run api\" \"npm run ui\"",
+    "api": "cd backend && venv\\Scripts\\python.exe -m uvicorn main:app --reload --port 8001",
+    "ui": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stepha-Gonz/My-Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Stepha-Gonz/My-Portfolio/issues"
+  },
+  "homepage": "https://github.com/Stepha-Gonz/My-Portfolio#readme",
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  }
+}
