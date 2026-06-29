@@ -7,7 +7,12 @@ export default function ProjectDetail() {
   const { slug } = useParams();
   const { lang } = useApp();
   const navigate = useNavigate();
-  const project = DATA.projects.find(p => p.slug === slug);
+
+  const projects = DATA.projects;
+  const idx = projects.findIndex(p => p.slug === slug);
+  const project = projects[idx];
+  const prev = idx > 0 ? projects[idx - 1] : null;
+  const next = idx < projects.length - 1 ? projects[idx + 1] : null;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -37,32 +42,30 @@ export default function ProjectDetail() {
         </div>
       </div>
 
-      <div className="container project-detail-body">
+      <div className="project-detail-body">
 
-        {/* Video preview for web projects */}
+        {/* Video preview — with controls + sound (no autoplay) */}
         {project.video && (
-          <div className="project-detail-media">
+          <div className="project-detail-media container">
             <video
               src={project.video}
-              autoPlay
-              loop
-              muted
+              controls
               playsInline
               className="project-detail-video"
             />
           </div>
         )}
 
-        {/* Static image if no video */}
+        {/* Static image if no video and no embed */}
         {!project.video && !project.embed && (
-          <div className="project-detail-media">
+          <div className="project-detail-media container">
             <img src={project.img} alt={project.title} className="project-detail-img" />
           </div>
         )}
 
-        {/* Power BI embed */}
+        {/* Power BI embed — full-width breakout */}
         {project.embed && (
-          <div className="project-detail-embed">
+          <div className="project-detail-embed-wide">
             <iframe
               title={project.title}
               src={project.embed}
@@ -73,11 +76,58 @@ export default function ProjectDetail() {
           </div>
         )}
 
-        <div className="project-detail-content">
-          <h2 className="project-detail-section-title">
-            {lang === 'en' ? 'About the project' : 'Sobre el proyecto'}
-          </h2>
-          <p className="project-detail-desc">{project.detail[lang]}</p>
+        {/* Description */}
+        <div className="container project-detail-content">
+          <div className="project-detail-cols">
+            <div className="project-detail-desc-col">
+              <h2 className="project-detail-section-title">
+                {lang === 'en' ? 'About the project' : 'Sobre el proyecto'}
+              </h2>
+              <p className="project-detail-desc">{project.detail[lang]}</p>
+              {project.longDetail && (
+                <p className="project-detail-desc">{project.longDetail[lang]}</p>
+              )}
+            </div>
+            <div className="project-detail-stack-col">
+              <h2 className="project-detail-section-title">
+                {lang === 'en' ? 'Built with' : 'Construido con'}
+              </h2>
+              <ul className="project-detail-tools">
+                {project.stack.map(s => (
+                  <li key={s} className="project-detail-tool">{s}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Prev / Next navigation */}
+        <div className="project-nav-bar container">
+          <div className="project-nav-side">
+            {prev && (
+              <button className="project-nav-btn" onClick={() => navigate(`/project/${prev.slug}`)}>
+                <span className="project-nav-label">
+                  ← {lang === 'en' ? 'Previous' : 'Anterior'}
+                </span>
+                <span className="project-nav-name">{prev.title}</span>
+              </button>
+            )}
+          </div>
+          <div className="project-nav-center">
+            <button className="project-nav-all" onClick={() => navigate('/#work')}>
+              {lang === 'en' ? 'All projects' : 'Todos los proyectos'}
+            </button>
+          </div>
+          <div className="project-nav-side project-nav-right">
+            {next && (
+              <button className="project-nav-btn" onClick={() => navigate(`/project/${next.slug}`)}>
+                <span className="project-nav-label">
+                  {lang === 'en' ? 'Next' : 'Siguiente'} →
+                </span>
+                <span className="project-nav-name">{next.title}</span>
+              </button>
+            )}
+          </div>
         </div>
 
       </div>

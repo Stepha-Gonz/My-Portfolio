@@ -74,7 +74,7 @@ export default function Work() {
               onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') navigate(`/project/${p.slug}`); }}
             >
               <div className="project-img-wrap">
-                <img src={p.img} alt={p.title} loading="lazy" />
+                <img src={p.img} alt={p.title} loading="lazy" decoding="async" />
                 <div className="project-badge">
                   <span className="project-tag">{p.tag.toUpperCase()}</span>
                 </div>
