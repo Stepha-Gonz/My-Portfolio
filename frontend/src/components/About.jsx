@@ -42,8 +42,8 @@ export default function About() {
                 : 'Ahora diseño soluciones de datos de extremo a extremo en distintas industrias. La mente de ingeniera química me mantiene honesta con la incertidumbre. La mente de ingeniera de sistemas me mantiene honesta con la escala.'}
             </p>
 
-            <a href="/CV-Stephanie_Gonzalez.pdf" download className="cv-btn">
-              {lang === 'en' ? 'Download CV' : 'Descargar CV'}
+            <a href={lang === 'en' ? '/CV-Stephanie_Gonzalez.pdf' : '/HV-Stephanie_Gonzalez.pdf'} download className="cv-btn">
+              {lang === 'en' ? 'Download CV' : 'Descargar HV'}
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                 <polyline points="7 10 12 15 17 10"/>

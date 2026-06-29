@@ -7,15 +7,28 @@ export default function Stats() {
     <section className="stats" id="impact">
       <div className="container">
         <div className="stats-grid">
+
           <div className="stat-card reveal">
-            <div className="stat-value">QA Hero</div>
+            <div className="stat-value">CX Hero Academy</div>
             <div className="stat-label">
               {lang === 'en'
-                ? 'Custom AI agent currently powering CX QA Deep-Dive analyses across 6 LATAM countries'
+                ? 'Gamified full-stack training platform for BPO agents — personalized routes from QA audit gaps, live AI simulations & XP system'
+                : 'Plataforma full-stack gamificada de entrenamiento para agentes BPO — rutas personalizadas desde brechas QA, simulaciones IA en vivo y sistema XP'}
+            </div>
+            <div className="stat-note">
+              {lang === 'en' ? 'DiDi Global · 2026 — In development' : 'DiDi Global · 2026 — En construcción'}
+            </div>
+          </div>
+
+          <div className="stat-card reveal">
+            <div className="stat-value">CX Hero</div>
+            <div className="stat-label">
+              {lang === 'en'
+                ? 'Custom AI agent powering CX QA Deep-Dive analyses across 6 LATAM countries'
                 : 'Agente IA propio que potencia análisis Deep-Dive de QA CX en 6 países de LATAM'}
             </div>
             <div className="stat-note">
-              {lang === 'en' ? 'DiDi Global · 2026 — In progress' : 'DiDi Global · 2026 — En curso'}
+              {lang === 'en' ? 'DiDi Global · 2026 — In production' : 'DiDi Global · 2026 — En producción'}
             </div>
           </div>
 
@@ -38,6 +51,7 @@ export default function Stats() {
             </div>
             <div className="stat-note">OPPO Colombia · 2025</div>
           </div>
+
         </div>
       </div>
     </section>

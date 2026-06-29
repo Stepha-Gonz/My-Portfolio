@@ -1,26 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { DATA } from '../data/portfolioData';
-import Modal from './Modal';
-
-function ProjectModalContent({ project, lang }) {
-  return (
-    <>
-      <img className="modal-img" src={project.img} alt={project.title} loading="lazy" />
-      <p className="modal-kind">{project.kind[lang]}</p>
-      <h2 className="modal-title">{project.title}</h2>
-      <p className="modal-desc">{project.detail[lang]}</p>
-      <div className="modal-stack">
-        {project.stack.map(s => <span key={s} className="tag-pill">{s}</span>)}
-      </div>
-    </>
-  );
-}
 
 export default function Work() {
   const { lang } = useApp();
+  const navigate = useNavigate();
   const [filter, setFilter] = useState('all');
-  const [modalProject, setModalProject] = useState(null);
+  const gridRef = useRef(null);
 
   const filters = [
     { key: 'all', label: 'ALL' },
@@ -31,6 +18,28 @@ export default function Work() {
   const filtered = filter === 'all'
     ? DATA.projects
     : DATA.projects.filter(p => p.tag === filter);
+
+  // Re-observe cards every time the filtered list changes
+  useEffect(() => {
+    const grid = gridRef.current;
+    if (!grid) return;
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    grid.querySelectorAll('.reveal').forEach(el => {
+      el.classList.remove('visible');
+      io.observe(el);
+    });
+
+    return () => io.disconnect();
+  }, [filtered]);
 
   return (
     <section id="work">
@@ -52,7 +61,7 @@ export default function Work() {
           </div>
         </div>
 
-        <div className="projects-grid" aria-live="polite">
+        <div className="projects-grid" ref={gridRef} aria-live="polite">
           {filtered.map((p, i) => (
             <article
               key={p.slug}
@@ -61,8 +70,8 @@ export default function Work() {
               role="button"
               tabIndex={0}
               aria-label={`View ${p.title}`}
-              onClick={() => setModalProject(p)}
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setModalProject(p); }}
+              onClick={() => navigate(`/project/${p.slug}`)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') navigate(`/project/${p.slug}`); }}
             >
               <div className="project-img-wrap">
                 <img src={p.img} alt={p.title} loading="lazy" />
@@ -82,11 +91,6 @@ export default function Work() {
           ))}
         </div>
       </div>
-
-      <Modal
-        content={modalProject ? <ProjectModalContent project={modalProject} lang={lang} /> : null}
-        onClose={() => setModalProject(null)}
-      />
     </section>
   );
 }

@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import { DATA } from '../data/portfolioData';
 import Modal from './Modal';
@@ -14,64 +14,81 @@ function CertModalContent({ cert }) {
   );
 }
 
+const SPEED = 0.5; // px per frame
+const CARD_WIDTH = 296; // px per card step for buttons
+
 export default function Certifications() {
   const { lang } = useApp();
   const [modalCert, setModalCert] = useState(null);
-  const carouselRef = useRef(null);
   const trackRef = useRef(null);
-  const dragRef = useRef({ isDragging: false, startX: 0, baseOffset: 0, timer: null });
+  const stateRef = useRef({ x: 0, paused: false, dragging: false, startX: 0, startOffset: 0 });
+  const rafRef = useRef(null);
 
-  function pauseAnim() {
+  // Pure JS auto-scroll loop — no CSS animation
+  useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
-    const matrix = new DOMMatrix(getComputedStyle(track).transform);
-    dragRef.current.baseOffset = matrix.m41;
-    track.style.transform = `translateX(${dragRef.current.baseOffset}px)`;
-    track.classList.add('paused');
+
+    function loop() {
+      const s = stateRef.current;
+      if (!s.paused && !s.dragging) {
+        s.x -= SPEED;
+        // Reset when we've scrolled half (the duplicate starts)
+        const half = track.scrollWidth / 2;
+        if (Math.abs(s.x) >= half) s.x = 0;
+        track.style.transform = `translateX(${s.x}px)`;
+      }
+      rafRef.current = requestAnimationFrame(loop);
+    }
+
+    rafRef.current = requestAnimationFrame(loop);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, []);
+
+  function pause(ms) {
+    stateRef.current.paused = true;
+    clearTimeout(stateRef.current.resumeTimer);
+    if (ms) stateRef.current.resumeTimer = setTimeout(() => { stateRef.current.paused = false; }, ms);
   }
 
-  function resumeAnim() {
-    const track = trackRef.current;
-    if (!track) return;
-    track.style.transform = '';
-    track.classList.remove('paused');
+  function scrollBy(delta) {
+    stateRef.current.x += delta;
+    if (trackRef.current) trackRef.current.style.transform = `translateX(${stateRef.current.x}px)`;
+    pause(2000);
   }
 
+  // Drag handlers
   function onMouseDown(e) {
-    dragRef.current.isDragging = true;
-    dragRef.current.startX = e.clientX;
-    clearTimeout(dragRef.current.timer);
-    pauseAnim();
-    if (carouselRef.current) carouselRef.current.style.cursor = 'grabbing';
+    stateRef.current.dragging = true;
+    stateRef.current.startX = e.clientX;
+    stateRef.current.startOffset = stateRef.current.x;
+    e.currentTarget.style.cursor = 'grabbing';
     e.preventDefault();
   }
-
   function onMouseMove(e) {
-    if (!dragRef.current.isDragging) return;
-    const track = trackRef.current;
-    if (track) track.style.transform = `translateX(${dragRef.current.baseOffset + (e.clientX - dragRef.current.startX)}px)`;
+    if (!stateRef.current.dragging) return;
+    stateRef.current.x = stateRef.current.startOffset + (e.clientX - stateRef.current.startX);
+    if (trackRef.current) trackRef.current.style.transform = `translateX(${stateRef.current.x}px)`;
   }
-
-  function onMouseUp() {
-    if (!dragRef.current.isDragging) return;
-    dragRef.current.isDragging = false;
-    if (carouselRef.current) carouselRef.current.style.cursor = '';
-    dragRef.current.timer = setTimeout(resumeAnim, 800);
+  function onMouseUp(e) {
+    if (!stateRef.current.dragging) return;
+    stateRef.current.dragging = false;
+    e.currentTarget.style.cursor = '';
+    pause(800);
   }
-
   function onTouchStart(e) {
-    dragRef.current.startX = e.touches[0].clientX;
-    clearTimeout(dragRef.current.timer);
-    pauseAnim();
+    stateRef.current.dragging = true;
+    stateRef.current.startX = e.touches[0].clientX;
+    stateRef.current.startOffset = stateRef.current.x;
   }
-
   function onTouchMove(e) {
-    const track = trackRef.current;
-    if (track) track.style.transform = `translateX(${dragRef.current.baseOffset + (e.touches[0].clientX - dragRef.current.startX)}px)`;
+    if (!stateRef.current.dragging) return;
+    stateRef.current.x = stateRef.current.startOffset + (e.touches[0].clientX - stateRef.current.startX);
+    if (trackRef.current) trackRef.current.style.transform = `translateX(${stateRef.current.x}px)`;
   }
-
   function onTouchEnd() {
-    dragRef.current.timer = setTimeout(resumeAnim, 800);
+    stateRef.current.dragging = false;
+    pause(800);
   }
 
   const cards = DATA.certs.map((cert, i) => (
@@ -97,15 +114,18 @@ export default function Certifications() {
 
   return (
     <section id="certs">
-      <div className="container">
+      <div className="container certs-header">
         <h2 className="section-title">
           {lang === 'en' ? 'Certifications' : 'Certificaciones'}
         </h2>
+        <div className="certs-nav">
+          <button className="certs-nav-btn" onClick={() => scrollBy(CARD_WIDTH)} aria-label="Previous">←</button>
+          <button className="certs-nav-btn" onClick={() => scrollBy(-CARD_WIDTH)} aria-label="Next">→</button>
+        </div>
       </div>
 
       <div
         className="certs-carousel"
-        ref={carouselRef}
         onMouseDown={onMouseDown}
         onMouseMove={onMouseMove}
         onMouseUp={onMouseUp}

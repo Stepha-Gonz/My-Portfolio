@@ -21,6 +21,7 @@ export const DATA = {
         es: 'Análisis de mercado sectorial con ventas, inventario y proyecciones por región, canal y rango de precio. Medidas DAX y transformaciones Power Query para actualización automatizada.',
       },
       stack: ['Power BI', 'DAX', 'Power Query'],
+      embed: 'https://app.powerbi.com/view?r=eyJrIjoiNGY3OGQwZjgtODVjOC00OWVlLTlmODgtOTZmOTk2Y2JkNDNmIiwidCI6ImMwNmZiNTU5LTFiNjgtNGI4NC1hMTRmLTQ3ZDBkODM3YTVhYiIsImMiOjR9',
     },
     {
       slug: 'bizexpo',
@@ -38,6 +39,7 @@ export const DATA = {
         es: 'Plataforma web para evento tech con autenticación, dashboard analytics admin y mapeo dinámico Leaflet.js. Construida end-to-end aplicando principios de arquitectura RESTful.',
       },
       stack: ['PHP', 'MySQL', 'JS', 'SASS'],
+      video: '/video/bizexpo-pre.mp4',
     },
     {
       slug: 'glowradiance',
@@ -55,6 +57,7 @@ export const DATA = {
         es: 'Concepto e-commerce de skincare con catálogo de productos completo, navegación por categorías, flujo add-to-cart y mockup de checkout. Construido con HTML/CSS/JS limpio sin frameworks.',
       },
       stack: ['HTML', 'CSS', 'JS'],
+      video: '/video/glowradiance-pre.mp4',
     },
     {
       slug: 'tasknexus',
@@ -72,6 +75,7 @@ export const DATA = {
         es: 'Aplicación de gestión de tareas con tableros estilo kanban, priorización, seguimiento de fechas límite y persistencia local. Construida con JS/CSS puro sin frameworks.',
       },
       stack: ['JS', 'CSS', 'HTML'],
+      video: '/video/tasknexus-pre.mp4',
     },
     {
       slug: 'dentalclinic',
@@ -89,6 +93,7 @@ export const DATA = {
         es: 'Sitio web responsive para clínica dental con páginas de servicios, formulario de cita y integración Google Maps. Ciclo completo: requerimientos → mockups Figma → desarrollo → deployment.',
       },
       stack: ['HTML', 'CSS', 'JS', 'Figma'],
+      video: '/video/clinicadental-pre.mp4',
     },
     {
       slug: 'homehunter',
@@ -106,6 +111,7 @@ export const DATA = {
         es: 'Aplicación de listado de propiedades con búsqueda avanzada, filtros por categoría y sistema de favoritos guardados. Integra una API inmobiliaria para listados en vivo.',
       },
       stack: ['JS', 'CSS', 'API'],
+      video: '/video/homehunter-pre.mp4',
     },
   ],
 
