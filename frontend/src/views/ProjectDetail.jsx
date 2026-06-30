@@ -51,6 +51,8 @@ export default function ProjectDetail() {
               src={project.video}
               controls
               playsInline
+              preload="none"
+              poster={project.img}
               className="project-detail-video"
             />
           </div>

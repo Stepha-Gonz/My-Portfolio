@@ -36,6 +36,10 @@
   color: var(--ink);
   flex-shrink: 0;
   transition: color var(--transition);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 
   &:hover { color: var(--accent); }
 }
@@ -50,12 +54,16 @@
   align-items: center;
   margin-left: auto;
 
-  a {
+  a, button {
     font-family: var(--font-body);
     font-size: 13px;
     letter-spacing: 0.02em;
     color: var(--ink-soft);
     transition: color var(--transition);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 
     &:hover { color: var(--ink); }
   }
@@ -149,12 +157,18 @@
   border-top: 1px solid var(--border);
   padding: 16px 0 24px;
 
-  a {
+  a, button {
     display: block;
+    width: 100%;
+    text-align: left;
     padding: 12px 36px;
     font-size: 15px;
+    font-family: var(--font-body);
     color: var(--ink-soft);
+    border: none;
     border-bottom: 1px solid var(--border);
+    background: none;
+    cursor: pointer;
     transition: color var(--transition), background var(--transition);
 
     &:hover { color: var(--ink); background: var(--ink-faint); }

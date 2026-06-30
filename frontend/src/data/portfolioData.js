@@ -8,7 +8,7 @@ export const DATA = {
     {
       slug: 'marketfood',
       tag: 'bi',
-      img: '/img/Market-food-beverage.png',
+      img: '/img/Market-food-beverage.webp',
       title: 'Market Analysis — Food & Beverage',
       year: '2024',
       kind: { en: 'Power BI · Sector Analytics', es: 'Power BI · Analítica Sectorial' },
@@ -26,7 +26,7 @@ export const DATA = {
     {
       slug: 'bizexpo',
       tag: 'web',
-      img: '/img/bizexpo-img.png',
+      img: '/img/bizexpo-img.webp',
       title: 'BizExpo — Tech Event Platform',
       year: '2024',
       kind: { en: 'Full-Stack Web · PHP + MySQL', es: 'Full-Stack Web · PHP + MySQL' },
@@ -44,7 +44,7 @@ export const DATA = {
     {
       slug: 'glowradiance',
       tag: 'web',
-      img: '/img/glowradiance-img.png',
+      img: '/img/glowradiance-img.webp',
       title: 'GlowRadiance',
       year: '2024',
       kind: { en: 'E-commerce UI', es: 'UI de E-commerce' },
@@ -62,7 +62,7 @@ export const DATA = {
     {
       slug: 'tasknexus',
       tag: 'web',
-      img: '/img/tasknexus-img.png',
+      img: '/img/tasknexus-img.webp',
       title: 'TaskNexus',
       year: '2024',
       kind: { en: 'Task Management Web App', es: 'App de Gestión de Tareas' },
@@ -80,7 +80,7 @@ export const DATA = {
     {
       slug: 'dentalclinic',
       tag: 'web',
-      img: '/img/hector-gonzalez.png',
+      img: '/img/hector-gonzalez.webp',
       title: 'Dental Clinic — Dr. Héctor González',
       year: '2024',
       kind: { en: 'Web Design & Development', es: 'Diseño y Desarrollo Web' },
@@ -90,7 +90,7 @@ export const DATA = {
       },
       detail: {
         en: 'Responsive website for a dental practice including service pages, appointment request form, and Google Maps integration. Full cycle: requirements gathering → Figma mockups → development → deployment.',
-        es: 'Sitio web responsive para clínica dental con páginas de servicios, formulario de cita y integración Google Maps. Ciclo completo: requerimientos → mockups Figma → desarrollo → deployment.',
+        es: 'Sitio web responsive para clínica dental con páginas de servicios, formulario de cita e integración Google Maps. Ciclo completo: requerimientos → mockups Figma → desarrollo → deployment.',
       },
       stack: ['HTML', 'CSS', 'JS', 'Figma'],
       video: '/video/clinicadental-pre.mp4',
@@ -98,7 +98,7 @@ export const DATA = {
     {
       slug: 'homehunter',
       tag: 'web',
-      img: '/img/homehunter2.png',
+      img: '/img/homehunter2.webp',
       title: 'HomeHunter',
       year: '2024',
       kind: { en: 'Real Estate Web App', es: 'Web App Inmobiliaria' },
@@ -205,31 +205,31 @@ export const DATA = {
 
   certs: [
     {
-      img: '/img/certificate-DataAnalytics.png',
+      img: '/img/certificate-DataAnalytics.webp',
       title: 'Data Analytics Specialization',
       org: 'San Ignacio University (Miami) · Netzun',
       date: 'Jul — Aug 2024',
     },
     {
-      img: '/img/certificate-WebDevelopment.png',
+      img: '/img/certificate-WebDevelopment.webp',
       title: 'Full-Stack Web Development',
       org: 'Udemy',
       date: 'Feb — Jul 2024',
     },
     {
-      img: '/img/certificate-AutomatedTesting.png',
+      img: '/img/certificate-AutomatedTesting.webp',
       title: 'Introduction to Automated Testing',
       org: 'EPAM Campus',
       date: 'May — Jun 2024',
     },
     {
-      img: '/img/systemsengineer-degree.png',
+      img: '/img/systemsengineer-degree.webp',
       title: 'Systems Engineering',
       org: 'EAN University',
       date: '2019 — 2023',
     },
     {
-      img: '/img/chemicalsengineer-degree.png',
+      img: '/img/chemicalsengineer-degree.webp',
       title: 'Chemical Engineering',
       org: 'EAN University',
       date: '2017 — 2021',

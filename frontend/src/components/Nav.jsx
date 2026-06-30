@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 
 export default function Nav() {
   const { lang, toggleLang, toggleTheme } = useApp();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -13,22 +17,46 @@ export default function Nav() {
   }, []);
 
   const links = [
-    { href: '#about',        en: 'about',        es: 'sobre mí'   },
-    { href: '#work',         en: 'work',          es: 'proyectos'  },
-    { href: '#career',       en: 'career',        es: 'carrera'    },
-    { href: '#capabilities', en: 'capabilities',  es: 'capacidades'},
-    { href: '#contact',      en: 'contact',       es: 'contacto'   },
+    { id: 'about',        en: 'about',        es: 'sobre mí'    },
+    { id: 'work',         en: 'work',         es: 'proyectos'   },
+    { id: 'career',       en: 'career',       es: 'carrera'     },
+    { id: 'capabilities', en: 'capabilities', es: 'capacidades' },
+    { id: 'contact',      en: 'contact',      es: 'contacto'    },
   ];
+
+  function goToSection(id) {
+    setMenuOpen(false);
+    if (isHome) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Navigate to home, then scroll after render
+      navigate('/');
+      sessionStorage.setItem('scrollTo', id);
+    }
+  }
+
+  function goHome() {
+    setMenuOpen(false);
+    navigate('/');
+    sessionStorage.setItem('scrollTo', 'top');
+  }
 
   return (
     <header>
       <nav className={`nav${scrolled ? ' scrolled' : ''}`} id="nav">
         <div className="nav-inner">
-          <a href="#" className="nav-logo">Stepha<span className="nav-logo-dot">•</span>Gonz</a>
+          <button className="nav-logo" onClick={goHome} aria-label="Go to home">
+            Stepha<span className="nav-logo-dot">•</span>Gonz
+          </button>
 
           <ul className="nav-links">
             {links.map(l => (
-              <li key={l.href}><a href={l.href}>{lang === 'en' ? l.en : l.es}</a></li>
+              <li key={l.id}>
+                <button onClick={() => goToSection(l.id)}>
+                  {lang === 'en' ? l.en : l.es}
+                </button>
+              </li>
             ))}
           </ul>
 
@@ -50,9 +78,9 @@ export default function Nav() {
 
         <div className={`nav-mobile${menuOpen ? ' open' : ''}`}>
           {links.map(l => (
-            <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)}>
+            <button key={l.id} onClick={() => goToSection(l.id)}>
               {lang === 'en' ? l.en : l.es}
-            </a>
+            </button>
           ))}
         </div>
       </nav>
