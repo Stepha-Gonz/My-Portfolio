@@ -5,8 +5,18 @@ export default function Cursor({ accent = 'var(--violet)' }) {
   const ringRef = useRef(null);
   const [label, setLabel] = useState(null);
   const [hovering, setHovering] = useState(false);
+  const [isTouch, setIsTouch] = useState(true);
 
   useEffect(() => {
+    const mq = window.matchMedia('(hover: none), (pointer: coarse)');
+    const f = () => setIsTouch(mq.matches);
+    f();
+    mq.addEventListener('change', f);
+    return () => mq.removeEventListener('change', f);
+  }, []);
+
+  useEffect(() => {
+    if (isTouch) return;
     const dot = dotRef.current;
     const ring = ringRef.current;
     if (!dot || !ring) return;
@@ -35,7 +45,9 @@ export default function Cursor({ accent = 'var(--violet)' }) {
       window.removeEventListener('mousemove', onMove);
       window.removeEventListener('mouseover', onOver);
     };
-  }, []);
+  }, [isTouch]);
+
+  if (isTouch) return null;
 
   return (
     <>
