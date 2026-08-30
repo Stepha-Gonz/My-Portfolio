@@ -30,9 +30,10 @@ export default function Contact() {
   useEffect(() => { if (!touched) setMsg(auto); }, [auto, touched]);
 
   const body = msg || auto;
-  const subject = lang === 'en' ? 'A tiny brief' : 'Un mini brief';
-  const mailto = `mailto:${DATA.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const mailSubject = lang === 'en' ? 'A tiny brief' : 'Un mini brief';
+  const mailto = `mailto:${DATA.email}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(body)}`;
   const valid = name.trim() && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) && body.trim().length > 4;
+  const emailInvalid = email.trim().length > 0 && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
 
   async function send(e) {
     e.preventDefault();
@@ -43,8 +44,14 @@ export default function Contact() {
       const r = await fetch('https://api.web3forms.com/submit', {
         method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          access_key: DATA.formKey, subject: `${subject} — ${name}`, name, email, from_name: name,
-          message: `${body}\n\n— ${c.q1}: ${c.a1[a1]}\n— ${c.q2}: ${c.a2[a2]}`,
+          access_key: DATA.formKey,
+          subject: `Mensaje de Portafolio — ${name}`,
+          from_name: name,
+          name,
+          email,
+          [c.q1]: c.a1[a1],
+          [c.q2]: c.a2[a2],
+          Mensaje: body,
         }),
       });
       const j = await r.json();
@@ -58,7 +65,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="sec dark-block" style={{ padding: '110px 0' }}>
+    <section id="contact" className="sec" style={{ padding: '110px 0' }}>
       <div className="aura" style={{ left: '8%', top: '-10%', width: '54vw', height: '54vw', background: 'radial-gradient(circle,var(--aura-a),transparent 66%)' }} />
       <div className="wrap inner">
         <div className="g2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center' }}>
@@ -100,6 +107,13 @@ export default function Contact() {
                 style={{ width: '100%', justifyContent: 'space-between', opacity: valid && state !== 'sending' ? 1 : .45, cursor: valid ? 'none' : 'not-allowed' }}>
                 {state === 'sending' ? c.sending : state === 'ok' ? c.sent : c.send} <span style={{ fontSize: 16 }}>↗</span>
               </button>
+              {!valid && state === 'idle' && (
+                <div style={{ fontSize: 12.5, color: emailInvalid ? 'var(--coral)' : 'var(--ink-mute)', textAlign: 'center' }}>
+                  {emailInvalid
+                    ? (lang === 'en' ? 'That email looks incomplete.' : 'Ese correo se ve incompleto.')
+                    : (lang === 'en' ? 'Add your name and a valid email to send.' : 'Agrega tu nombre y un correo válido para enviar.')}
+                </div>
+              )}
             </form>
             {state === 'ok' && <div style={{ fontSize: 14, color: 'var(--lime)', marginBottom: 12, lineHeight: 1.5 }}>{c.ok}</div>}
             {state === 'error' && <div style={{ fontSize: 13.5, color: 'var(--coral)', marginBottom: 12, lineHeight: 1.5 }}>{c.error} <a href={mailto} style={{ color: 'var(--coral)' }}>{c.error_l}</a>{err ? ' · ' + err : ''}</div>}

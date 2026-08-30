@@ -9,7 +9,7 @@ export default function Impact() {
   const c = COPY.impact[lang];
 
   return (
-    <section id="impact" className="sec dark-block">
+    <section id="impact" className="sec">
       <div className="aura" style={{ right: '-12%', top: '-16%', width: '52vw', height: '52vw', background: 'radial-gradient(circle,var(--aura-a),transparent 68%)' }} />
       <div className="wrap inner">
         <SectionHead eyebrow={c.eyebrow} blurb={c.blurb}>

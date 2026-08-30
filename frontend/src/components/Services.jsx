@@ -17,7 +17,7 @@ export default function Services() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="services" className="sec dark-block">
+    <section id="services" className="sec">
       <div className="aura" style={{ right: '-10%', bottom: '-20%', width: '50vw', height: '50vw', background: 'radial-gradient(circle,var(--aura-a),transparent 68%)' }} />
       <div className="wrap inner">
         <SectionHead eyebrow={c.eyebrow} blurb={c.blurb}>
