@@ -1,24 +1,21 @@
 import { useEffect } from 'react';
-import { useScrollReveal } from '../hooks/useScrollReveal';
 import Hero from '../components/Hero';
-import Stats from '../components/Stats';
-import About from '../components/About';
 import Work from '../components/Work';
+import Impact from '../components/Impact';
+import About from '../components/About';
 import Career from '../components/Career';
-import Capabilities from '../components/Capabilities';
-import Certifications from '../components/Certifications';
+import Services from '../components/Services';
+import Credentials from '../components/Credentials';
 import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 
 export default function Home() {
-  useScrollReveal();
-
   // Handle scroll-to-section after navigating back from a project page
   useEffect(() => {
     const target = sessionStorage.getItem('scrollTo');
     if (!target) return;
     sessionStorage.removeItem('scrollTo');
     if (target === 'top') { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
-    // Wait for DOM to paint
     const attempt = (tries = 0) => {
       const el = document.getElementById(target);
       if (el) { el.scrollIntoView({ behavior: 'smooth' }); }
@@ -30,13 +27,14 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <Stats />
-      <About />
       <Work />
+      <Impact />
+      <About />
       <Career />
-      <Capabilities />
-      <Certifications />
+      <Services />
+      <Credentials />
       <Contact />
+      <Footer />
     </main>
   );
 }

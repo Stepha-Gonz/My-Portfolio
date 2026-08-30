@@ -4,7 +4,7 @@ const AppContext = createContext(null);
 
 export function AppProvider({ children }) {
   const [lang, setLangState] = useState(() => localStorage.getItem('lang') || 'en');
-  const [theme, setThemeState] = useState(() => localStorage.getItem('theme') || 'light');
+  const [theme, setThemeState] = useState(() => localStorage.getItem('theme') || 'dark');
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;

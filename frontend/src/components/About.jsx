@@ -1,62 +1,42 @@
 import { useApp } from '../context/AppContext';
+import { COPY } from '../data/copy';
+import { Reveal, RevealWords } from './ui/Reveal';
 
 export default function About() {
   const { lang } = useApp();
+  const c = COPY.about[lang];
 
   return (
-    <section id="about">
-      <div className="container">
-        <div className="about-grid">
-          <div className="about-text reveal">
-            <h2 className="about-headline">
-              {lang === 'en'
-                ? 'Two engineering degrees. One obsession: making data tell the truth.'
-                : 'Dos títulos de ingeniería. Una obsesión: hacer que los datos digan la verdad.'}
+    <section id="about" className="sec">
+      <div className="aura" style={{ right: '-10%', top: '-10%', width: '46vw', height: '46vw', background: 'radial-gradient(circle,var(--aura-a),transparent 68%)', opacity: .55 }} />
+      <div className="wrap inner">
+        <div className="g2" style={{ display: 'grid', gridTemplateColumns: '1.1fr .9fr', gap: 80, alignItems: 'center' }}>
+          <div>
+            <div className="eyebrow" style={{ marginBottom: 22 }}>{c.eyebrow}</div>
+            <h2 className="disp" style={{ fontSize: 'clamp(38px,4.6vw,62px)', margin: 0 }}>
+              <RevealWords text={c.h1} /> <span className="it" style={{ fontFamily: 'var(--font-display)' }}>{c.hi}</span><br />
+              <RevealWords text={c.h2} delay={150} />
             </h2>
-
-            <div className="about-degrees">
-              {lang === 'en' ? (
-                <>
-                  <span>Systems Eng. · EAN 2023</span>
-                  <span className="about-degrees-sep">|</span>
-                  <span>Chemical Eng. · EAN 2021</span>
-                </>
-              ) : (
-                <>
-                  <span>Ing. de Sistemas · EAN 2023</span>
-                  <span className="about-degrees-sep">|</span>
-                  <span>Ing. Química · EAN 2021</span>
-                </>
-              )}
-            </div>
-
-            <p className="about-p">
-              {lang === 'en'
-                ? 'I started in chemical engineering learning to model physical systems — mass balances, kinetics, thermodynamics. Then I pivoted to systems engineering and discovered you can apply the same rigour to data: model the flow, identify the constraints, optimise the output.'
-                : 'Empecé en ingeniería química aprendiendo a modelar sistemas físicos — balances de masa, cinética, termodinámica. Luego cambié a ingeniería de sistemas y descubrí que puedes aplicar el mismo rigor a los datos: modela el flujo, identifica las restricciones, optimiza la salida.'}
-            </p>
-
-            <p className="about-p">
-              {lang === 'en'
-                ? 'Now I architect end-to-end data solutions across industries. The chemical-engineer brain keeps me honest about uncertainty. The software-engineer brain keeps me honest about scale.'
-                : 'Ahora diseño soluciones de datos de extremo a extremo en distintas industrias. La mente de ingeniera química me mantiene honesta con la incertidumbre. La mente de ingeniera de sistemas me mantiene honesta con la escala.'}
-            </p>
-
-            <a href={lang === 'en' ? '/CV-Stephanie_Gonzalez.pdf' : '/HV-Stephanie_Gonzalez.pdf'} download className="cv-btn">
-              {lang === 'en' ? 'Download CV' : 'Descargar HV'}
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="7 10 12 15 17 10"/>
-                <line x1="12" y1="15" x2="12" y2="3"/>
-              </svg>
+            <div className="mono" style={{ fontSize: 11, color: 'var(--ink-mute)', letterSpacing: '.12em', margin: '32px 0', padding: '18px 0', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', lineHeight: 1.9 }}>{c.degrees}</div>
+            <p style={{ fontSize: 16.5, lineHeight: 1.65, color: 'var(--ink-soft)', margin: '0 0 18px' }}>{c.p1}</p>
+            <p style={{ fontSize: 16.5, lineHeight: 1.65, color: 'var(--ink-soft)', margin: '0 0 36px' }}>{c.p2}</p>
+            <a href={lang === 'en' ? '/CV-Stephanie_Gonzalez.pdf' : '/HV-Stephanie_Gonzalez.pdf'} download data-cursor="cv ↓" className="btn">
+              {c.cta} <span style={{ fontSize: 15 }}>↓</span>
             </a>
           </div>
-
-          <div className="about-visual reveal">
-            <div className="about-img-wrap">
-              <img src="/img/about-img.png" alt="Stephanie Gonzalez" loading="lazy" />
+          <Reveal>
+            <div style={{ position: 'relative', aspectRatio: '3/4', maxWidth: 440, marginLeft: 'auto' }}>
+              <div style={{ position: 'absolute', left: 26, top: 26, right: -18, bottom: -18, borderRadius: 6, background: 'linear-gradient(150deg,var(--violet),var(--coral))', opacity: .85 }} />
+              <div style={{ position: 'absolute', inset: 0, borderRadius: 6, overflow: 'hidden', background: 'var(--bg-2)', border: '1px solid var(--border)' }}>
+                <img src="/img/about/about-img.webp" alt="Stephanie Gonzalez" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              <div style={{ position: 'absolute', right: -30, top: -30, width: 132, height: 132, borderRadius: '50%', background: 'var(--lime)', color: 'oklch(20% 0.04 292)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 2, boxShadow: '0 0 50px -10px var(--lime)' }}>
+                <span className="mono" style={{ fontSize: 8.5, letterSpacing: '.16em' }}>{c.badge[0]}</span>
+                <span className="mono" style={{ fontSize: 14, fontWeight: 500, letterSpacing: '.06em' }}>{c.badge[1]}</span>
+                <span className="mono" style={{ fontSize: 8.5, letterSpacing: '.16em' }}>{c.badge[2]}</span>
+              </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
