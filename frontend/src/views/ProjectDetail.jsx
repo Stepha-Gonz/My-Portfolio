@@ -54,7 +54,6 @@ export default function ProjectDetail() {
   const { lang } = useApp();
   const navigate = useNavigate();
   const c = COPY.detail[lang];
-  const A = COPY.approach[lang];
 
   const projects = DATA.projects;
   const idx = projects.findIndex((p) => p.slug === slug);
@@ -74,7 +73,7 @@ export default function ProjectDetail() {
   }
 
   const meta = [
-    ['ROLE', lang === 'en' ? 'Designer & Developer' : 'Diseño y Desarrollo'],
+    ['ROLE', p.role[lang]],
     ['TYPE', p.kind[lang]],
     ['YEAR', p.year],
     ['STACK', p.stack.join(' · ')],
@@ -128,31 +127,29 @@ export default function ProjectDetail() {
       <S i={1} label={c.s2}>
         <div className="g2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }}>
           <h2 className="disp" style={{ fontSize: 'clamp(32px,4vw,54px)', margin: 0 }}>
-            {lang === 'en' ? "Information wasn't the problem." : 'La información no era el problema.'}<br />
-            <span className="it-c" style={{ fontFamily: 'var(--font-display)' }}>{lang === 'en' ? 'Clarity was.' : 'La claridad sí.'}</span>
+            {p.headlines.problem.l1[lang]}<br />
+            <span className="it-c" style={{ fontFamily: 'var(--font-display)' }}>{p.headlines.problem.l2[lang]}</span>
           </h2>
           <div>
             <p style={{ fontSize: 16, lineHeight: 1.65, color: 'var(--ink-soft)', margin: '0 0 16px' }}>{p.detail ? p.detail[lang] : p.summary[lang]}</p>
-            <p style={{ fontSize: 16, lineHeight: 1.65, color: 'var(--ink-soft)', margin: 0 }}>{lang === 'en'
-              ? 'The data existed — scattered across sources, formats and teams. The work was giving it a shape people could read, trust and act on.'
-              : 'Los datos existían — dispersos en fuentes, formatos y equipos. El trabajo fue darles una forma que las personas pudieran leer, entender y usar.'}</p>
+            <p style={{ fontSize: 16, lineHeight: 1.65, color: 'var(--ink-soft)', margin: 0 }}>{p.problemNote[lang]}</p>
           </div>
         </div>
       </S>
 
       <S i={2} label={c.s3}>
         <h2 className="disp" style={{ fontSize: 'clamp(30px,3.6vw,46px)', margin: '0 0 44px', maxWidth: '14ch' }}>
-          {lang === 'en' ? 'From complex data to' : 'De datos complejos a'} <span className="it" style={{ fontFamily: 'var(--font-display)' }}>{lang === 'en' ? 'clear decisions.' : 'decisiones claras.'}</span>
+          {p.headlines.approach.l1[lang]} <span className="it" style={{ fontFamily: 'var(--font-display)' }}>{p.headlines.approach.l2[lang]}</span>
         </h2>
         <div className="g4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 24 }}>
-          {A.map(([t, d], i) => (
+          {p.approach.map((a, i) => (
             <div key={i}>
               <div style={{ width: 44, height: 44, borderRadius: 12, border: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 18 }}>
                 <span style={{ width: 14, height: 14, borderRadius: i % 2 ? '50%' : 3, background: i % 2 ? 'var(--coral)' : 'var(--lime)' }} />
               </div>
               <div className="mono" style={{ fontSize: 10, letterSpacing: '.14em', color: 'var(--ink-mute)', marginBottom: 8 }}>0{i + 1}</div>
-              <div style={{ fontSize: 18, fontWeight: 500, marginBottom: 9 }}>{t}</div>
-              <p style={{ fontSize: 14, lineHeight: 1.6, color: 'var(--ink-soft)', margin: 0 }}>{d}</p>
+              <div style={{ fontSize: 18, fontWeight: 500, marginBottom: 9 }}>{a.t[lang]}</div>
+              <p style={{ fontSize: 14, lineHeight: 1.6, color: 'var(--ink-soft)', margin: 0 }}>{a.d[lang]}</p>
             </div>
           ))}
         </div>
@@ -161,8 +158,8 @@ export default function ProjectDetail() {
       <S i={3} label={c.s4}>
         <div className="g2" style={{ display: 'grid', gridTemplateColumns: '.7fr 1.3fr', gap: 48, alignItems: 'center' }}>
           <h2 className="disp" style={{ fontSize: 'clamp(30px,3.6vw,46px)', margin: 0 }}>
-            {lang === 'en' ? 'Simple to' : 'Simple de'} <span className="it" style={{ fontFamily: 'var(--font-display)' }}>{lang === 'en' ? 'explore.' : 'explorar.'}</span><br />
-            {lang === 'en' ? 'Powerful to' : 'Poderoso para'} <span className="it" style={{ fontFamily: 'var(--font-display)' }}>{lang === 'en' ? 'decide.' : 'decidir.'}</span>
+            {p.headlines.interface.l1[lang]} <span className="it" style={{ fontFamily: 'var(--font-display)' }}>{p.headlines.interface.l2[lang]}</span><br />
+            {p.headlines.interface.l3[lang]} <span className="it" style={{ fontFamily: 'var(--font-display)' }}>{p.headlines.interface.l4[lang]}</span>
           </h2>
           <div className="card" style={{ overflow: 'hidden', boxShadow: 'var(--shadow)' }}>
             {p.media === 'powerbi' && p.embed
@@ -181,35 +178,25 @@ export default function ProjectDetail() {
       <S i={4} label={c.s5}>
         <div className="g2" style={{ display: 'grid', gridTemplateColumns: '.8fr 1.2fr', gap: 48, alignItems: 'center' }}>
           <h2 className="disp" style={{ fontSize: 'clamp(30px,3.6vw,46px)', margin: 0 }}>
-            {lang === 'en' ? 'Better insights.' : 'Mejores insights.'}<br />{lang === 'en' ? 'Better' : 'Mejores'} <span className="it" style={{ fontFamily: 'var(--font-display)' }}>{lang === 'en' ? 'decisions.' : 'decisiones.'}</span>
+            {p.headlines.outcome.l1[lang]}<br />{p.headlines.outcome.l2[lang]} <span className="it" style={{ fontFamily: 'var(--font-display)' }}>{p.headlines.outcome.l3[lang]}</span>
           </h2>
           <div className="g3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 18 }}>
-            {[
-              [lang === 'en' ? 'Single source' : 'Fuente única', lang === 'en' ? 'of truth for the team' : 'de verdad para el equipo', 'var(--lime)'],
-              [lang === 'en' ? 'Less manual work' : 'Menos trabajo manual', lang === 'en' ? 'in every weekly cycle' : 'en cada ciclo semanal', 'var(--violet)'],
-              [lang === 'en' ? 'Faster answers' : 'Respuestas más rápidas', lang === 'en' ? 'to the questions that matter' : 'a las preguntas que importan', 'var(--coral)'],
-            ].map(([t, d, col], i) => (
-              <div key={i} className="card" style={{ padding: '24px 22px' }}>
-                <div style={{ width: 12, height: 12, borderRadius: '50%', background: col, marginBottom: 18, boxShadow: '0 0 18px ' + col }} />
-                <div style={{ fontSize: 19, fontWeight: 500, letterSpacing: '-.015em', marginBottom: 8 }}>{t}</div>
-                <div style={{ fontSize: 13.5, lineHeight: 1.55, color: 'var(--ink-soft)' }}>{d}</div>
-              </div>
-            ))}
+            {p.outcome.map((o, i) => {
+              const col = o.color === 'lime' ? 'var(--lime)' : o.color === 'coral' ? 'var(--coral)' : 'var(--violet)';
+              return (
+                <div key={i} className="card" style={{ padding: '24px 22px' }}>
+                  <div style={{ width: 12, height: 12, borderRadius: '50%', background: col, marginBottom: 18, boxShadow: '0 0 18px ' + col }} />
+                  <div style={{ fontSize: 19, fontWeight: 500, letterSpacing: '-.015em', marginBottom: 8 }}>{o.t[lang]}</div>
+                  <div style={{ fontSize: 13.5, lineHeight: 1.55, color: 'var(--ink-soft)' }}>{o.d[lang]}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </S>
 
-      <S i={5} label={c.s6} style={{ borderBottom: '1px solid var(--border)' }}>
-        <div className="g2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center' }}>
-          <div>
-            <h2 className="disp" style={{ fontSize: 'clamp(30px,3.6vw,46px)', margin: '0 0 20px' }}>
-              {lang === 'en' ? "Design doesn't remove complexity." : 'El diseño no elimina la complejidad.'}<br />
-              <span className="it" style={{ fontFamily: 'var(--font-display)' }}>{lang === 'en' ? 'It makes it useful.' : 'La hace útil.'}</span>
-            </h2>
-            <p style={{ fontSize: 16, lineHeight: 1.65, color: 'var(--ink-soft)', margin: 0, maxWidth: 460 }}>{lang === 'en'
-              ? 'The challenge was never the data. It was understanding what people actually needed to see.'
-              : 'El reto nunca fueron los datos, sino entender qué necesitaban ver realmente las personas.'}</p>
-          </div>
+      <section className="sec" style={{ padding: '80px 0', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
+        <div className="wrap inner" style={{ maxWidth: 1180 }}>
           <a href={`/project/${next.slug}`} onClick={(e) => { e.preventDefault(); navigate(`/project/${next.slug}`); }} data-cursor="next ↗"
             className="card" style={{ display: 'block', textDecoration: 'none', color: 'var(--ink)', padding: '30px 32px', overflow: 'hidden', position: 'relative' }}
             onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--violet)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; }}>
@@ -222,7 +209,7 @@ export default function ProjectDetail() {
             </div>
           </a>
         </div>
-      </S>
+      </section>
       <Footer />
     </div>
   );

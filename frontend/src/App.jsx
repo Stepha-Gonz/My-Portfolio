@@ -13,6 +13,13 @@ export default function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<Home />} />
+          <Route path="/projects" element={<Home />} />
+          <Route path="/impact" element={<Home />} />
+          <Route path="/career" element={<Home />} />
+          <Route path="/services" element={<Home />} />
+          <Route path="/credentials" element={<Home />} />
+          <Route path="/contact" element={<Home />} />
           <Route path="/project/:slug" element={<ProjectDetail />} />
         </Routes>
       </AppProvider>

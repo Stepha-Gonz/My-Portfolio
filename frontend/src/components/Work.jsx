@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { DATA } from '../data/portfolioData';
@@ -5,8 +6,14 @@ import { COPY } from '../data/copy';
 import SectionHead from './ui/SectionHead';
 import { RevealWords } from './ui/Reveal';
 
-function WorkCard({ p, i, lang, label, onOpen }) {
-  const big = i === 0, wide = i === 3, total = DATA.projects.length;
+const FILTERS = [
+  { key: 'all', label: 'ALL' },
+  { key: 'bi', label: 'BI' },
+  { key: 'web', label: 'WEB' },
+];
+
+function WorkCard({ p, i, lang, label, onOpen, total }) {
+  const big = i === 0, wide = i === 3;
   const [g1, g2] = p.tint || ['oklch(35% 0.14 295)', 'oklch(65% 0.16 320)'];
   return (
     <a href={`/project/${p.slug}`} onClick={(e) => { e.preventDefault(); onOpen(p.slug); }} data-cursor={label}
@@ -44,6 +51,9 @@ export default function Work() {
   const c = COPY.work[lang];
   const navigate = useNavigate();
   const onOpen = (slug) => navigate(`/project/${slug}`);
+  const [filter, setFilter] = useState('all');
+
+  const filtered = filter === 'all' ? DATA.projects : DATA.projects.filter((p) => p.tag === filter);
 
   return (
     <section id="work" className="sec" style={{ background: 'var(--bg-2)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
@@ -52,9 +62,23 @@ export default function Work() {
         <SectionHead eyebrow={c.eyebrow} blurb={c.blurb}>
           <RevealWords text={c.h1} /> <span className="it" style={{ fontFamily: 'var(--font-display)' }}>{c.hi}</span>
         </SectionHead>
+        <div style={{ display: 'flex', gap: 8, marginBottom: 28, marginTop: -30 }}>
+          {FILTERS.map((f) => {
+            const active = filter === f.key;
+            const label = f.key === 'all' ? c.all : f.label;
+            return (
+              <button key={f.key} onClick={() => setFilter(f.key)} data-cursor="filter" className="mono" style={{
+                padding: '9px 16px', borderRadius: 999, fontSize: 11, letterSpacing: '.1em',
+                border: '1px solid ' + (active ? 'var(--violet)' : 'var(--border)'),
+                background: active ? 'color-mix(in oklch,var(--violet) 14%,transparent)' : 'transparent',
+                color: active ? 'var(--violet)' : 'var(--ink-soft)', transition: 'all .25s',
+              }}>{label}</button>
+            );
+          })}
+        </div>
         <div className="bento" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gridAutoRows: '308px', gap: 20 }}>
-          {DATA.projects.map((p, i) => (
-            <WorkCard key={p.slug} p={p} i={i} lang={lang} label={c.open} onOpen={onOpen} />
+          {filtered.map((p, i) => (
+            <WorkCard key={p.slug} p={p} i={i} lang={lang} label={c.open} onOpen={onOpen} total={filtered.length} />
           ))}
         </div>
       </div>
