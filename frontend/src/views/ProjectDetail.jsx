@@ -100,12 +100,26 @@ export default function ProjectDetail() {
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                 {p.stack.map((s) => (<span key={s} className="mono" style={{ fontSize: 9.5, letterSpacing: '.1em', padding: '6px 12px', borderRadius: 999, border: '1px solid var(--border)', color: 'var(--ink-soft)' }}>{s}</span>))}
               </div>
+              {(p.links?.demo || p.links?.sales) && (
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 22 }}>
+                  {p.links.demo && (
+                    <a href={p.links.demo} target="_blank" rel="noopener noreferrer" data-cursor="visit ↗" className="btn">
+                      {lang === 'en' ? 'Visit the site' : 'Ir a la página'} <span style={{ fontSize: 15 }}>↗</span>
+                    </a>
+                  )}
+                  {p.links.sales && (
+                    <a href={p.links.sales} target="_blank" rel="noopener noreferrer" data-cursor="buy ↗" className="btn btn-ghost">
+                      {lang === 'en' ? 'Get it' : 'Consíguelo'} <span style={{ fontSize: 15 }}>↗</span>
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
             {p.img
               ? <div className="card" style={{ overflow: 'hidden', boxShadow: 'var(--shadow)' }}>
                 <div style={{ display: 'flex', gap: 6, padding: '12px 16px', borderBottom: '1px solid var(--border)', alignItems: 'center' }}>
                   <span style={{ width: 9, height: 9, borderRadius: '50%', background: 'var(--border)' }} /><span style={{ width: 9, height: 9, borderRadius: '50%', background: 'var(--border)' }} /><span style={{ width: 9, height: 9, borderRadius: '50%', background: 'var(--border)' }} />
-                  <span className="mono" style={{ fontSize: 9.5, letterSpacing: '.1em', color: 'var(--ink-mute)', margin: '0 auto' }}>{p.slug}.stephagonz.co</span>
+                  <span className="mono" style={{ fontSize: 9.5, letterSpacing: '.1em', color: 'var(--ink-mute)', margin: '0 auto' }}>{p.links?.demo ? p.links.demo.replace(/^https?:\/\//, '').replace(/\/$/, '') : `${p.slug}.stephagonz.co`}</span>
                 </div>
                 <img src={p.img} alt={p.title} style={{ width: '100%', display: 'block' }} />
               </div>
@@ -173,6 +187,16 @@ export default function ProjectDetail() {
               </div>}
           </div>
         </div>
+        {p.gallery && (
+          <div className="g3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20, marginTop: 40 }}>
+            {p.gallery.map((g, i) => (
+              <div key={i} className="card" style={{ overflow: 'hidden', boxShadow: 'var(--shadow)' }}>
+                <img src={g.img} alt={g.caption[lang]} style={{ width: '100%', display: 'block' }} />
+                <div className="mono" style={{ padding: '12px 16px', fontSize: 9.5, letterSpacing: '.1em', color: 'var(--ink-mute)' }}>{g.caption[lang]}</div>
+              </div>
+            ))}
+          </div>
+        )}
       </S>
 
       <S i={4} label={c.s5}>
